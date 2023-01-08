@@ -15,9 +15,9 @@ cat .ssh/id_rsa.pub
 登录到服务器创建秘钥文件并(按i)编辑，粘贴刚才复制的公钥(按esc输入:wq保存)
 
 ```text
-mkdir .ssh\authorized_keys
+mkdir .ssh/authorized_keys
 
-vim .ssh\authorized_keys
+vim .ssh/authorized_keys
 ```
 
 设置权限
