@@ -1,7 +1,7 @@
 # 用腾讯云的centos7.6系统
 
 ```python
- **ssh秘钥连接**
+ ssh秘钥连接
 ```
 
 生成秘钥
@@ -71,7 +71,7 @@ yum groupinstall fonts -y
 cd&&git clone --depth=1 -b main <https://gitee.com/Le-niao/Yunzai-Bot.git>  #克隆云崽
 cd Yunzai-Bot    #进入文件夹
 
-7. 安装依赖
+7.安装依赖
 npm install -g cnpm --registry=<https://registry.npm.taobao.org>  #安装cnpm
 cnpm install pnpm -g  #使用 cnpm 安装pnpm
 pnpm config set registry <https://registry.npm.taobao.org> #pnpm换源
@@ -83,3 +83,19 @@ npm start  #后台启动
 npm stop  #后台关闭
 node app  #前台启动
 npm run login  重新登录
+
+…or create a new repository on the command line
+
+echo "# Centos7.6-initial" >> README.md
+
+git init
+
+git add README.md
+
+git commit -m "first commit"
+
+git branch -M main
+
+git remote add origin https://github.com/Lycofuture/Centos7.6-initial.git
+
+git push -u origin main
