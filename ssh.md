@@ -24,8 +24,7 @@ vim .ssh/authorized_keys
 
 ```text
 chmod 600 .ssh/authorized_keys
-
-chmod /home/test/.ssh
+chmod 700 /home/test/.ssh
 ```
 
 重启ssh
