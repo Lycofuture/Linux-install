@@ -16,7 +16,6 @@ cat .ssh/id_rsa.pub
 
 ```text
 mkdir .ssh/authorized_keys
-
 vim .ssh/authorized_keys
 ```
 
