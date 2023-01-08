@@ -106,7 +106,7 @@ service clash start
 配置安装到指定路径
 
 ```pytho
-./configure --prefix=/usr/local/python3
+./configure --enable-optimizations
 ```
 
 编译 && 安装
