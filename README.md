@@ -31,7 +31,7 @@ yum install -y wget && wget -O install.sh https://download.bt.cn/install/install
 下载[clash](https://github.com/Dreamacro/clash)
 
 ```python
-wget <https://github.com/Dreamacro/clash/releases/download/v1.12.0/clash-linux-amd64-v1.12.0.gz>
+wget https://github.com/Dreamacro/clash/releases/download/v1.12.0/clash-linux-amd64-v1.12.0.gz
 ```
 
 解压
@@ -138,13 +138,13 @@ sudo yum -y install gcc-c++ make nodejs
 查看nodejs版本
 
 ```python
-node -V 
+node -v
 ```
 
 查看npm版本
 
 ```python
-npm -V 
+npm -v
 ```
 
 ## git安装
@@ -152,7 +152,7 @@ npm -V
 导入git源
 
 ```python
-sudo yum -y install <https://packages.endpointdev.com/rhel/7/os/x86_64/endpoint-repo.x86_64.rpm>
+sudo yum -y install https://packages.endpointdev.com/rhel/7/os/x86_64/endpoint-repo.x86_64.rpm
 ```
 
 安装git
