@@ -1,12 +1,17 @@
 # 用腾讯云的centos7.6系统
 
-随便一个ssh工具即可
+```python
+ **ssh秘钥连接**
+```
+
+生成秘钥
 
 宝塔面板
 
-'''
+$$
 yum install -y wget && wget -O install.sh <https://download.bt.cn/install/install_6.0.sh> && sh install.sh ed8484bec
-'''
+
+$$
 clash安装
 
 wget <https://github.com/Dreamacro/clash/releases/download/v1.12.0/clash-linux-amd64-v1.12.0.gz>
