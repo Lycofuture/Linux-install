@@ -47,8 +47,10 @@ WantedBy=multi-user.target
 
 设置开机自启
 
+```text
 systemctl daemon-reload
 systemctl enable clash
+```
 
 启动
 
