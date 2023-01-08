@@ -1,4 +1,4 @@
-# clash安装
+# clash Linux安装
 
 下载[clash](https://github.com/Dreamacro/clash)
 
