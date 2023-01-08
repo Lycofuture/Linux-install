@@ -60,7 +60,9 @@ service clash start
 
 ## 配置面板
 
+```text
 cd ~/.config/clash
+```
 
 下载面板，解压，重命名
 
