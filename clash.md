@@ -3,7 +3,7 @@
 下载[clash](https://github.com/Dreamacro/clash)
 
 ```text
-wget <https://github.com/Dreamacro/clash/releases/download/v1.12.0/clash-linux-amd64-v1.12.0.gz>
+wget https://github.com/Dreamacro/clash/releases/download/v1.12.0/clash-linux-amd64-v1.12.0.gz
 ```
 
 解压
