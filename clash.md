@@ -79,7 +79,9 @@ external-ui: dashboard
 ```
 
 secret: xxxx #设置访问密码
+
 external-controller: 0.0.0.0:9090  #别忘记在服务器厂商开放端口号
+
 external-ui: dashboard  #面板路径
 
 ## 修改系统代理
