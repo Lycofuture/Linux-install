@@ -21,7 +21,7 @@ mv clash-linux-amd64-v1.12.0 /usr/local/bin/clash
 给执行权限
 
 ```text
-chmod +x /usr/local/bin/clash-linux-amd64-v1
+chmod +x /usr/local/bin/clash
 ```
 
 设置成服务
