@@ -92,21 +92,33 @@ external-ui: dashboard  #面板路径
 vim /etc/profile
 ```
 
-全局代理(开关版)
+- 全局代理(开关版)
 
 ```text
 alias setproxy="export ALL_PROXY=代理服务器IP:端口号"
 alias unsetproxy="unset ALL_PROXY"
 ```
 
-全局代理
+开启代理
+
+```text
+setproxy
+```
+
+关闭代理
+
+```text
+unsetproxy
+```
+
+- 全局代理
 
 ```text
 export http_proxy=127.0.0.1:9090
 export https_proxy=127.0.0.1:9090
 ```
 
-重载配置文件
+- 重载配置文件
 
 ```text
 source /etc/profile
@@ -114,19 +126,19 @@ source /etc/profile
 
 ### 其他指令
 
-查看服务状态
+- 查看服务状态
 
 ```text
 systemctl clash status
 ```
 
-重启服务
+- 重启服务
 
 ```text
 systemctl clash restart
 ```
 
-停止服务
+- 停止服务
 
 ```text
 systemctl clash stop
