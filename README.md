@@ -118,7 +118,7 @@ make && make install
 ## 更换仓库源一直选Y就行
 
 ```python
-bash <(curl -sSL <https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirrors.sh>)
+bash <(curl -sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirrors.sh)
 ```
 
 ## 安装node.js
@@ -126,7 +126,7 @@ bash <(curl -sSL <https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirr
 添加仓库源
 
 ```python
-curl -sL <https://rpm.nodesource.com/setup_17.x> | sudo bash -
+curl -sL https://rpm.nodesource.com/setup_17.x | sudo bash -
 ```
 
 安装gcc-c++ make nodejs
