@@ -102,6 +102,8 @@ yum -y install chromium
 yum -y install redis
 ```
 
+## [安装python3.10](/python.md)
+
 ## 安装中文包(没什么软用)
 
 ```text

@@ -124,6 +124,12 @@ export https_proxy=127.0.0.1:9090
 source /etc/profile
 ```
 
+查看代理是否代理
+
+```text
+env|grep -i proxy
+```
+
 ### 其他指令
 
 查看服务状态
