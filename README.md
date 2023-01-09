@@ -14,13 +14,13 @@ useradd -m 用户名
 
 - [ssh秘钥连接](/ssh.md)
 
-- [更换软件源]
+- 更换软件源
 
  ```text
 bash <(curl -sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirrors.sh)
 ```
 
-- [宝塔面板]
+- 宝塔面板
 
  ```text
 yum install -y wget && wget -O install.sh https://download.bt.cn/install/install_6.0.sh && sh install.sh ed8484bec
@@ -28,54 +28,7 @@ yum install -y wget && wget -O install.sh https://download.bt.cn/install/install
 
 - [clash安装](/clash.md)
 
-## 系统变量
-
-全局代理(开关版)
-
-```text
-vim  /etc/profile
-```
-
-```text
-alias sproxy='export http_proxy=<http://127.0.0.1:7890;export>  https_proxy=<http://127.0.0.1:7890>'
-alias cproxy='export http_proxy=;export https_proxy='
-```
-
-退出
-
-```text
-:wq
-```
-
-重载配置
-
-```text
-source /etc/profile
-```
-
-代理开
-
-```text
-sproxy
-```
-
-代理关
-
-```text
-cproxy
-```
-
-查看系统代理
-
-```text
-env|grep -i proxy
-```
-
-clash启动
-
-```text
-service clash start
-```
+- [系统代理](/proxy.md)
 
 ## 编译安装
 
@@ -89,12 +42,6 @@ service clash start
 
 ```text
 make && make install
-```
-
-## 更换仓库源一直选Y就行
-
-```text
-bash <(curl -sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirrors.sh)
 ```
 
 ## 安装node.js
