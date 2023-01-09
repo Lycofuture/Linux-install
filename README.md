@@ -1,22 +1,18 @@
-# centos7.6系统初始化
+# **centos7.6系统初始化**
 
-## ssh秘钥连接
+创建用户 > useradd -m 用户名
 
-生成秘钥
-
- ```python
-ssh-keygen
+```text
+useradd -m 用户名
 ```
 
-```python
-cat id_rsa.pub >> authorized_keys
+设置密码 > passwd 用户名
+
+```text
+ passwd
 ```
 
-重启ssh
-
-```python
-service sshd restart
-```
+- ssh秘钥连接
 
 ## 宝塔面板
 
