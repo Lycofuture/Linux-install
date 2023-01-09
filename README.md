@@ -14,43 +14,19 @@ useradd -m 用户名
 
 - [ssh秘钥连接](/ssh.md)
 
-- 换源
+- [更换软件源]
 
  ```text
 bash <(curl -sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirrors.sh)
 ```
 
-- 宝塔面板
+- [宝塔面板]
 
  ```text
 yum install -y wget && wget -O install.sh https://download.bt.cn/install/install_6.0.sh && sh install.sh ed8484bec
 ```
 
-## clash安装
-
-下载[clash](https://github.com/Dreamacro/clash)
-
-```text
-wget https://github.com/Dreamacro/clash/releases/download/v1.12.0/clash-linux-amd64-v1.12.0.gz
-```
-
-解压
-
-```text
-gzip -d clash-linux-amd64-v1.12.0.gz
-```
-
-移动到/usr/local/bin/clash并重命名
-
-```text
-mv clash-linux-amd64-v1.12.0 /usr/local/bin/clash
-```
-
-给执行权限
-
-```text
-chmod +x /usr/local/bin/clash-linux-amd64-v1
-```
+- [clash安装](/clash.md)
 
 ## 系统变量
 
