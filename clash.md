@@ -95,20 +95,20 @@ vim /etc/profile
 全局代理(开关版)
 
 ```text
-alias setproxy="export ALL_PROXY=代理服务器IP:端口号"
-alias unsetproxy="unset ALL_PROXY"
+alias kclash="export ALL_PROXY=127.0.0.1:7890"
+alias gclash="unset ALL_PROXY"
 ```
 
 开启代理
 
 ```text
-setproxy
+kclash
 ```
 
 关闭代理
 
 ```text
-unsetproxy
+gclash
 ```
 
 全局代理
@@ -129,17 +129,17 @@ source /etc/profile
 查看服务状态
 
 ```text
-systemctl clash status
+service clash status
 ```
 
 重启服务
 
 ```text
-systemctl clash restart
+service clash restart
 ```
 
 停止服务
 
 ```text
-systemctl clash stop
+service clash stop
 ```

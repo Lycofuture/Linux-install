@@ -18,6 +18,9 @@ cat .ssh/id_rsa.pub
 mkdir .ssh
 chmod 700 .ssh
 vim .ssh/authorized_keys
+```
+
+```text
 chmod 600 .ssh/authorized_keys
 ```
 
