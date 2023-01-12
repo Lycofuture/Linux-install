@@ -95,8 +95,8 @@ vim /etc/profile
 全局代理(开关版)
 
 ```text
-alias kclash="export ALL_PROXY=127.0.0.1:7890"
-alias gclash="unset ALL_PROXY"
+alias kclash="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+alias gclash="unset  http_proxy  https_proxy  all_proxy"
 ```
 
 开启代理
