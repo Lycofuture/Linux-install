@@ -12,6 +12,16 @@ useradd -m 用户名
  passwd
 ```
 
+先登陆root账户，在root用户下更改sudoers文件
+
+vim /etc/sudoers
+
+在## Allow root to run any commands anywhere下添加以下内容，按I插入，插入完成后按ESC退出插入，输出:wq!保存退出，如下图所示
+
+您的用户名 ALL=(ALL) NOPASSWD:ALL
+
+source /etc/profile
+
 - [ssh秘钥连接](/ssh.md)
 
 - 更换软件源
