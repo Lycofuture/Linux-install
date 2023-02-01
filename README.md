@@ -393,10 +393,8 @@ yum -y install redis
 
 </p>
 </details>
-<details><summary><b>编译安装</b></summary>
+<details><summary><b>安装python3.10.9(centos)</b></summary>
 <p>
-
-## 安装python3.10.9(centos)
 
 安装依赖
 
@@ -454,7 +452,7 @@ pip --version
 </p>
 </details>
 
-<details><summary><b>编译安装</b></summary>
+<details><summary><b>git代码</b></summary>
 <p>
 
 ## git代码部分
