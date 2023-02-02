@@ -1,4 +1,23 @@
 <p align="center"><b>Linux部分教程</b></p>
+
+查看端口
+
+```
+sudo ufw status verbose 端口
+```
+
+开启端口
+
+```
+sudo ufw allow 端口
+```
+
+删除端口
+
+```
+sudo ufw delete allow 端口
+```
+
 <details><summary><b>Linux 创建用户</b></summary>
 <p>
 
