@@ -28,6 +28,12 @@ vim /etc/sudoers
 用户名 ALL=(ALL) NOPASSWD:ALL
 ```
 
+保持长时间连接
+
+```
+vim /etc/ssh/sshd_config
+```
+
 重载配置文件生效
 
 ```bash
