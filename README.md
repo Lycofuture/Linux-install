@@ -424,9 +424,12 @@ yum -y install redis
 安装依赖
 
 ```text
-yum -y groupinstall "Development tools"
-yum install -y ncurses-devel gdbm-devel xz-devel sqlite-devel tk-devel uuid-devel readline-devel bzip2-devel libffi-devel
-yum install -y openssl-devel openssl11 openssl11-devel
+
+sudo apt-get install gcc make zlib1g-dev libbz2-dev libsqlite3-dev install python3-dev libxml2-dev libffi-dev libssl-dev libxslt1-dev 
+
+#编译指令
+sudo ./configure --enable-optimizations --enable-shared --prefix=/usr/local/lib/python3.x
+
 ```
 
 [下载python](https://www.python.org/)
