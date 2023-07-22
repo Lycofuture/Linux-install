@@ -80,6 +80,12 @@ apt-get install locales
 dpkg-reconfigure locales
 ```
 
+设置系统时区(中国时区)
+
+```bash
+timedatectl set-timezone Asia/Shanghai
+```
+
 ## centos
 
 安装中文语言包
