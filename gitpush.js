@@ -1,20 +1,20 @@
 const simpleGit = require('simple-git');
 
-const git = simpleGit();
+const {add, addConfig, commit, push} = simpleGit();
 
 // 设置用户名和邮箱
 
-git.addConfig('user.name', 'Your Name');
+addConfig('user.name', 'Your Name');
 
-git.addConfig('user.email', 'your-email@example.com');
+addConfig('user.email', 'your-email@example.com');
 
 // 添加所有更改
 
-git.add('*');
+add('*');
 
 // 提交更改
 
-git.commit('Commit message')
+commit('Commit message')
 
   .then(() => console.log('Changes committed'))
 
@@ -22,9 +22,8 @@ git.commit('Commit message')
 
 // 推送到远程仓库
 
-git.push()
+push()
 
   .then(() => console.log('Code pushed to remote repository'))
 
   .catch((err) => console.error('Failed to push code:', err));
-
