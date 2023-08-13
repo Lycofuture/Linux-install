@@ -13,6 +13,15 @@ function Anime() {
     const LayerData = JSON.parse((fs.readFileSync('../AnimeThesaurus/data.json')).toString())
     const dataex = JSON.parse((fs.readFileSync('../AnimeThesaurus/可爱系二次元bot词库1.5万词V1.2.json')).toString())
     const datajs = JSON.parse((fs.readFileSync('../AnimeThesaurus/傲娇系二次元bot词库5千词V1.2.json')).toString())
+    const woeksheets = xlsx.parse(fs.readFileSync('./可爱系二次元bot词库1.5万词V1.2.xlsx'))
+    // 解析指定路径的 Excel 文件（从缓冲区读取）
+    const workSheetsFromBuffer = xlsx.parse(fs.readFileSync('./傲娇系二次元bot词库5千词V1.2.xlsx'))
+    // 获取第一个 Excel 文件解析后的数据
+    let jsonData = workSheetsFromBuffer[0].data
+    // 获取第二个 Excel 文件解析后的数据
+    const json = woeksheets[0].data
+    // 合并两个数据数组
+    const dataARR = [...jsonData, ...json]
     const data = {...LayerData, ...dataex, ...datajs}
     const jsondata = {}
     let num = 0
@@ -20,18 +29,40 @@ function Anime() {
         if (!jsondata[i]) {
             jsondata[i] = []
         }
-        jsondata[i].push(
+        for (let j in data[i]) {
+            console.log(data[i][j])
+            jsondata[i].push(
+                [
+                    {
+                        type: 'text',
+                        text: data[i][j]
+                    }
+                ]
+            )
+            num++
+        }
+    }
+    for (let i in dataARR) {
+        let key = dataARR[i]
+        // 打印每个键的值
+        // 检查文本数组的首个元素是否已经是 text 对象的属性
+        if (!jsondata[key[0]]) {
+            // 如果不是，则创建一个空数组作为该属性的值
+            jsondata[key[0]] = []
+        }
+        // 向相应的数组中推入包含文本值的对象
+        jsondata[key[0]].push(
             [
                 {
                     type: 'text',
-                    text: data[i]
+                    text: key[1]
                 }
             ]
         )
         num++
     }
     console.log(num)
-    fs.writeFileSync('./AnimeThesaurus.json', JSON.stringify(jsondata, null, 4))
+    fs.writeFileSync('./Excel_Anime_ALL.json', JSON.stringify(jsondata, null, 4))
 }
 
 function Exceljson() {
