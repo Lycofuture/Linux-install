@@ -1,0 +1,54 @@
+{
+  "name": "node-xlsx",
+  "author": "Olivier Louvignes <olivier@mg-crea.com>",
+  "version": "0.23.0",
+  "description": "NodeJS Excel files parser & builder",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "node-xlsx": "./lib/bin/cli.js"
+  },
+  "scripts": {
+    "start": "npm run spec -- --watch",
+    "build": "rimraf lib/*; tsc --build",
+    "lint": "eslint src/ test/",
+    "prettycheck": "prettier --check src/ test/",
+    "typecheck": "tsc --noEmit",
+    "spec": "jest --runInBand",
+    "test": "npm run lint && npm run prettycheck && npm run typecheck && npm run spec",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": "github:mgcrea/node-xlsx",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.3/xlsx-0.19.3.tgz"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.5.0",
+    "@tsconfig/node10": "^1.0.9",
+    "@types/jest": "^29.5.1",
+    "@types/sodium-native": "^2.3.5",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
+    "eslint": "^8.41.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "keywords": [
+    "excel",
+    "parser",
+    "builder",
+    "xlsx",
+    "xls"
+  ]
+}
