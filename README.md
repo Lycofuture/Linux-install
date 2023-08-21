@@ -250,7 +250,7 @@ service clash start
 设置代理
 
 ```text
-vim /etc/profile
+nano /etc/profile
 ```
 
 全局代理(开启`kclash`，关闭`gclash`)
