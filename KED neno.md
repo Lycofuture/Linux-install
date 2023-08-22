@@ -22,7 +22,7 @@ sudo apt install sqlitebrowser
 ```bash
 sqlitebrowser transactions.db
 ```
-
+- 删除代理proxy
 - 最后重启pkcon
 
 ```bash
