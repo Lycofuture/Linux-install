@@ -46,9 +46,8 @@ sudo nano /etc/pam.d/sddm
 ```
 将第一个注释，第二个取消注释
 
-#auth    required        pam_succeed_if.so user != root quiet_success
-
-auth    sufficient      pam_succeed_if.so user ingroup nopasswdlogin	
+> #auth    required        pam_succeed_if.so user != root quiet_success
+   auth    sufficient      pam_succeed_if.so user ingroup nopasswdlogin	
 
 ## 安装中文语包和繁体包
 
@@ -61,4 +60,10 @@ sudo apt-get install language-pack-gnome-zh-hans language-pack-kde-zh-hans\
 
 ```bash
 sudo apt-get install language-selector-gnome
+```
+
+## fcitx5设置开机自启
+
+```bash
+cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/
 ```
