@@ -39,3 +39,10 @@ sudo nano /etc/pam.d/sddm
 #auth    required        pam_succeed_if.so user != root quiet_success
 
 auth    sufficient      pam_succeed_if.so user ingroup nopasswdlogin	
+
+## 安装中文语言包和繁体包
+
+```bash
+	sudo apt install language-pack-gnome-zh-hans language-pack-kde-zh-hans\
+	 language-pack-zh-hans language-pack-gnome-zh-hant language-pack-kde-zh-hant language-pack-zh-hant
+```
