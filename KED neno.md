@@ -1,7 +1,7 @@
 y## 更新软件源
 
 ```bash
-pkcon refresh && pkcon update
+sudo pkcon refresh && sudo pkcon update
 ```
 ## pkcon 取消代理
 
