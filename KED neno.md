@@ -62,8 +62,7 @@ sudo apt-get install language-pack-gnome-zh-hans language-pack-kde-zh-hans\
 sudo apt-get install language-selector-gnome
 ```
 
-## fcitx5设置开机自启
-
-```bash
-cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/
+## ui
+```bahs
+sudo apt-get install fcitx-ui-qimpanel
 ```
