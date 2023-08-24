@@ -80,6 +80,12 @@ apt-get install locales
 dpkg-reconfigure locales
 ```
 
+下载系统服务管理
+
+```bash
+apt-get install systemd
+```
+
 设置系统时区(中国时区)
 
 ```bash
