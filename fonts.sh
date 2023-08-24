@@ -14,4 +14,4 @@ else
 fi
 
 # 安装匹配的软件包
-$apt_cmd $package_names -y
+$apt_cmd -y $package_names
