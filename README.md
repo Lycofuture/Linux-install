@@ -262,22 +262,13 @@ nano /etc/profile
 全局代理(开启`kclash`，关闭`gclash`)
 
 ```bash
-alias kclash="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891"
-alias gclash="unset  http_proxy  https_proxy  all_proxy"
-```
-
-或者直接`ALL`
-
-```bash
-alias kclash="export ALL_PROXY=127.0.0.1:7890"
-alias gclash="unset ALL_PROXY"
+alias kclash="export all_proxy=socks5://127.0.0.1:7891"
+alias gclash="unset all_proxy"
 ```
 
 全局代理(无开关)
 
 ```text
-export http_proxy=127.0.0.1:9090
-export https_proxy=127.0.0.1:9090
 export all_proxy=socks5://127.0.0.1:7891
 ```
 
