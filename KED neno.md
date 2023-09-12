@@ -56,6 +56,12 @@ sudo apt-get install language-pack-gnome-zh-hans language-pack-kde-zh-hans\
 	 language-pack-zh-hans language-pack-gnome-zh-hant language-pack-kde-zh-hant language-pack-zh-hant
 ```
 
+## fcitx 
+
+```
+sudo apt install fcitx5 fcitx5-chewing fcitx5-chinese-addons fcitx5-rime
+
+```
 ## 安装语言支持
 
 ```bash
