@@ -30,7 +30,7 @@ sudo apt install sqlitebrowser
 - 编辑数据库
 
 ```bash
-sqlitebrowser transactions.db
+sudo sqlitebrowser /var/lib/PackageKit/transactions.db
 ```
 - 删除代理proxy
 - 最后重启pkcon
