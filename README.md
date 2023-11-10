@@ -5,12 +5,26 @@
 ```text
 https://trackerslist.com/all.txt
 https://newtrackon.com/api/all
+https://newtrackon.com/api/stable
+https://newtrackon.com/api/live
+
 
 https://cf.trackerslist.com/best.txt
 https://cf.trackerslist.com/all.txt
 https://cf.trackerslist.com/http.txt
 
+https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best_ip.txt
+https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ip.txt
+https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt
+https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt
+https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_udp.txt
+https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_http.txt
+https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_https.txt
+https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ws.txt
+
 https://www.yaozuopan.top/iplist.txt
+
+http://github.itzmx.com/1265578519/OpenTracker/master/tracker.txt
 ```
 
 </p>
