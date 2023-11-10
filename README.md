@@ -1,4 +1,22 @@
 <p align="center"><b>Linux部分教程</b></p>
+<details><summary><b>Tracker列表</b></summary>
+<p>
+ 
+```text
+https://trackerslist.com/all.txt
+https://newtrackon.com/api/all
+
+https://cf.trackerslist.com/best.txt
+https://cf.trackerslist.com/all.txt
+https://cf.trackerslist.com/http.txt
+
+https://www.yaozuopan.top/iplist.txt
+```
+
+</p>
+</details>
+<details><summary><b>初始化</b></summary>
+<p>
 
 查看端口
 
@@ -18,6 +36,8 @@ sudo ufw allow 端口
 sudo ufw delete allow 端口
 ```
 
+</p>
+</details>
 <details><summary><b>Linux 创建用户</b></summary>
 <p>
 
