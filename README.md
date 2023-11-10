@@ -57,7 +57,7 @@ https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_all_
 https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_bad.txt 
 ```
 
-> DNS
+DNS
 > 原生
 
 ```text
