@@ -2,6 +2,8 @@
 <details><summary><b>Tracker列表</b></summary>
 <p>
  
+官方源
+ 
 ```text
 https://trackerslist.com/all.txt
 https://newtrackon.com/api/all
@@ -27,6 +29,76 @@ https://www.yaozuopan.top/iplist.txt
 http://github.itzmx.com/1265578519/OpenTracker/master/tracker.txt
 ```
 
+动漫源
+
+```text
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_best.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_udp.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_http.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_https.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_ws.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_best_ip.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_ip.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_bad.txt 
+```
+
+> TurnLine
+
+```text
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_best.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_all.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_all_udp.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_all_http.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_all_https.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_all_ws.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_best_ip.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_all_ip.txt 
+https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/ATline_bad.txt 
+```
+
+> DNS
+> 原生
+
+```text
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/AT_best.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/AT_all.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/AT_all_udp.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/AT_all_http.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/AT_all_https.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/AT_all_ws.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/AT_best_ip.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/AT_all_ip.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/AT_bad.txt
+```
+
+> aria2
+
+```text
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATaria2_best.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATaria2_all.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATaria2_all_udp.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATaria2_all_http.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATaria2_all_https.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATaria2_all_ws.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATaria2_best_ip.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATaria2_all_ip.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATaria2_bad.txt
+```
+
+> tracker
+
+```text
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATline_best.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATline_all.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATline_all_udp.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATline_all_http.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATline_all_https.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATline_all_ws.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATline_best_ip.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATline_all_ip.txt
+https://cdn.jsdelivr.net/gh/DeSireFire/animeTrackerList/ATline_bad.txt
+```
 </p>
 </details>
 <details><summary><b>初始化</b></summary>
