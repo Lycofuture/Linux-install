@@ -33,3 +33,4 @@
 ## 资源站
 
 - [爱恋动漫](https://www.kisssub.org/)
+- [天使动漫论坛](https://www.tsdm39.com/forum.php)
