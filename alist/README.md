@@ -20,6 +20,7 @@
 星期五
 
 - [不死不幸 / Undead Unluck / アンデッドアンラック](https://undead-unluck.net/)(更新中)
+- [盾之勇者成名录 第三季 / Tate no Yuusha no Nariagari S3 / 盾の勇者の成り上がり Season 3](http://shieldhero-anime.jp/)(更新中)
 
 星期六
 
