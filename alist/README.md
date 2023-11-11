@@ -11,6 +11,7 @@
 星期三
 
 - [絆之 Allele 第二季 / Kizuna no Allele S02 / 絆のアリル](https://kizunanoallele.com/)(更新中)
+- [捡走被人悔婚的千金，教会她坏坏的幸福生活 / Konyaku Haki sareta Reijou wo Hirotta Ore ga, Ikenai Koto wo Oshiekomu / 婚約破棄された令嬢を拾った俺が、イケナイことを教え込む](https://ikenaikyo.com/)(更新中)
 
 星期四
 
