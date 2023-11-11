@@ -178,13 +178,23 @@ body {
 .hope-ui-dark .newValine {
     background-color:rgb(0 0 0 / 80%)!important;
 }
-/*输入栏里面跳舞的小人背景图*/
-.vedit {
+/*输入栏里面跳舞的小人背景图 - 白天模式透明度*/
+.hope-ui-light .vedit {
     background-image:url(https://cdn.jsdelivr.net/gh/anwen-anyi/imgAnwen/images/OuNiJiang.gif);
     background-size:contain;
     background-repeat:no-repeat;
     background-position:right bottom;
     transition:all 0.25s ease-in-out 0s;
+}
+/*输入栏里面跳舞的小人背景图 - 夜间模式透明度*/
+.hope-ui-dark .vedit {
+    background-image:url(https://cdn.jsdelivr.net/gh/anwen-anyi/imgAnwen/images/OuNiJiang.gif);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:right bottom;
+    transition:all 0.25s ease-in-out 0s;
+    -webkit-filter: invert(1);
+    filter: invert(1);
 }
 textarea#comment-textarea:focus {
     background-position-y:120px;
