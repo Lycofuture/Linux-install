@@ -3,6 +3,7 @@
 星期一
 
 - [星灵感应 / Hoshikuzu Telepath / 星屑テレパス](https://hoshitele-anime.com/)(更新中)
+- [我们的雨色协议 / Bokura no Ameiro Purotokoru / 僕らの雨いろプロトコル](https://bokuame.com/)(更新中)
 
 星期二
 
