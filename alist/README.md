@@ -23,6 +23,7 @@
 - [不死不幸 / Undead Unluck / アンデッドアンラック](https://undead-unluck.net/)(更新中)
 - [盾之勇者成名录 第三季 / Tate no Yuusha no Nariagari S3 / 盾の勇者の成り上がり Season 3](http://shieldhero-anime.jp/)(更新中)
 - [葬送的芙莉莲 / Sousou no Frieren / 葬送のフリーレン](https://frieren-anime.jp/)(更新中)
+- [位于恋爱光谱极端的我们 / LoliHouse / 経験済みなキミと、経験ゼロなオレが、お付き合いする話](https://kimizero.com/)(更新中)
 
 星期六
 
