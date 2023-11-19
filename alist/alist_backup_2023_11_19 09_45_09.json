@@ -1,0 +1,633 @@
+{
+  "settings": [
+    {
+      "key": "version",
+      "value": "v3.28.0",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 1,
+      "flag": 2
+    },
+    {
+      "key": "site_title",
+      "value": "动漫资源库",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 1,
+      "flag": 0
+    },
+    {
+      "key": "announcement",
+      "value": "10月新番(持续更新)",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 1,
+      "flag": 0
+    },
+    {
+      "key": "pagination_type",
+      "value": "pagination",
+      "help": "",
+      "type": "select",
+      "options": "all,pagination,load_more,auto_load_more",
+      "group": 1,
+      "flag": 0
+    },
+    {
+      "key": "default_page_size",
+      "value": "30",
+      "help": "",
+      "type": "number",
+      "options": "",
+      "group": 1,
+      "flag": 0
+    },
+    {
+      "key": "allow_indexed",
+      "value": "true",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 1,
+      "flag": 0
+    },
+    {
+      "key": "allow_mounted",
+      "value": "true",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 1,
+      "flag": 0
+    },
+    {
+      "key": "robots_txt",
+      "value": "User-agent: *\nAllow: /",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 1,
+      "flag": 0
+    },
+    {
+      "key": "logo",
+      "value": "https://jsd.nn.ci/gh/alist-org/logo@main/logo.svg",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 2,
+      "flag": 0
+    },
+    {
+      "key": "favicon",
+      "value": "https://jsd.nn.ci/gh/alist-org/logo@main/logo.svg",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 2,
+      "flag": 0
+    },
+    {
+      "key": "main_color",
+      "value": "#1890ff",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 2,
+      "flag": 0
+    },
+    {
+      "key": "home_icon",
+      "value": "🏠",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 2,
+      "flag": 0
+    },
+    {
+      "key": "home_container",
+      "value": "hope_container",
+      "help": "",
+      "type": "select",
+      "options": "max_980px,hope_container",
+      "group": 2,
+      "flag": 0
+    },
+    {
+      "key": "settings_layout",
+      "value": "responsive",
+      "help": "",
+      "type": "select",
+      "options": "list,responsive",
+      "group": 2,
+      "flag": 0
+    },
+    {
+      "key": "text_types",
+      "value": "txt,htm,html,xml,java,properties,sql,js,md,json,conf,ini,vue,php,py,bat,gitignore,yml,go,sh,c,cpp,h,hpp,tsx,vtt,srt,ass,rs,lrc",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 3,
+      "flag": 1
+    },
+    {
+      "key": "audio_types",
+      "value": "mp3,flac,ogg,m4a,wav,opus,wma",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 3,
+      "flag": 1
+    },
+    {
+      "key": "video_types",
+      "value": "mp4,mkv,avi,mov,rmvb,webm,flv",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 3,
+      "flag": 1
+    },
+    {
+      "key": "image_types",
+      "value": "jpg,tiff,jpeg,png,gif,bmp,svg,ico,swf,webp",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 3,
+      "flag": 1
+    },
+    {
+      "key": "proxy_types",
+      "value": "m3u8",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 3,
+      "flag": 1
+    },
+    {
+      "key": "proxy_ignore_headers",
+      "value": "authorization,referer",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 3,
+      "flag": 1
+    },
+    {
+      "key": "external_previews",
+      "value": "{\ninterface {\n  [extensions: string]: {\n    [name: string]: string //(url)\n  }\n},\n{\n  \"txt\": {\n    \"Notepad\": \"notepad://$url\"\n  },\n  \"/.*/\": {\n    \"VSCode\": \"vscode://$url\"\n  }\n}\n}",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 3,
+      "flag": 0
+    },
+    {
+      "key": "iframe_previews",
+      "value": "{\n\t\"doc,docx,xls,xlsx,ppt,pptx\": {\n\t\t\"Microsoft\":\"https://view.officeapps.live.com/op/view.aspx?src=$e_url\",\n\t\t\"Google\":\"https://docs.google.com/gview?url=$e_url&embedded=true\"\n\t},\n\t\"pdf\": {\n\t\t\"PDF.js\":\"https://alist-org.github.io/pdf.js/web/viewer.html?file=$e_url\"\n\t},\n\t\"epub\": {\n\t\t\"EPUB.js\":\"https://alist-org.github.io/static/epub.js/viewer.html?url=$e_url\"\n\t}\n}",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 3,
+      "flag": 0
+    },
+    {
+      "key": "audio_cover",
+      "value": "https://jsd.nn.ci/gh/alist-org/logo@main/logo.svg",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 3,
+      "flag": 0
+    },
+    {
+      "key": "audio_autoplay",
+      "value": "true",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 3,
+      "flag": 0
+    },
+    {
+      "key": "video_autoplay",
+      "value": "true",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 3,
+      "flag": 0
+    },
+    {
+      "key": "hide_files",
+      "value": "/\\/README.md/i",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 4,
+      "flag": 0
+    },
+    {
+      "key": "package_download",
+      "value": "true",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 4,
+      "flag": 0
+    },
+    {
+      "key": "customize_head",
+      "value": "<!--Alist V3建议添加的，已经默认添加了，如果你的没有建议加上-->\n<script src=\"https://polyfill.io/v3/polyfill.min.js?features=String.prototype.replaceAll\"></script>\n\n<!--指定utf-8编码-->\n<meta charset=\"utf-8\" />\n\n<!--引入字体，全局字体使用-->\n<link rel=\"stylesheet\" href=\"https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/lxgwwenkai-regular.css\" />\n\n<!--评论系统使用的js-->\n<script src='https://unpkg.com/valine/dist/Valine.min.js'></script>\n\n<!--不蒜子计数器-->\n<script async src=\"https://busuanzi.icodeq.com/busuanzi.pure.mini.js\"></script>\n\n<!-- Font6，自定义底部使用和看板娘使用的图标和字体文件-->\n<link type='text/css' rel=\"stylesheet\" href=\"https://npm.elemecdn.com/font6pro@6.3.0/css/fontawesome.min.css\" media='all'>\n<link href=\"https://npm.elemecdn.com/font6pro@6.3.0/css/all.min.css\" rel=\"stylesheet\">\n\n<!--音乐播放器所用的文件-->\n<!-- require APlayer -->\n<link rel=\"stylesheet\" href=\"https://npm.elemecdn.com/aplayer@1.10.1/dist/APlayer.min.css\">\n<script src=\"https://npm.elemecdn.com/aplayer@1.10.1/dist/APlayer.min.js\"></script>\n<!-- require MetingJS -->\n<script src=\"https://npm.elemecdn.com/meting2@0.0.1/js/Meting.min.js\"></script>\n<!-- 新的，添加 require MetingJS 优先使用这个吧 -->\n<!--<script src=\"https://npm.elemecdn.com/meting2@0.0.1/js/Meting.min.js\"></script>-->\n<!-- 新的备用，添加 require MetingJS -->\n<!--<script src=\"https://jsd.haorwen.tk/gh/lemonmous/Source-material@1.0/js/Meting.min.js\"></script>-->\n<!-- 备用，添加 require MetingJS -->\n<!--<script src=\"https://cdn.jsdelivr.net/gh/lemonmous/Source-material@1.0/js/Meting.min.js\"></script>-->\n\n<!-- 旧的，已失效的请删除 require MetingJS -->\n<!--<script src=\"https://npm.elemecdn.com/meting@2.0.1/dist/Meting.min.js\"></script>-->\n\n<!-- 自行配置音乐选项 auto 内容 -->\n<!--<meting-js fixed=\"true\" autoplay=\"false\" theme=\"#409EFF\" list-folded=\"true\" server=\"netease\" type=\"playlist\" id=\"2568697963\"></meting-js>-->\n\n\n<style>\n/* 去除通知栏 右上角 X */\n.notify-render .hope-close-button {\n    display: none;\n}\n/* 文字超长自动换行 */\n.name-box .name {\n\twhite-space: unset !important;\n\toverflow: unset !important;\n}\n/* 缩略图图片变大 代码中的160px 自己改 现在是注释状态若需要自行解除注释 */\n.obj-box > div {\ngrid-template-columns: repeat(auto-fill, minmax(160px, 1fr))\n}\n.obj-box > div .item-thumbnail{\n  height: 100px;\n}\n    \n/* 图片API用法点进去都会有食用说明的,API来自网络不保证实效性稳定性自己测试\n  樱花：https://www.dmoe.cc\n  夏沫：https://cdn.seovx.com\n  搏天：https://api.btstu.cn/doc/sjbz.php\n  姬长信：https://github.com/insoxin/API\n  小歪：https://api.ixiaowai.cn/\n  保罗：https://api.paugram.com\n  墨天逸：https://api.mtyqx.cn\n  岁月小筑：https://img.xjh.me\n  东方Project：https://img.paulzzh.com\n  */\n\n/*白天背景图*/\n.hope-ui-light {\n    background-image: url(\"https://cdn.seovx.com/d/?mom=302\") !important;\n    background-repeat:no-repeat;\n    background-size:cover;\n    background-attachment:fixed;\n    background-position-x:center;\n}\n/*夜间背景图*/\n.hope-ui-dark {\n    background-image: url(https://img.paulzzh.com/touhou/random) !important;\n    background-repeat:no-repeat;\n    background-size:cover;\n    background-attachment:fixed;\n    background-position-x:center;\n}\n/*主列表白天模式透明*/\n.obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-igScBhH-css {\n    background-color: rgba(255, 255, 255, 0.5)!important;\n}\n/*主列表夜间模式透明*/\n .obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-iigjoxS-css {\n    background-color:rgb(0 0 0 / 50%)!important;\n}\n\n/*readme白天模式透明*/\n.hope-c-PJLV.hope-c-PJLV-ikSuVsl-css {\n    background-color: rgba(255, 255, 255, 0.5)!important;\n}\n/*readme夜间模式透明*/\n.hope-c-PJLV.hope-c-PJLV-iiuDLME-css {\n    background-color:rgb(0 0 0 / 50%)!important;\n}\n\n/*顶部右上角切换按钮透明*/\n.hope-ui-light .hope-c-ivMHWx-hZistB-cv.hope-icon-button {\n    background-color: rgba(255, 255, 255, 0.3)!important;\n}\n.hope-ui-dark .hope-c-ivMHWx-hZistB-cv.hope-icon-button {\n    background-color:rgb(0 0 0 / 10%)!important;\n\t\n}\n\n/*右下角侧边栏按钮透明 第一个是白天 第二个是夜间*/\n.hope-ui-light .hope-c-PJLV-ijgzmFG-css {\n    background-color: rgba(255, 255, 255, 0.5)!important;\n}\n.hope-ui-dark .hope-c-PJLV-ijgzmFG-css {\n    background-color:rgb(0 0 0 / 50%)!important;\n}\n\n/*白天模式代码块透明*/\n.hope-ui-light pre {\n    background-color: rgba(255, 255, 255, 0.1)!important;\n}\n/*夜间模式代码块透明*/\n.hope-ui-dark pre {\n    background-color: rgba(255, 255, 255, 0)!important;\n}\n\n/*底部CSS，.App .table这三个一起的*/\n dibu {\n    border-top: 0px;\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n    margin: 0px;\n    padding: 0px;\n}\n.App {\n    min-height: 85vh;\n}\n.table {\n    margin: auto;\n}\n\n/*去掉底部*/\n.footer {\n    display: none!important;\n}\n\n/*全局字体*/\n * {\n    font-family:LXGW WenKai\n}\n* {\n    font-weight:bold\n}\nbody {\n    font-family: LXGW WenKai;\n}\n\n\n/*以下为评论系统专用*/\n/*适配大小契合度*/\n.newValine {\n    width: min(96%, 940px);\n    flex-direction: column;\n    row-gap: var(--hope-space-2);\n    border-radius: var(--hope-radii-xl);\n    padding: var(--hope-space-2);\n    box-shadow: var(--hope-shadows-lg);\n}\n/*评论区 - 白天模式透明度*/\n.hope-ui-light .newValine {\n    background-color: rgba(255, 255, 255, 0.8)!important;\n}\n/*评论区 - 夜间模式透明度*/\n.hope-ui-dark .newValine {\n    background-color:rgb(0 0 0 / 80%)!important;\n}\n/*输入栏里面跳舞的小人背景图 - 白天模式透明度*/\n.hope-ui-light .vedit {\n    background-image:url(https://cdn.jsdelivr.net/gh/anwen-anyi/imgAnwen/images/OuNiJiang.gif);\n    background-size:contain;\n    background-repeat:no-repeat;\n    background-position:right bottom;\n    transition:all 0.25s ease-in-out 0s;\n}\n/*输入栏里面跳舞的小人背景图 - 夜间模式透明度*/\n.hope-ui-dark .vedit {\n    background-image:url(https://cdn.jsdelivr.net/gh/anwen-anyi/imgAnwen/images/OuNiJiang.gif);\n    background-size:contain;\n    background-repeat:no-repeat;\n    background-position:right bottom;\n    transition:all 0.25s ease-in-out 0s;\n    -webkit-filter: invert(1);\n    filter: invert(1);\n}\ntextarea#comment-textarea:focus {\n    background-position-y:120px;\n    transition:all 0.25s ease-in-out 0s;\n}\n\n\n/*渐变背景CSS*/\n #canvas-basic {\n    position: fixed;\n    display: block;\n    width: 100%;\n    height: 100%;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    left: 0;\n    z-index: -999;\n}\n\n\n/*音乐播放器进一步进行隐藏*/\n\n<!--看板娘 -自定义大小，隐藏对话框和对话框高度-->\n<style type=\"text/css\">\n  #waifu #live2d {\n    height: 350px!important;\n    width: 350px!important;\n  }\n  #waifu-tips {\n    top: -60px;\n    /*display:none !important;隐藏对话框*/\n  }\n</style>\n\n<!--看板娘加载指定模型-->\n<script>\n  localStorage.setItem('modelId', '7');\n  localStorage.setItem('modelTexturesId', '3');\n</script>\n\n<!--以下四个两个主用两个备用的,选一条使用即可-->\n<!--自己选左右-->\n<script src=\"https://api.itggg.cn/live2dnew/left/index.js\"></script>\n<!--<script src=\"https://api.itggg.cn/live2dnew/right/index.js\"></script>-->\n\n<!--备用的，自己选左右-->\n<script src=\"https://luluossfile.lulufind.com/work/teacher_u20221017ce7b5991_1666420843832_19934968_file.js\"></script>\n<!--<script src=\"https://luluossfile.lulufind.com/work/teacher_u20221017bb6d7454_1666420849979_19584065_file.js\"></script>-->\n\n\n<style>\n/*白天模式 搜索主体+毛玻璃*/\n.hope-ui-light .hope-c-PJLV-iiBaxsN-css{\n   background-color: rgba(255,255,255,0.2)!important;\n   backdrop-filter: blur(10px)!important;\n}\n\n/*白天模式 搜索栏输入框+毛玻璃*/\n.hope-ui-light .hope-c-kvTTWD-hYRNAb-variant-filled{\n   background-color: rgba(255,255,255,0.2)!important;\n   backdrop-filter: blur(10px)!important;\n}\n\n/*白天模式 搜索按钮+毛玻璃*/\n.hope-ui-light .hope-c-PJLV-ikEIIxw-css{\n   background-color: rgba(255,255,255,0.2)!important;\n   backdrop-filter: blur(10px)!important;\n   padding: var(--hope-space-1)!important;\n}\n\n/*夜间模式搜索主体+毛玻璃*/\n.hope-ui-dark .hope-c-PJLV-iiBaxsN-css{\n    background-color: rgb(0 0 0 / 10%)!important;\n    backdrop-filter: blur(10px)!important;\n}\n\n/*夜间模式搜索栏+毛玻璃*/\n.hope-ui-dark .hope-c-kvTTWD-hYRNAb-variant-filled{\n    background-color: rgb(0 0 0 / 10%)!important;\n    backdrop-filter: blur(10px)!important;\n}\n\n/*夜间模式 搜索按钮+毛玻璃*/\n.hope-ui-dark .hope-c-PJLV-ikEIIxw-css{\n    background-color: rgb(0 0 0 / 10%)!important;\n    backdrop-filter: blur(10px)!important;\n    padding: var(--hope-space-1)!important;\n}\n</style>\n\n</style>\n",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 4,
+      "flag": 1
+    },
+    {
+      "key": "customize_body",
+      "value": "<!--延迟加载-->\n<!--如果要写自定义内容建议都加到这个延迟加载的范围内-->\n<div id=\"customize\" style=\"display: none;\">\n    <div>\n\t\t<!--音乐播放器-->\n        <meting-js fixed=\"true\" autoplay=\"true\" theme=\"#409EFF\" list-folded=\"true\" server=\"netease\" type=\"playlist\" id=\"2568697963\"></meting-js>\n\n\t\t\n\t\t<!--评论模块还有下面的script也是-->\n\t\t<center>\n\t\t\t<div class=\"newValine\" id=\"vcomments\"></div>\n\t\t</center>\n\t\t<script>\n\t\t\tnew Valine({\n\t\t\t\tvisitor: true,\n\t\t\t\tel: '#vcomments',\n\t\t\t\tavatar: 'wavatar',\n\t\t\t\tappId: 'mqNCZUaZM1z4nPlpFSQBSGH7-gzGzoHsz',\n\t\t\t\tappKey: '2umMHA8W4tTcXG2kTqroZ6xS',\n\t\t\t\tMasterKey: 'sZBKcqA9XTFpQ7QMKB16UBIY',\n\t\t\t\tplaceholder: \"有什么问题欢迎评论区留言~么么哒\"\n\t\t\t}) \n\t\t</script>\n\n        <br/>\n        <center class=\"dibu\">\n            <div style=\" line-height: 20px;font-size: 9pt;font-weight: bold;\">\n                <span>\n                    \"\n                    <span style=\"color: rgb(13, 109, 252); font-weight: bold;\" id=\"hitokoto\">\n                        <a href=\"#\" id=\"hitokoto_text\">\n                            \"人生最大的遗憾,就是在最无能为力的时候遇到一个想要保护一生的人.\"\n                        </a>\n                    </span> \"\n                </span>\n                <p style=\"margin-left: 10rem;font-size: 8pt;\">\n                    <small>\n                        —— Anwen's Cloud\n                    </small>\n                </p>\n            </div>\n\n            <div style=\"font-size: 13px; font-weight: bold; mix-blend-mode: difference;\">\n                <span class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"https://qm.qq.com/q/Sg5y2WlO00\"\n                        target=\"_blank\">\n                        <i class=\"fab fa-qq\" style=\"color:#409EFF\" aria-hidden=\"true\">\n                        </i>\n                        QQ |\n                    </a>\n                </span>\n                <span class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"mailto:d342jxc@gmail.com\" target=\"_blank\">\n                        <i class=\"fa-duotone fa-envelope-open\" style=\"color:#409EFF\" aria-hidden=\"true\">\n                        </i>\n                        邮箱 |\n                    </a>\n                </span>\n                <span class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#\" target=\"_blank\">\n                        <i class=\"fas fa-edit\" style=\"color:#409EFF\" aria-hidden=\"true\">\n                        </i>\n                        博客 |\n                    </a>\n                </span>\n                <span class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#\" target=\"_blank\">\n                        <i class=\"fas fa-comment-lines\" style=\"color:#409EFF;\" aria-hidden=\"true\">\n                        </i>\n                        留言 |\n                    </a>\n                </span>\n                <!--后台入口-->\n                <span class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/alist/@manage\" target=\"_blank\">\n                        <i class=\"fa-solid fa-folder-gear\" style=\"color:#409EFF;\" aria-hidden=\"true\">\n                        </i>\n                        管理 |\n                    </a>\n                </span>\n                <!--版权，请尊重作者-->\n                <span class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"https://github.com/Xhofe/alist\" target=\"_blank\">\n                        <i class=\"fa-solid fa-copyright\" style=\"color:#409EFF;\" aria-hidden=\"true\">\n                        </i>\n                        Alist\n                    </a>\n                </span>\n\t\t\t\t<br />\n\t\t\t\t<!--添加一个访问量-->\n\t\t\t\t<span>\n                    本\"<span style=\"color: rgb(13, 109, 252); font-weight: bold;\"><a href=\"#\">目录</a></span>\"访问量 <span id=\"busuanzi_value_page_pv\" style=\"color: rgb(13, 109, 252); font-weight: bold;\"></span> 次 本站总访问量 <span id=\"busuanzi_value_site_pv\" style=\"color: rgb(13, 109, 252); font-weight: bold;\"></span>                次 本站总访客数 <span id=\"busuanzi_value_site_uv\" style=\"color: rgb(13, 109, 252); font-weight: bold;\"></span> 人\n                </span>\n                <br />\n\t\t\t\t<!--添加备案信息-->\n                <span class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"https://beian.miit.gov.cn/#/Integrated/index\" target=\"_blank\">\n                        <i class=\"fa-solid fa-shield-check\" style=\"color:#409EFF;\" aria-hidden=\"true\">\n                        </i>\n                        冀 ICP备2222000777号\n                    </a>\n                </span>\n            </div>\n        </center>\n        <br />\n        <br />\n    </div>\n\n\n\n    <!--一言API-->\n    <script src=\"https://v1.hitokoto.cn/?encode=js&select=%23hitokoto\" defer></script>\n<!--延迟加载范围到这里结束-->\n</div>\n<!--延迟加载配套使用JS-->\n<script>\n    let interval = setInterval(() => {\n        if (document.querySelector(\".footer\")) {\n            document.querySelector(\"#customize\").style.display = \"\";\n            clearInterval(interval);\n        }\n    }, 200);\n</script>\n\n<!-- 渐变背景初始化,如果要使用渐变背景把下面的那一行注释去掉即可-->\n<!-- 下面的几行都是渐变的一套,自定义头部内还有一个关联的自定义CSS -->\n<!--<canvas id=\"canvas-basic\"></canvas> -->\n<script src=\"https://npm.elemecdn.com/granim@2.0.0/dist/granim.min.js\"></script>\n<script>\nvar granimInstance = new Granim({\n    element: '#canvas-basic',\n    direction: 'left-right',\n    isPausedWhenNotInView: true,\n    states : {\n        \"default-state\": {\n            gradients: [\n                ['#a18cd1', '#fbc2eb'],\n                 ['#fff1eb', '#ace0f9'],\n                 ['#d4fc79', '#96e6a1'],\n                 ['#a1c4fd', '#c2e9fb'],\n                 ['#a8edea', '#fed6e3'],\n                 ['#9890e3', '#b1f4cf'],\n                 ['#a1c4fd', '#c2e9fb'],\n                 ['#fff1eb', '#ace0f9']\n           \n            ]\n        }\n    }\n});\n</script>\n\n<!--鼠标点击效果-->\n<script src=\"https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js\"></script>\n",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 4,
+      "flag": 1
+    },
+    {
+      "key": "link_expiration",
+      "value": "0",
+      "help": "",
+      "type": "number",
+      "options": "",
+      "group": 4,
+      "flag": 1
+    },
+    {
+      "key": "sign_all",
+      "value": "true",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 4,
+      "flag": 1
+    },
+    {
+      "key": "privacy_regs",
+      "value": "(?:(?:\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])\\.){3}(?:\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])\n([[:xdigit:]]{1,4}(?::[[:xdigit:]]{1,4}){7}|::|:(?::[[:xdigit:]]{1,4}){1,6}|[[:xdigit:]]{1,4}:(?::[[:xdigit:]]{1,4}){1,5}|(?:[[:xdigit:]]{1,4}:){2}(?::[[:xdigit:]]{1,4}){1,4}|(?:[[:xdigit:]]{1,4}:){3}(?::[[:xdigit:]]{1,4}){1,3}|(?:[[:xdigit:]]{1,4}:){4}(?::[[:xdigit:]]{1,4}){1,2}|(?:[[:xdigit:]]{1,4}:){5}:[[:xdigit:]]{1,4}|(?:[[:xdigit:]]{1,4}:){1,6}:)\n(?U)access_token=(.*)&",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 4,
+      "flag": 1
+    },
+    {
+      "key": "ocr_api",
+      "value": "https://api.nn.ci/ocr/file/json",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 4,
+      "flag": 0
+    },
+    {
+      "key": "filename_char_mapping",
+      "value": "{\"/\": \"|\"}",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 4,
+      "flag": 0
+    },
+    {
+      "key": "forward_direct_link_params",
+      "value": "true",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 4,
+      "flag": 0
+    },
+    {
+      "key": "webauthn_login_enabled",
+      "value": "true",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 4,
+      "flag": 0
+    },
+    {
+      "key": "aria2_uri",
+      "value": "http://localhost:6800/jsonrpc",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 5,
+      "flag": 1
+    },
+    {
+      "key": "aria2_secret",
+      "value": "",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 5,
+      "flag": 1
+    },
+    {
+      "key": "token",
+      "value": "alist-99a4a6f4-4cc9-4b54-ab36-158cacda7c1fuZwKR3LKdAR20a5J0mAmbbmXfMevSmwC9RXGVoHAZyVFcyfcQmpNwRmAzXw89Pop",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 0,
+      "flag": 1
+    },
+    {
+      "key": "search_index",
+      "value": "database_non_full_text",
+      "help": "",
+      "type": "select",
+      "options": "database,database_non_full_text,bleve,none",
+      "group": 6,
+      "flag": 0
+    },
+    {
+      "key": "auto_update_index",
+      "value": "true",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 6,
+      "flag": 0
+    },
+    {
+      "key": "ignore_paths",
+      "value": "",
+      "help": "one path per line",
+      "type": "text",
+      "options": "",
+      "group": 6,
+      "flag": 1
+    },
+    {
+      "key": "max_index_depth",
+      "value": "100",
+      "help": "max depth of index",
+      "type": "number",
+      "options": "",
+      "group": 6,
+      "flag": 1
+    },
+    {
+      "key": "index_progress",
+      "value": "{\"obj_count\":31695,\"is_done\":true,\"last_done_time\":\"2023-11-10T22:38:39.021932812+08:00\",\"error\":\"\"}",
+      "help": "",
+      "type": "text",
+      "options": "",
+      "group": 0,
+      "flag": 1
+    },
+    {
+      "key": "sso_login_enabled",
+      "value": "false",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 7,
+      "flag": 0
+    },
+    {
+      "key": "sso_login_platform",
+      "value": "Github",
+      "help": "",
+      "type": "select",
+      "options": "Casdoor,Github,Microsoft,Google,Dingtalk,OIDC",
+      "group": 7,
+      "flag": 0
+    },
+    {
+      "key": "sso_client_id",
+      "value": "",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 7,
+      "flag": 1
+    },
+    {
+      "key": "sso_client_secret",
+      "value": "",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 7,
+      "flag": 1
+    },
+    {
+      "key": "sso_organization_name",
+      "value": "",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 7,
+      "flag": 1
+    },
+    {
+      "key": "sso_application_name",
+      "value": "",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 7,
+      "flag": 1
+    },
+    {
+      "key": "sso_endpoint_name",
+      "value": "",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 7,
+      "flag": 1
+    },
+    {
+      "key": "sso_jwt_public_key",
+      "value": "",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 7,
+      "flag": 1
+    },
+    {
+      "key": "sso_auto_register",
+      "value": "false",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 7,
+      "flag": 1
+    },
+    {
+      "key": "sso_default_dir",
+      "value": "/",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 7,
+      "flag": 1
+    },
+    {
+      "key": "sso_default_permission",
+      "value": "0",
+      "help": "",
+      "type": "number",
+      "options": "",
+      "group": 7,
+      "flag": 1
+    },
+    {
+      "key": "sso_compatibility_mode",
+      "value": "false",
+      "help": "",
+      "type": "bool",
+      "options": "",
+      "group": 7,
+      "flag": 0
+    },
+    {
+      "key": "qbittorrent_url",
+      "value": "http://admin:adminadmin@localhost:8080/",
+      "help": "",
+      "type": "string",
+      "options": "",
+      "group": 0,
+      "flag": 1
+    },
+    {
+      "key": "qbittorrent_seedtime",
+      "value": "0",
+      "help": "",
+      "type": "number",
+      "options": "",
+      "group": 0,
+      "flag": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "",
+      "base_path": "/",
+      "role": 2,
+      "disabled": false,
+      "permission": 0,
+      "sso_id": ""
+    },
+    {
+      "id": 2,
+      "username": "guest",
+      "password": "",
+      "base_path": "/",
+      "role": 1,
+      "disabled": false,
+      "permission": 2,
+      "sso_id": ""
+    }
+  ],
+  "storages": [
+    {
+      "id": 1,
+      "mount_path": "/动漫",
+      "order": 0,
+      "driver": "PikPak",
+      "cache_expiration": 30,
+      "status": "work",
+      "addition": "{\"root_folder_id\":\"VNioPXVIl1Mgxx_8QuCpaJBMo1\",\"username\":\"hizcmua@163.com\",\"password\":\"248651793qp\",\"disable_media_link\":false}",
+      "remark": "",
+      "modified": "2023-11-12T00:04:57.987868213+08:00",
+      "disabled": false,
+      "enable_sign": true,
+      "order_by": "modified",
+      "order_direction": "desc",
+      "extract_folder": "",
+      "web_proxy": true,
+      "webdav_policy": "native_proxy",
+      "down_proxy_url": ""
+    },
+    {
+      "id": 2,
+      "mount_path": "/资源",
+      "order": 0,
+      "driver": "BaiduNetdisk",
+      "cache_expiration": 30,
+      "status": "disabled",
+      "addition": "{\"refresh_token\":\"122.8ede93a0ec55d9f0ab5d1b07746c9ad1.YHjv5IFqLxB_OhiVlYfw9CtcHN3BwTUqJYz_cFO.bo2EhA\",\"root_folder_path\":\"/我的资源\",\"order_by\":\"name\",\"order_direction\":\"asc\",\"download_api\":\"crack\",\"client_id\":\"iYCeC9g08h5vuP9UqvPHKKSVrKFXGa1v\",\"client_secret\":\"jXiFMOPVPCWlO2M5CwWQzffpNPaGTRBG\",\"custom_crack_ua\":\"netdisk\",\"AccessToken\":\"121.d94d68045c227b7cc934706ac2eeb287.YGHnSmkFhOU0F-H-Mn49rH4csKw8Rxxb6R6CwUL.XJtz3w\",\"upload_thread\":\"3\",\"upload_api\":\"https://d.pcs.baidu.com\"}",
+      "remark": "",
+      "modified": "2023-11-10T19:17:59.733695127+08:00",
+      "disabled": true,
+      "enable_sign": true,
+      "order_by": "",
+      "order_direction": "",
+      "extract_folder": "",
+      "web_proxy": true,
+      "webdav_policy": "native_proxy",
+      "down_proxy_url": ""
+    },
+    {
+      "id": 3,
+      "mount_path": "/播放器",
+      "order": 0,
+      "driver": "PikPak",
+      "cache_expiration": 30,
+      "status": "work",
+      "addition": "{\"root_folder_id\":\"VNiz4rawaClPOBKm8viko6RWo1\",\"username\":\"hizcmua@163.com\",\"password\":\"248651793qp\",\"disable_media_link\":false}",
+      "remark": "",
+      "modified": "2023-11-12T00:04:37.826461239+08:00",
+      "disabled": false,
+      "enable_sign": true,
+      "order_by": "",
+      "order_direction": "",
+      "extract_folder": "",
+      "web_proxy": true,
+      "webdav_policy": "native_proxy",
+      "down_proxy_url": ""
+    }
+  ],
+  "metas": [
+    {
+      "id": 1,
+      "path": "/",
+      "password": "",
+      "p_sub": false,
+      "write": true,
+      "w_sub": true,
+      "hide": "",
+      "h_sub": false,
+      "readme": "## 本站本季番更新列表\n\n星期一\n\n- [星灵感应 / Hoshikuzu Telepath / 星屑テレパス](https://hoshitele-anime.com/)(更新中)\n- [我们的雨色协议 / Bokura no Ameiro Purotokoru / 僕らの雨いろプロトコル](https://bokuame.com/)(更新中)\n\n星期二\n\n- \n\n星期三\n\n- [絆之 Allele 第二季 / Kizuna no Allele S02 / 絆のアリル](https://kizunanoallele.com/)(更新中)\n- [捡走被人悔婚的千金，教会她坏坏的幸福生活 / Konyaku Haki sareta Reijou wo Hirotta Ore ga, Ikenai Koto wo Oshiekomu / 婚約破棄された令嬢を拾った俺が、イケナイことを教え込む](https://ikenaikyo.com/)(更新中)\n\n星期四\n\n-\n\n星期五\n\n- [不死不幸 / Undead Unluck / アンデッドアンラック](https://undead-unluck.net/)(更新中)\n- [盾之勇者成名录 第三季 / Tate no Yuusha no Nariagari S3 / 盾の勇者の成り上がり Season 3](http://shieldhero-anime.jp/)(更新中)\n- [葬送的芙莉莲 / Sousou no Frieren / 葬送のフリーレン](https://frieren-anime.jp/)(更新中)\n- [位于恋爱光谱极端的我们 / LoliHouse / 経験済みなキミと、経験ゼロなオレが、お付き合いする話](https://kimizero.com/)(更新中)\n\n星期六\n\n- [女友成堆 / 女朋友 and 女朋友 / 女友成双 / カノジョも彼女](https://kanokano-anime.com/)(更新中)\n\n星期日\n\n- [靠着魔法药剂在异世界活下去！ / Potion-danomi de Ikinobimasu! / ポーション頼みで生き延びます！](https://potion-anime.com/)(更新中)\n- [超超超超超喜欢你的100个女朋友 / Hyakkano / 君のことが大大大大大好きな100人の彼女](https://hyakkano.com/)(更新中)\n- [偶像大师百万现场 / THE IDOLM@STER MILLION LIVE! / アイドルマスター ミリオンライブ！](https://millionlive-anime.idolmaster-official.jp/)(更新中)\n\n## 资源站\n\n- [爱恋动漫](https://www.kisssub.org/)\n- [天使动漫论坛](https://www.tsdm39.com/forum.php)",
+      "r_sub": false
+    },
+    {
+      "id": 2,
+      "path": "/动漫",
+      "password": "",
+      "p_sub": false,
+      "write": true,
+      "w_sub": true,
+      "hide": "",
+      "h_sub": false,
+      "readme": "<div align=\"center\" face=\"微软雅黑\" color=green size=5>建议使用代理观看</div>\n\n## 播放器\n\n电脑推荐使用 : [PotPlayer](https://potplayer.daum.net/?lang=zh_CN)\n手机推荐使用 : [MX Player](https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad)\n\n## 字幕说明\n\n`Subtitle` 为已翻译字幕，部分为外挂字幕\n\n视频不内置字幕的均为外挂字幕，需要独立的字幕文件\n\n`GB`、`CHS` 简体中文\n\n`BIG5` 、`CHT` 繁体中文\n\n`JPSC` 简日双语\n\n`JPN` 日文\n\n`DEU` 德文\n\n`ENG` 国际英文\n\n`ENU` 英文\n\n`RUS` 俄语\n\n例示:\n\n如下文件带有`CHS`为简体中文\n\n[Sakurato] Tate no Yuusha no Nariagari Season2 [01-12 Fin][AVC-8bit 1080P AAC][CHS]\n\n## 编码说明\n\n`AVC`  H.264\n`HEVC` H.265",
+      "r_sub": true
+    }
+  ]
+}
