@@ -56,6 +56,11 @@
    ```xml
    https://www.kisssub.org/rss-LoliHouse+%E4%BD%8D%E4%BA%8E%E6%81%8B%E7%88%B1%E5%85%89%E8%B0%B1%E6%9E%81%E7%AB%AF%E7%9A%84%E6%88%91%E4%BB%AC+Kimizero+WebRip+1080p+HEVC+10bit+AAC+%E7%AE%80%E7%B9%81+%E5%86%85%E5%B0%81%E5%AD%97%E5%B9%95.xml
     ```
+- [哥布林杀手 第二季 / Goblin Slayer S2 / ゴブリンスレイヤー](https://goblinslayer.jp/)(更新中)
+- - Rss
+  ```xml
+  https://www.kisssub.org/rss-%E7%88%B1%E6%81%8B%E5%AD%97%E5%B9%95%E7%A4%BE+10%E6%9C%88%E6%96%B0%E7%95%AA+%E5%93%A5%E5%B8%83%E6%9E%97%E6%9D%80%E6%89%8B+%E7%AC%AC%E4%BA%8C%E5%AD%A3+Goblin+Slayer+S2+1080P+MP4+%E7%AE%80%E6%97%A5+%E5%8F%8C%E8%AF%AD.xml
+  ```
 
 星期六
 
