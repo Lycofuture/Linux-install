@@ -15,7 +15,11 @@
 
 星期二
 
-- 
+- [圣剑学院的魔剑使 / Seiken Gakuin no Makentsukai / 聖剣学院の魔剣使い](https://seikengakuin.com/)(更新中)
+- - Rss
+    ```xml
+    https://www.kisssub.org/rss-LoliHouse+%E5%9C%A3%E5%89%91%E5%AD%A6%E9%99%A2%E7%9A%84%E9%AD%94%E5%89%91%E4%BD%BF+Seiken+Gakuin+no+Makentsukai+WebRip+1080p+HEVC+10bit+AAC+%E7%AE%80%E7%B9%81+%E5%86%85%E5%B0%81%E5%AD%97%E5%B9%95.xml
+    ```
 
 星期三
 
