@@ -7,7 +7,7 @@
 
    https://newtrackon.com/list
 
-   https://torrents.io/tracker-list/
+   https://trackerslist.com/all.txt
 
    http://github.itzmx.com/1265578519/OpenTracker/master/tracker.txt
 
