@@ -17,24 +17,7 @@
 
    http://www.torrenttrackerlist.com/torrent-tracker-list
    ```
-
-- 列表
-- ```url
-  https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt
-  
-  https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ip.txt
-
-  https://trackerslist.com/all.txt
-
-  https://newtrackon.com/api/all
-  
-  https://github.itzmx.com/1265578519/OpenTracker/master/tracker.txt
- 
-  https://raw.githubusercontent.com/Lycofuture/Linux-install/main/Tracker/kisssub.org.txt  https://download2340.mediafire.com/iuttyhfe09xggA5jXmLniDk28nK4jwAsjnw6fHoAhdSyj0o_CuOseml4MBDKvwxtm41nYC3SbeRbA9rjLRgilhKVVAVwLozFzQ0ips-ogvLLBEn5rpA3teDHB4y_2-gP1U9NyHE3hJbUwsvHljeUdICDn9G9HYIAUjcjj-5cdb5uFg/ujf8y7p9lxcj5kp/super+fast++torrent+trackers+list.txt
-  https://www.mediafire.com/download/i0cronnuwj5co6n/super+fast+trackers.txt
-
-  ```
-
+   
 </p>
 </details>
 <details><summary><b>爱恋动漫论坛tTorrent源</b></summary>
