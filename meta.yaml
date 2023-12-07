@@ -26,7 +26,7 @@ dns:
       - 240.0.0.0/4
 proxies:
 - name: hysteria2节点                            
-  type: hy2                                      
+  type: hysteria2                                    
   server: 15.204.49.157                               
   port: 4434                                
   password: sharecentrepro                              
