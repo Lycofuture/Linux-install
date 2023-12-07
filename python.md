@@ -34,7 +34,7 @@ make && make install
 
 ```text
 echo 'export PATH=/usr/local/python3/bin:$PATH' >> /etc/profile
-source ~/.bashrc
+source /etc/profile
 ```
 
 检查是否配置正确
