@@ -3,6 +3,7 @@ socks-port: 7891
 allow-lan: true
 mode: Rule
 log-level: info
+ipv6: true
 external-controller: :9090
 dns:
   enable: true
@@ -40,19 +41,19 @@ dns:
       - '+.facebook.com'
       - '+.youtube.com'
 proxies:
-  - {name: 🇭🇰 HK, server: gzv6.jykeji.xyz, port: 30079, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: 🇹🇼 TW, server: gzv6.jykeji.xyz, port: 45038, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: 🇯🇵 JP, server: gzv6.jykeji.xyz, port: 29019, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: 🇸🇬 SG, server: gzv6.jykeji.xyz, port: 21883, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: 🇰🇷 KR, server: gzv6.jykeji.xyz, port: 31882, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: 🇺🇸 US, server: gzv6.jykeji.xyz, port: 11346, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: 🇩🇪 DE, server: cqlt.jykeji.xyz, port: 35738, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: 🇫🇷 FR, server: cqlt.jykeji.xyz, port: 31850, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: 🇦🇺 AU, server: gzv6.jykeji.xyz, port: 39624, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: 🇬🇧 UK, server: cqlt.jykeji.xyz, port: 24266, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: RO, server: cqlt.jykeji.xyz, port: 43884, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: TU, server: cqlt.jykeji.xyz, port: 33566, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
-  - {name: BR, server: gzv6.jykeji.xyz, port: 36953, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false}
+  - {name: 🇭🇰 HK, server: gzv6.jykeji.xyz, port: 30079, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: 🇹🇼 TW, server: gzv6.jykeji.xyz, port: 45038, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: 🇯🇵 JP, server: gzv6.jykeji.xyz, port: 29019, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: 🇸🇬 SG, server: gzv6.jykeji.xyz, port: 21883, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: 🇰🇷 KR, server: gzv6.jykeji.xyz, port: 31882, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: 🇺🇸 US, server: gzv6.jykeji.xyz, port: 11346, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: 🇩🇪 DE, server: cqlt.jykeji.xyz, port: 35738, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: 🇫🇷 FR, server: cqlt.jykeji.xyz, port: 31850, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: 🇦🇺 AU, server: gzv6.jykeji.xyz, port: 39624, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: 🇬🇧 UK, server: cqlt.jykeji.xyz, port: 24266, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: RO, server: cqlt.jykeji.xyz, port: 43884, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: TU, server: cqlt.jykeji.xyz, port: 33566, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
+  - {name: BR, server: gzv6.jykeji.xyz, port: 36953, type: ss, cipher: chacha20-ietf-poly1305, password: 8182a494-0adf-44b2-8eda-d46b7e5162a9, tfo: false, ip-version: ipv6}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
