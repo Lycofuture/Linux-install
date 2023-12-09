@@ -77,6 +77,12 @@ proxies:
   congestion-controller: bbr
   sni: www.bing.com
   skip-cert-verify: true
+- name: ss
+  type: ss
+  server: 185.77.225.87
+  port: 18077
+  password: teddysun.com
+  cipher: aes-256-gcm
 - name: ssr
   type: ssr
   server: 185.77.225.87
@@ -96,6 +102,7 @@ proxy-groups:
     - vmess-ws
     - hysteria2
     - tuic5
+    - ss
     - ssr
 - name: 自动选择
   type: url-test
@@ -107,6 +114,7 @@ proxy-groups:
     - vmess-ws
     - hysteria2
     - tuic5
+    - ss
     - ssr
 
 - name: 🌍选择代理节点
@@ -119,6 +127,7 @@ proxy-groups:
     - vmess-ws
     - hysteria2
     - tuic5
+    - ss
     - ssr
 rules:
   - GEOIP,LAN,DIRECT
