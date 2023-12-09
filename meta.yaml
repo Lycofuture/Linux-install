@@ -102,11 +102,11 @@ proxies:
 - name: ssr
   type: ssr
   server: 185.77.225.87
-  port: 11095
-  password: teddysun.com
-  cipher: aes-256-cfb
+  port: 10934
+  password: 235674vlgyd
+  cipher: chacha20-ietf
   obfs: plain
-  protocol: origin
+  protocol: auth_sha1_v4
 proxy-groups:
 - name: 负载均衡
   type: load-balance
