@@ -25,7 +25,7 @@ dns:
     ipcidr:
       - 240.0.0.0/4
 proxies:
-- name: vless-reality-vision节点
+- name: vless-reality-vision
   type: vless
   server: 185.77.225.87
   port: 54389
@@ -39,7 +39,7 @@ proxies:
     public-key: 2Y4Gw2QVnjDKk5YPMU_2X5MEfOY4dZjvqgV7vOYpESY
     short-id: 71e55683
   client-fingerprint: chrome
-- name: vmess-ws节点
+- name: vmess-ws
   type: vmess
   server: 185.77.225.87
   port: 2086
@@ -54,7 +54,7 @@ proxies:
     path: "9d7d8f9f-5040-43cd-8041-2e54992ad834-vm"
     headers:
       Host: www.bing.com
-- name: hysteria2节点
+- name: hysteria2
   type: hysteria2
   server: 185.77.225.87
   port: 30935
@@ -64,7 +64,7 @@ proxies:
   sni: www.bing.com
   skip-cert-verify: true
   fast-open: true
-- name: tuic5节点
+- name: tuic5
   server: 185.77.225.87
   port: 24535
   type: tuic
@@ -77,6 +77,14 @@ proxies:
   congestion-controller: bbr
   sni: www.bing.com
   skip-cert-verify: true
+- name: ssr
+  type: ssr
+  server: 185.77.225.87
+  port: 11095
+  password: teddysun.com
+  cipher: aes-256-cfb
+  obfs: plain
+  protocol: origin
 proxy-groups:
 - name: 负载均衡
   type: load-balance
@@ -84,20 +92,22 @@ proxy-groups:
   interval: 300
   strategy: round-robin
   proxies:
-    - vless-reality-vision节点
-    - vmess-ws节点
-    - hysteria2节点
-    - tuic5节点
+    - vless-reality-vision
+    - vmess-ws
+    - hysteria2
+    - tuic5
+    - ssr
 - name: 自动选择
   type: url-test
   url: https://cp.cloudflare.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-    - vless-reality-vision节点
-    - vmess-ws节点
-    - hysteria2节点
-    - tuic5节点
+    - vless-reality-vision
+    - vmess-ws
+    - hysteria2
+    - tuic5
+    - ssr
 
 - name: 🌍选择代理节点
   type: select
@@ -105,10 +115,11 @@ proxy-groups:
     - 负载均衡
     - 自动选择
     - DIRECT
-    - vless-reality-vision节点
-    - vmess-ws节点
-    - hysteria2节点
-    - tuic5节点
+    - vless-reality-vision
+    - vmess-ws
+    - hysteria2
+    - tuic5
+    - ssr
 rules:
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
