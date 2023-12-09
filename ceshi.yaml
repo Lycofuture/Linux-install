@@ -86,9 +86,9 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A953.27%20GB","type":"hysteria2","server":"hkt.aiopen.sbs","port":443,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"tv.apple.com","skip-cert-verify":true}
-  - {"name":"%E5%A5%97%E9%A4%90%E5%88%B0%E6%9C%9F%EF%BC%9A%E9%95%BF%E6%9C%9F%E6%9C%89%E6%95%88","type":"hysteria2","server":"hkt.aiopen.sbs","port":443,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"tv.apple.com","skip-cert-verify":true}
-  - {"name":"%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFHKT-hy2","type":"hysteria2","server":"hkt.aiopen.sbs","port":443,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"tv.apple.com","skip-cert-verify":true}
+  - {"name":"剩余流量：953.27 GB","type":"hysteria2","server":"hkt.aiopen.sbs","port":443,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"tv.apple.com","skip-cert-verify":true}
+  - {"name":"套餐到期：长期有效","type":"hysteria2","server":"hkt.aiopen.sbs","port":443,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"tv.apple.com","skip-cert-verify":true}
+  - {"name":"🇭🇰香港HKT-hy2","type":"hysteria2","server":"hkt.aiopen.sbs","port":443,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"tv.apple.com","skip-cert-verify":true}
   - {"name":"🇺🇸美国洛杉矶02-0.1倍\r","type":"vless","server":"108.181.23.71","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"disc501.prod.do.dsp.mp.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"tJX7QSzAR3XfL3mMPCmk3kuysE4kffHZuvgx_1ZKWgU","short-id":"b403059469ffb013"},"client-fingerprint":"chrome"}
   - {"name":"🇺🇸美国洛杉矶03-0.1倍\r","type":"vless","server":"108.181.23.123","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"cp501.prod.do.dsp.mp.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"76BpJx47g3lIFDLX7h17FjE0K-x5nOZaTUrR0wz4I2U","short-id":"8889097faa095002"},"client-fingerprint":"chrome"}
   - {"name":"🇺🇸美国洛杉矶04-0.1倍\r","type":"vless","server":"108.181.23.231","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"kv501.prod.do.dsp.mp.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"UoHID35r6kYvEaFVMOlzdS6dJk0N1MNaUC7RmNZ7VXs","short-id":"87287304b13de5ac"},"client-fingerprint":"chrome"}
@@ -148,9 +148,9 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - '%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A953.27%20GB'
-      - '%E5%A5%97%E9%A4%90%E5%88%B0%E6%9C%9F%EF%BC%9A%E9%95%BF%E6%9C%9F%E6%9C%89%E6%95%88'
-      - '%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFHKT-hy2'
+      - '剩余流量：953.27 GB'
+      - '套餐到期：长期有效'
+      - '🇭🇰香港HKT-hy2'
       - "🇺🇸美国洛杉矶02-0.1倍\r"
       - "🇺🇸美国洛杉矶03-0.1倍\r"
       - "🇺🇸美国洛杉矶04-0.1倍\r"
@@ -210,9 +210,9 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - '%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A953.27%20GB'
-      - '%E5%A5%97%E9%A4%90%E5%88%B0%E6%9C%9F%EF%BC%9A%E9%95%BF%E6%9C%9F%E6%9C%89%E6%95%88'
-      - '%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFHKT-hy2'
+      - '剩余流量：953.27 GB'
+      - '套餐到期：长期有效'
+      - '🇭🇰香港HKT-hy2'
       - "🇺🇸美国洛杉矶02-0.1倍\r"
       - "🇺🇸美国洛杉矶03-0.1倍\r"
       - "🇺🇸美国洛杉矶04-0.1倍\r"
@@ -272,9 +272,9 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - '%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A953.27%20GB'
-      - '%E5%A5%97%E9%A4%90%E5%88%B0%E6%9C%9F%EF%BC%9A%E9%95%BF%E6%9C%9F%E6%9C%89%E6%95%88'
-      - '%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFHKT-hy2'
+      - '剩余流量：953.27 GB'
+      - '套餐到期：长期有效'
+      - '🇭🇰香港HKT-hy2'
       - "🇺🇸美国洛杉矶02-0.1倍\r"
       - "🇺🇸美国洛杉矶03-0.1倍\r"
       - "🇺🇸美国洛杉矶04-0.1倍\r"
@@ -333,9 +333,9 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - '%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A953.27%20GB'
-      - '%E5%A5%97%E9%A4%90%E5%88%B0%E6%9C%9F%EF%BC%9A%E9%95%BF%E6%9C%9F%E6%9C%89%E6%95%88'
-      - '%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFHKT-hy2'
+      - '剩余流量：953.27 GB'
+      - '套餐到期：长期有效'
+      - '🇭🇰香港HKT-hy2'
       - "🇺🇸美国洛杉矶02-0.1倍\r"
       - "🇺🇸美国洛杉矶03-0.1倍\r"
       - "🇺🇸美国洛杉矶04-0.1倍\r"
@@ -394,9 +394,9 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - '%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A953.27%20GB'
-      - '%E5%A5%97%E9%A4%90%E5%88%B0%E6%9C%9F%EF%BC%9A%E9%95%BF%E6%9C%9F%E6%9C%89%E6%95%88'
-      - '%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFHKT-hy2'
+      - '剩余流量：953.27 GB'
+      - '套餐到期：长期有效'
+      - '🇭🇰香港HKT-hy2'
       - "🇺🇸美国洛杉矶02-0.1倍\r"
       - "🇺🇸美国洛杉矶03-0.1倍\r"
       - "🇺🇸美国洛杉矶04-0.1倍\r"
@@ -455,9 +455,9 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - '%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A953.27%20GB'
-      - '%E5%A5%97%E9%A4%90%E5%88%B0%E6%9C%9F%EF%BC%9A%E9%95%BF%E6%9C%9F%E6%9C%89%E6%95%88'
-      - '%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFHKT-hy2'
+      - '剩余流量：953.27 GB'
+      - '套餐到期：长期有效'
+      - '🇭🇰香港HKT-hy2'
       - "🇺🇸美国洛杉矶02-0.1倍\r"
       - "🇺🇸美国洛杉矶03-0.1倍\r"
       - "🇺🇸美国洛杉矶04-0.1倍\r"
@@ -533,9 +533,9 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - '%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%EF%BC%9A953.27%20GB'
-      - '%E5%A5%97%E9%A4%90%E5%88%B0%E6%9C%9F%EF%BC%9A%E9%95%BF%E6%9C%9F%E6%9C%89%E6%95%88'
-      - '%F0%9F%87%AD%F0%9F%87%B0%E9%A6%99%E6%B8%AFHKT-hy2'
+      - '剩余流量：953.27 GB'
+      - '套餐到期：长期有效'
+      - '🇭🇰香港HKT-hy2'
       - "🇺🇸美国洛杉矶02-0.1倍\r"
       - "🇺🇸美国洛杉矶03-0.1倍\r"
       - "🇺🇸美国洛杉矶04-0.1倍\r"
