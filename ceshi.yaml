@@ -1,7 +1,7 @@
 ####################################
 # 创建者：v2rayse.com
 # 客户端：Clash.Meta
-# 创建时间：2023-12-10 13:16:45
+# 创建时间：2023-12-10 13:22:10
 # 使用模版：V2RaySE 默认模版
 # 节点数量：11
 ####################################
@@ -86,116 +86,116 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"%5BHy2%5D%E6%97%A5%E6%9C%AC01","type":"hysteria2","server":"jp2.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"jp2.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E9%9F%A9%E5%9B%BD01","type":"hysteria2","server":"kr2.xiaoliyu.cyou","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"kr2.xiaoliyu.cyou","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E5%BE%B7%E5%9B%BD01","type":"hysteria2","server":"de1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"de1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E6%82%89%E5%B0%BC01","type":"hysteria2","server":"au1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"au1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E6%B3%95%E5%9B%BD01","type":"hysteria2","server":"fr1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"fr1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E7%BE%8E%E5%9B%BD01","type":"hysteria2","server":"us1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"us1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E8%BF%AA%E6%8B%9C01","type":"hysteria2","server":"ae1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"ae1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E5%8D%B0%E5%BA%A601","type":"hysteria2","server":"in1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"in1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E8%8B%B1%E5%9B%BD01","type":"hysteria2","server":"uk1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"uk1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101","type":"hysteria2","server":"sg1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"sg1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"%5BHy2%5D%E5%B7%B4%E8%A5%BF01","type":"hysteria2","server":"bra1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"bra1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]日本01","type":"hysteria2","server":"jp2.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"jp2.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]韩国01","type":"hysteria2","server":"kr2.xiaoliyu.cyou","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"kr2.xiaoliyu.cyou","skip-cert-verify":true}
+  - {"name":"[Hy2]德国01","type":"hysteria2","server":"de1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"de1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]悉尼01","type":"hysteria2","server":"au1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"au1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]法国01","type":"hysteria2","server":"fr1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"fr1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]美国01","type":"hysteria2","server":"us1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"us1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]迪拜01","type":"hysteria2","server":"ae1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"ae1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]印度01","type":"hysteria2","server":"in1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"in1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]英国01","type":"hysteria2","server":"uk1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"uk1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]新加坡01","type":"hysteria2","server":"sg1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"sg1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"[Hy2]巴西01","type":"hysteria2","server":"bra1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"bra1.xiaoliyu.us","skip-cert-verify":true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
-      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
-      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
-      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
-      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
-      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
-      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
-      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
-      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
-      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
-      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
+      - '[Hy2]日本01'
+      - '[Hy2]韩国01'
+      - '[Hy2]德国01'
+      - '[Hy2]悉尼01'
+      - '[Hy2]法国01'
+      - '[Hy2]美国01'
+      - '[Hy2]迪拜01'
+      - '[Hy2]印度01'
+      - '[Hy2]英国01'
+      - '[Hy2]新加坡01'
+      - '[Hy2]巴西01'
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
-      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
-      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
-      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
-      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
-      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
-      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
-      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
-      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
-      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
-      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
+      - '[Hy2]日本01'
+      - '[Hy2]韩国01'
+      - '[Hy2]德国01'
+      - '[Hy2]悉尼01'
+      - '[Hy2]法国01'
+      - '[Hy2]美国01'
+      - '[Hy2]迪拜01'
+      - '[Hy2]印度01'
+      - '[Hy2]英国01'
+      - '[Hy2]新加坡01'
+      - '[Hy2]巴西01'
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
-      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
-      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
-      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
-      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
-      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
-      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
-      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
-      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
-      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
-      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
+      - '[Hy2]日本01'
+      - '[Hy2]韩国01'
+      - '[Hy2]德国01'
+      - '[Hy2]悉尼01'
+      - '[Hy2]法国01'
+      - '[Hy2]美国01'
+      - '[Hy2]迪拜01'
+      - '[Hy2]印度01'
+      - '[Hy2]英国01'
+      - '[Hy2]新加坡01'
+      - '[Hy2]巴西01'
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
-      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
-      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
-      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
-      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
-      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
-      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
-      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
-      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
-      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
-      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
+      - '[Hy2]日本01'
+      - '[Hy2]韩国01'
+      - '[Hy2]德国01'
+      - '[Hy2]悉尼01'
+      - '[Hy2]法国01'
+      - '[Hy2]美国01'
+      - '[Hy2]迪拜01'
+      - '[Hy2]印度01'
+      - '[Hy2]英国01'
+      - '[Hy2]新加坡01'
+      - '[Hy2]巴西01'
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
-      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
-      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
-      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
-      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
-      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
-      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
-      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
-      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
-      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
-      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
+      - '[Hy2]日本01'
+      - '[Hy2]韩国01'
+      - '[Hy2]德国01'
+      - '[Hy2]悉尼01'
+      - '[Hy2]法国01'
+      - '[Hy2]美国01'
+      - '[Hy2]迪拜01'
+      - '[Hy2]印度01'
+      - '[Hy2]英国01'
+      - '[Hy2]新加坡01'
+      - '[Hy2]巴西01'
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
-      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
-      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
-      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
-      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
-      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
-      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
-      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
-      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
-      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
-      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
+      - '[Hy2]日本01'
+      - '[Hy2]韩国01'
+      - '[Hy2]德国01'
+      - '[Hy2]悉尼01'
+      - '[Hy2]法国01'
+      - '[Hy2]美国01'
+      - '[Hy2]迪拜01'
+      - '[Hy2]印度01'
+      - '[Hy2]英国01'
+      - '[Hy2]新加坡01'
+      - '[Hy2]巴西01'
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -218,17 +218,17 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
-      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
-      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
-      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
-      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
-      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
-      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
-      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
-      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
-      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
-      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
+      - '[Hy2]日本01'
+      - '[Hy2]韩国01'
+      - '[Hy2]德国01'
+      - '[Hy2]悉尼01'
+      - '[Hy2]法国01'
+      - '[Hy2]美国01'
+      - '[Hy2]迪拜01'
+      - '[Hy2]印度01'
+      - '[Hy2]英国01'
+      - '[Hy2]新加坡01'
+      - '[Hy2]巴西01'
 
 rules:
 # 本地/局域网地址
