@@ -1,9 +1,9 @@
 ####################################
 # 创建者：v2rayse.com
 # 客户端：Clash.Meta
-# 创建时间：2023-12-10 02:04:07
+# 创建时间：2023-12-10 13:16:45
 # 使用模版：V2RaySE 默认模版
-# 节点数量：56
+# 节点数量：11
 ####################################
 # !!当前配置文件请使用基于 Clash.Meta 内核程序
 mixed-port: 7890
@@ -86,431 +86,116 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"剩余流量：953.27 GB","type":"hysteria2","server":"hkt.aiopen.sbs","port":443,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"tv.apple.com","skip-cert-verify":true}
-  - {"name":"套餐到期：长期有效","type":"hysteria2","server":"hkt.aiopen.sbs","port":443,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"tv.apple.com","skip-cert-verify":true}
-  - {"name":"🇭🇰香港HKT-hy2","type":"hysteria2","server":"hkt.aiopen.sbs","port":443,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"tv.apple.com","skip-cert-verify":true}
-  - {"name":"🇺🇸美国洛杉矶02-0.1倍\r","type":"vless","server":"108.181.23.71","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"disc501.prod.do.dsp.mp.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"tJX7QSzAR3XfL3mMPCmk3kuysE4kffHZuvgx_1ZKWgU","short-id":"b403059469ffb013"},"client-fingerprint":"chrome"}
-  - {"name":"🇺🇸美国洛杉矶03-0.1倍\r","type":"vless","server":"108.181.23.123","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"cp501.prod.do.dsp.mp.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"76BpJx47g3lIFDLX7h17FjE0K-x5nOZaTUrR0wz4I2U","short-id":"8889097faa095002"},"client-fingerprint":"chrome"}
-  - {"name":"🇺🇸美国洛杉矶04-0.1倍\r","type":"vless","server":"108.181.23.231","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"kv501.prod.do.dsp.mp.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"UoHID35r6kYvEaFVMOlzdS6dJk0N1MNaUC7RmNZ7VXs","short-id":"87287304b13de5ac"},"client-fingerprint":"chrome"}
-  - {"name":"🇺🇸美国洛杉矶05-0.1倍\r","type":"vless","server":"108.181.23.241","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"sg-public-api.hoyoverse.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"QDTV3YgUkykyfzRSlpfEzw2jiVtOmjyFntsZX1Lvokc","short-id":"a37c6e9e8c3b421c"},"client-fingerprint":"chrome"}
-  - {"name":"🇺🇸美国洛杉矶08-0.1倍\r","type":"vless","server":"108.181.22.195","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"livetileedge.dsx.mp.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"IolfjRT2CRAXXZe2S0DRea2KGyDnQvqVKMcopLWcOFk","short-id":"9f6ad22d247deebf"},"client-fingerprint":"chrome"}
-  - {"name":"🇺🇸美国凤凰城01-0.01倍\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"ctldl.windowsupdate.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"fqdF2k_xP_m2VSf64xFjq-9gS3YxegxSY9MhReyxCCo","short-id":"aef7e6d101189a3b"},"client-fingerprint":"chrome"}
-  - {"name":"🇺🇸美国凤凰城02-0.01倍\r","type":"vless","server":"163.123.192.150","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"ctldl.windowsupdate.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"w_m21TQ4zUGOpdpep7ARx5LGcD8uxAGTfJQ-jdqQbQ0","short-id":"a585bd6a6432853d"},"client-fingerprint":"chrome"}
-  - {"name":"🇺🇸美国凤凰城03-0.01倍\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"cp501.prod.do.dsp.mp.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"QFu5-k4bpUqeS2XFUzHi7ntpj3LaHYd_n92rtCEA2Q8","short-id":"a6f9018810fa9a29"},"client-fingerprint":"chrome"}
-  - {"name":"🇺🇸美国凤凰城04-0.01倍\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"kv501.prod.do.dsp.mp.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"RDvdeUv8yIaB5QtS-7pA1UlHyYVFYbXgmf0WxaO7RxU","short-id":"8b75d774582412d2"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本1\r","type":"vless","server":"163.123.195.132","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.kyotominsai.co.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"WLmKihljMRBDoIMkJpiki7on3WNRnHSC_YA9ZGx16xg","short-id":"a0a772a88787093c"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本2\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.kicl.ac.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"I4RgAzX7q4ZE3Uclpmxr3PescSzv0Zd8-3MrkHF9s3Q","short-id":"8d9e536e67fc0c46"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本3\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.xserver.co.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"jDins6NA4QulVIf59XFbSnBCQ3FDqAkIInET8lKwUUg","short-id":"b12b0ce3bd0a2149"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本4\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"riyadhjps.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"J4UqPDWQSi1vjFPuz8jEd-5m9Str7hVhJThJbUO7wkU","short-id":"bd85192f5a37c11f"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本5\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.akamonkai.ac.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"U0Vs21fVyeNOQBlVBYj3E6hJse8g1mdPQ8cq_b3bY38","short-id":"94b8f1dc0f3dc63c"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本6\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"j-sira.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"Xjmpve0QJjoTBCWe3c_EYF0I9TlHeb_BlQBQVs4vDkg","short-id":"a13335ae54c23869"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本1 | 高速专线\r","type":"vless","server":"pqawsjp1.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.kyotominsai.co.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"WLmKihljMRBDoIMkJpiki7on3WNRnHSC_YA9ZGx16xg","short-id":"a0a772a88787093c"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本2 | 高速专线\r","type":"vless","server":"pqawsjp2.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.kicl.ac.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"I4RgAzX7q4ZE3Uclpmxr3PescSzv0Zd8-3MrkHF9s3Q","short-id":"8d9e536e67fc0c46"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本3 | 高速专线\r","type":"vless","server":"pqawsjp3.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.xserver.co.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"jDins6NA4QulVIf59XFbSnBCQ3FDqAkIInET8lKwUUg","short-id":"b12b0ce3bd0a2149"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本4 | 高速专线\r","type":"vless","server":"pqawsjp4.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"riyadhjps.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"J4UqPDWQSi1vjFPuz8jEd-5m9Str7hVhJThJbUO7wkU","short-id":"bd85192f5a37c11f"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本5 | 高速专线\r","type":"vless","server":"gsawsjp1.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.akamonkai.ac.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"U0Vs21fVyeNOQBlVBYj3E6hJse8g1mdPQ8cq_b3bY38","short-id":"94b8f1dc0f3dc63c"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本6 | 高速专线\r","type":"vless","server":"gsawsjp2.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.akamonkai.ac.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"U0Vs21fVyeNOQBlVBYj3E6hJse8g1mdPQ8cq_b3bY38","short-id":"94b8f1dc0f3dc63c"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本7 | 高速专线\r","type":"vless","server":"gsawsjp3.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"j-sira.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"Xjmpve0QJjoTBCWe3c_EYF0I9TlHeb_BlQBQVs4vDkg","short-id":"a13335ae54c23869"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本8 | 高速专线\r","type":"vless","server":"gsawsjp4.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"j-sira.jp","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"Xjmpve0QJjoTBCWe3c_EYF0I9TlHeb_BlQBQVs4vDkg","short-id":"a13335ae54c23869"},"client-fingerprint":"chrome"}
-  - {"name":"🇭🇰香港HKT2\r","type":"vless","server":"hkt2.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"itunes.apple.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"GI3xsFi2BpJfYA4wHBE5mpRBuIz9icR3q0jb3LMq3To","short-id":"8254a4e9fd5af18c"},"client-fingerprint":"chrome"}
-  - {"name":"🇸🇬新加坡1 | 高速专线\r","type":"vless","server":"pqawssg1.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.nus.edu.sg","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"KzAPSFTCe8rch_FDeNSgG8gGSoHU7doJyNHimeTuiWY","short-id":"b5e395143728ac21"},"client-fingerprint":"chrome"}
-  - {"name":"🇸🇬新加坡2 | 高速专线\r","type":"vless","server":"pqawssg2.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.nus.edu.sg","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"KzAPSFTCe8rch_FDeNSgG8gGSoHU7doJyNHimeTuiWY","short-id":"b5e395143728ac21"},"client-fingerprint":"chrome"}
-  - {"name":"🇸🇬新加坡3 | 高速专线\r","type":"vless","server":"gsawssg1.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.singaporetech.edu.sg","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"YCMZN1DhVwfQUzes7N92mIYg1ntuDFJT7X8Jmmul0mQ","short-id":"a6d4256abdb46937"},"client-fingerprint":"chrome"}
-  - {"name":"🇸🇬新加坡4 | 高速专线\r","type":"vless","server":"gsawssg2.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.singaporetech.edu.sg","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"YCMZN1DhVwfQUzes7N92mIYg1ntuDFJT7X8Jmmul0mQ","short-id":"a6d4256abdb46937"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵AWS日本01 | 双线负载专线-10倍\r","type":"vless","server":"120.232.242.14","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"videos.apple.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"5UmBc5_JN7lSPUX3Mgl0v94pS-G5eiuGEKZCZWHNHDQ","short-id":"907eaba296c933b5"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵AWS日本02 | 双线负载专线-10倍\r","type":"vless","server":"120.232.242.14","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"videos.apple.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"5UmBc5_JN7lSPUX3Mgl0v94pS-G5eiuGEKZCZWHNHDQ","short-id":"907eaba296c933b5"},"client-fingerprint":"chrome"}
-  - {"name":"🇹🇼台湾\r","type":"vless","server":"pqhinet1.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"jxsU-60I27dVZZouj96-F1nxviNZipL9vCgQgBtilWk","short-id":"b2534d488a0e57fc"},"client-fingerprint":"chrome"}
-  - {"name":"🇹🇼台湾2\r","type":"vless","server":"pqhinet2.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"ypxMPYVF55CfDDQPsg4dxtpwWmbbIK7Ba9EA28ueqS0","short-id":"bf6d21a6900ef2a0"},"client-fingerprint":"chrome"}
-  - {"name":"🇹🇼台湾3\r","type":"vless","server":"pqhinet3.aiopen.sbs","port":443,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"www.microsoft.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"3IBfdcAlmFDYgeTXHWOVeX9hT7h_yyRfwb5AEAWYyEk","short-id":"8fd6d51b98e41521"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵AWS日本03 | 双线负载专线-限时1倍\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"videos.apple.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"5UmBc5_JN7lSPUX3Mgl0v94pS-G5eiuGEKZCZWHNHDQ","short-id":"907eaba296c933b5"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵AWS日本04 | 双线负载专线-限时1倍\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"videos.apple.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"5UmBc5_JN7lSPUX3Mgl0v94pS-G5eiuGEKZCZWHNHDQ","short-id":"907eaba296c933b5"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵AWS日本05 | 双线负载专线-限时1倍\r","type":"vless","server":"36.139.138.6","port":35500,"udp":true,"uuid":"818dcb02-e9c4-4096-b4c1-745f90ddb330","tls":true,"servername":"videos.apple.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"5UmBc5_JN7lSPUX3Mgl0v94pS-G5eiuGEKZCZWHNHDQ","short-id":"907eaba296c933b5"},"client-fingerprint":"chrome"}
-  - {"name":"🇯🇵日本高速01-0.1倍\r","type":"trojan","server":"23.227.38.93","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"p1jp1.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/jp1","headers":{"host":"p1jp1.pqjc.buzz"}}}
-  - {"name":"🇯🇵日本高速02-0.1倍\r","type":"trojan","server":"209.46.30.11","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"2jp2.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/jp2","headers":{"host":"2jp2.pqjc.buzz"}}}
-  - {"name":"🇯🇵日本高速03-0.1倍\r","type":"trojan","server":"209.46.30.215","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"2jp3.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/jp3","headers":{"host":"2jp3.pqjc.buzz"}}}
-  - {"name":"🇯🇵日本高速04-0.1倍\r","type":"trojan","server":"209.46.30.17","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"2jp4.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/jp4","headers":{"host":"2jp4.pqjc.buzz"}}}
-  - {"name":"🇯🇵日本高速05-0.1倍\r","type":"trojan","server":"188.42.145.182","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"3jp5.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/jp5","headers":{"host":"3jp5.pqjc.buzz"}}}
-  - {"name":"🇯🇵日本高速06-0.1倍\r","type":"trojan","server":"188.42.145.39","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"2jp6.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/jp6","headers":{"host":"2jp6.pqjc.buzz"}}}
-  - {"name":"🇸🇬新加坡高速01-0.1倍\r","type":"trojan","server":"23.227.38.108","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"sg1.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/sg1","headers":{"host":"sg1.pqjc.buzz"}}}
-  - {"name":"🇸🇬新加坡高速02-0.1倍\r","type":"trojan","server":"23.227.38.176","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"sg1.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/sg1","headers":{"host":"sg1.pqjc.buzz"}}}
-  - {"name":"🇺🇸美国凤凰城1-0.01倍\r","type":"trojan","server":"23.227.39.18","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"pus1.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/us1","headers":{"host":"pus1.pqjc.buzz"}}}
-  - {"name":"🇺🇸美国凤凰城2-0.01倍\r","type":"trojan","server":"89.116.180.158","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"3us2.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/us2","headers":{"host":"3us2.pqjc.buzz"}}}
-  - {"name":"🇺🇸美国凤凰城3-0.01倍\r","type":"trojan","server":"167.68.5.183","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"6us3.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/us3","headers":{"host":"6us3.pqjc.buzz"}}}
-  - {"name":"🇺🇸美国凤凰城4-0.01倍\r","type":"trojan","server":"89.116.180.179","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"p6us4.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/us4","headers":{"host":"p6us4.pqjc.buzz"}}}
-  - {"name":"🇯🇵日本1 | 专线-推荐\r","type":"trojan","server":"120.232.242.14","port":26700,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"18-140-66-207.nhost.00cdn.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇯🇵日本2 | 专线-推荐\r","type":"trojan","server":"36.139.138.6","port":26700,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"18-140-66-207.nhost.00cdn.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇯🇵日本3 | 专线-推荐\r","type":"trojan","server":"36.139.138.6","port":26700,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"18-140-66-207.nhost.00cdn.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇩🇪德国01\r","type":"trojan","server":"5.104.108.120","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"20-24-33-134.nhost.00cdn.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇩🇪德国02\r","type":"trojan","server":"5.104.108.109","port":443,"udp":true,"password":"818dcb02-e9c4-4096-b4c1-745f90ddb330","sni":"20-24-33-134.nhost.00cdn.com","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"%5BHy2%5D%E6%97%A5%E6%9C%AC01","type":"hysteria2","server":"jp2.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"jp2.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E9%9F%A9%E5%9B%BD01","type":"hysteria2","server":"kr2.xiaoliyu.cyou","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"kr2.xiaoliyu.cyou","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E5%BE%B7%E5%9B%BD01","type":"hysteria2","server":"de1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"de1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E6%82%89%E5%B0%BC01","type":"hysteria2","server":"au1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"au1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E6%B3%95%E5%9B%BD01","type":"hysteria2","server":"fr1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"fr1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E7%BE%8E%E5%9B%BD01","type":"hysteria2","server":"us1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"us1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E8%BF%AA%E6%8B%9C01","type":"hysteria2","server":"ae1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"ae1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E5%8D%B0%E5%BA%A601","type":"hysteria2","server":"in1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"in1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E8%8B%B1%E5%9B%BD01","type":"hysteria2","server":"uk1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"uk1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101","type":"hysteria2","server":"sg1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"sg1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"%5BHy2%5D%E5%B7%B4%E8%A5%BF01","type":"hysteria2","server":"bra1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"bra1.xiaoliyu.us","skip-cert-verify":true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - '剩余流量：953.27 GB'
-      - '套餐到期：长期有效'
-      - '🇭🇰香港HKT-hy2'
-      - "🇺🇸美国洛杉矶02-0.1倍\r"
-      - "🇺🇸美国洛杉矶03-0.1倍\r"
-      - "🇺🇸美国洛杉矶04-0.1倍\r"
-      - "🇺🇸美国洛杉矶05-0.1倍\r"
-      - "🇺🇸美国洛杉矶08-0.1倍\r"
-      - "🇺🇸美国凤凰城01-0.01倍\r"
-      - "🇺🇸美国凤凰城02-0.01倍\r"
-      - "🇺🇸美国凤凰城03-0.01倍\r"
-      - "🇺🇸美国凤凰城04-0.01倍\r"
-      - "🇯🇵日本1\r"
-      - "🇯🇵日本2\r"
-      - "🇯🇵日本3\r"
-      - "🇯🇵日本4\r"
-      - "🇯🇵日本5\r"
-      - "🇯🇵日本6\r"
-      - "🇯🇵日本1 | 高速专线\r"
-      - "🇯🇵日本2 | 高速专线\r"
-      - "🇯🇵日本3 | 高速专线\r"
-      - "🇯🇵日本4 | 高速专线\r"
-      - "🇯🇵日本5 | 高速专线\r"
-      - "🇯🇵日本6 | 高速专线\r"
-      - "🇯🇵日本7 | 高速专线\r"
-      - "🇯🇵日本8 | 高速专线\r"
-      - "🇭🇰香港HKT2\r"
-      - "🇸🇬新加坡1 | 高速专线\r"
-      - "🇸🇬新加坡2 | 高速专线\r"
-      - "🇸🇬新加坡3 | 高速专线\r"
-      - "🇸🇬新加坡4 | 高速专线\r"
-      - "🇯🇵AWS日本01 | 双线负载专线-10倍\r"
-      - "🇯🇵AWS日本02 | 双线负载专线-10倍\r"
-      - "🇹🇼台湾\r"
-      - "🇹🇼台湾2\r"
-      - "🇹🇼台湾3\r"
-      - "🇯🇵AWS日本03 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本04 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本05 | 双线负载专线-限时1倍\r"
-      - "🇯🇵日本高速01-0.1倍\r"
-      - "🇯🇵日本高速02-0.1倍\r"
-      - "🇯🇵日本高速03-0.1倍\r"
-      - "🇯🇵日本高速04-0.1倍\r"
-      - "🇯🇵日本高速05-0.1倍\r"
-      - "🇯🇵日本高速06-0.1倍\r"
-      - "🇸🇬新加坡高速01-0.1倍\r"
-      - "🇸🇬新加坡高速02-0.1倍\r"
-      - "🇺🇸美国凤凰城1-0.01倍\r"
-      - "🇺🇸美国凤凰城2-0.01倍\r"
-      - "🇺🇸美国凤凰城3-0.01倍\r"
-      - "🇺🇸美国凤凰城4-0.01倍\r"
-      - "🇯🇵日本1 | 专线-推荐\r"
-      - "🇯🇵日本2 | 专线-推荐\r"
-      - "🇯🇵日本3 | 专线-推荐\r"
-      - "🇩🇪德国01\r"
-      - "🇩🇪德国02\r"
+      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
+      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
+      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
+      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
+      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
+      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
+      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
+      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
+      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
+      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
+      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - '剩余流量：953.27 GB'
-      - '套餐到期：长期有效'
-      - '🇭🇰香港HKT-hy2'
-      - "🇺🇸美国洛杉矶02-0.1倍\r"
-      - "🇺🇸美国洛杉矶03-0.1倍\r"
-      - "🇺🇸美国洛杉矶04-0.1倍\r"
-      - "🇺🇸美国洛杉矶05-0.1倍\r"
-      - "🇺🇸美国洛杉矶08-0.1倍\r"
-      - "🇺🇸美国凤凰城01-0.01倍\r"
-      - "🇺🇸美国凤凰城02-0.01倍\r"
-      - "🇺🇸美国凤凰城03-0.01倍\r"
-      - "🇺🇸美国凤凰城04-0.01倍\r"
-      - "🇯🇵日本1\r"
-      - "🇯🇵日本2\r"
-      - "🇯🇵日本3\r"
-      - "🇯🇵日本4\r"
-      - "🇯🇵日本5\r"
-      - "🇯🇵日本6\r"
-      - "🇯🇵日本1 | 高速专线\r"
-      - "🇯🇵日本2 | 高速专线\r"
-      - "🇯🇵日本3 | 高速专线\r"
-      - "🇯🇵日本4 | 高速专线\r"
-      - "🇯🇵日本5 | 高速专线\r"
-      - "🇯🇵日本6 | 高速专线\r"
-      - "🇯🇵日本7 | 高速专线\r"
-      - "🇯🇵日本8 | 高速专线\r"
-      - "🇭🇰香港HKT2\r"
-      - "🇸🇬新加坡1 | 高速专线\r"
-      - "🇸🇬新加坡2 | 高速专线\r"
-      - "🇸🇬新加坡3 | 高速专线\r"
-      - "🇸🇬新加坡4 | 高速专线\r"
-      - "🇯🇵AWS日本01 | 双线负载专线-10倍\r"
-      - "🇯🇵AWS日本02 | 双线负载专线-10倍\r"
-      - "🇹🇼台湾\r"
-      - "🇹🇼台湾2\r"
-      - "🇹🇼台湾3\r"
-      - "🇯🇵AWS日本03 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本04 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本05 | 双线负载专线-限时1倍\r"
-      - "🇯🇵日本高速01-0.1倍\r"
-      - "🇯🇵日本高速02-0.1倍\r"
-      - "🇯🇵日本高速03-0.1倍\r"
-      - "🇯🇵日本高速04-0.1倍\r"
-      - "🇯🇵日本高速05-0.1倍\r"
-      - "🇯🇵日本高速06-0.1倍\r"
-      - "🇸🇬新加坡高速01-0.1倍\r"
-      - "🇸🇬新加坡高速02-0.1倍\r"
-      - "🇺🇸美国凤凰城1-0.01倍\r"
-      - "🇺🇸美国凤凰城2-0.01倍\r"
-      - "🇺🇸美国凤凰城3-0.01倍\r"
-      - "🇺🇸美国凤凰城4-0.01倍\r"
-      - "🇯🇵日本1 | 专线-推荐\r"
-      - "🇯🇵日本2 | 专线-推荐\r"
-      - "🇯🇵日本3 | 专线-推荐\r"
-      - "🇩🇪德国01\r"
-      - "🇩🇪德国02\r"
+      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
+      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
+      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
+      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
+      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
+      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
+      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
+      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
+      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
+      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
+      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - '剩余流量：953.27 GB'
-      - '套餐到期：长期有效'
-      - '🇭🇰香港HKT-hy2'
-      - "🇺🇸美国洛杉矶02-0.1倍\r"
-      - "🇺🇸美国洛杉矶03-0.1倍\r"
-      - "🇺🇸美国洛杉矶04-0.1倍\r"
-      - "🇺🇸美国洛杉矶05-0.1倍\r"
-      - "🇺🇸美国洛杉矶08-0.1倍\r"
-      - "🇺🇸美国凤凰城01-0.01倍\r"
-      - "🇺🇸美国凤凰城02-0.01倍\r"
-      - "🇺🇸美国凤凰城03-0.01倍\r"
-      - "🇺🇸美国凤凰城04-0.01倍\r"
-      - "🇯🇵日本1\r"
-      - "🇯🇵日本2\r"
-      - "🇯🇵日本3\r"
-      - "🇯🇵日本4\r"
-      - "🇯🇵日本5\r"
-      - "🇯🇵日本6\r"
-      - "🇯🇵日本1 | 高速专线\r"
-      - "🇯🇵日本2 | 高速专线\r"
-      - "🇯🇵日本3 | 高速专线\r"
-      - "🇯🇵日本4 | 高速专线\r"
-      - "🇯🇵日本5 | 高速专线\r"
-      - "🇯🇵日本6 | 高速专线\r"
-      - "🇯🇵日本7 | 高速专线\r"
-      - "🇯🇵日本8 | 高速专线\r"
-      - "🇭🇰香港HKT2\r"
-      - "🇸🇬新加坡1 | 高速专线\r"
-      - "🇸🇬新加坡2 | 高速专线\r"
-      - "🇸🇬新加坡3 | 高速专线\r"
-      - "🇸🇬新加坡4 | 高速专线\r"
-      - "🇯🇵AWS日本01 | 双线负载专线-10倍\r"
-      - "🇯🇵AWS日本02 | 双线负载专线-10倍\r"
-      - "🇹🇼台湾\r"
-      - "🇹🇼台湾2\r"
-      - "🇹🇼台湾3\r"
-      - "🇯🇵AWS日本03 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本04 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本05 | 双线负载专线-限时1倍\r"
-      - "🇯🇵日本高速01-0.1倍\r"
-      - "🇯🇵日本高速02-0.1倍\r"
-      - "🇯🇵日本高速03-0.1倍\r"
-      - "🇯🇵日本高速04-0.1倍\r"
-      - "🇯🇵日本高速05-0.1倍\r"
-      - "🇯🇵日本高速06-0.1倍\r"
-      - "🇸🇬新加坡高速01-0.1倍\r"
-      - "🇸🇬新加坡高速02-0.1倍\r"
-      - "🇺🇸美国凤凰城1-0.01倍\r"
-      - "🇺🇸美国凤凰城2-0.01倍\r"
-      - "🇺🇸美国凤凰城3-0.01倍\r"
-      - "🇺🇸美国凤凰城4-0.01倍\r"
-      - "🇯🇵日本1 | 专线-推荐\r"
-      - "🇯🇵日本2 | 专线-推荐\r"
-      - "🇯🇵日本3 | 专线-推荐\r"
-      - "🇩🇪德国01\r"
-      - "🇩🇪德国02\r"
+      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
+      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
+      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
+      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
+      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
+      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
+      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
+      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
+      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
+      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
+      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - '剩余流量：953.27 GB'
-      - '套餐到期：长期有效'
-      - '🇭🇰香港HKT-hy2'
-      - "🇺🇸美国洛杉矶02-0.1倍\r"
-      - "🇺🇸美国洛杉矶03-0.1倍\r"
-      - "🇺🇸美国洛杉矶04-0.1倍\r"
-      - "🇺🇸美国洛杉矶05-0.1倍\r"
-      - "🇺🇸美国洛杉矶08-0.1倍\r"
-      - "🇺🇸美国凤凰城01-0.01倍\r"
-      - "🇺🇸美国凤凰城02-0.01倍\r"
-      - "🇺🇸美国凤凰城03-0.01倍\r"
-      - "🇺🇸美国凤凰城04-0.01倍\r"
-      - "🇯🇵日本1\r"
-      - "🇯🇵日本2\r"
-      - "🇯🇵日本3\r"
-      - "🇯🇵日本4\r"
-      - "🇯🇵日本5\r"
-      - "🇯🇵日本6\r"
-      - "🇯🇵日本1 | 高速专线\r"
-      - "🇯🇵日本2 | 高速专线\r"
-      - "🇯🇵日本3 | 高速专线\r"
-      - "🇯🇵日本4 | 高速专线\r"
-      - "🇯🇵日本5 | 高速专线\r"
-      - "🇯🇵日本6 | 高速专线\r"
-      - "🇯🇵日本7 | 高速专线\r"
-      - "🇯🇵日本8 | 高速专线\r"
-      - "🇭🇰香港HKT2\r"
-      - "🇸🇬新加坡1 | 高速专线\r"
-      - "🇸🇬新加坡2 | 高速专线\r"
-      - "🇸🇬新加坡3 | 高速专线\r"
-      - "🇸🇬新加坡4 | 高速专线\r"
-      - "🇯🇵AWS日本01 | 双线负载专线-10倍\r"
-      - "🇯🇵AWS日本02 | 双线负载专线-10倍\r"
-      - "🇹🇼台湾\r"
-      - "🇹🇼台湾2\r"
-      - "🇹🇼台湾3\r"
-      - "🇯🇵AWS日本03 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本04 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本05 | 双线负载专线-限时1倍\r"
-      - "🇯🇵日本高速01-0.1倍\r"
-      - "🇯🇵日本高速02-0.1倍\r"
-      - "🇯🇵日本高速03-0.1倍\r"
-      - "🇯🇵日本高速04-0.1倍\r"
-      - "🇯🇵日本高速05-0.1倍\r"
-      - "🇯🇵日本高速06-0.1倍\r"
-      - "🇸🇬新加坡高速01-0.1倍\r"
-      - "🇸🇬新加坡高速02-0.1倍\r"
-      - "🇺🇸美国凤凰城1-0.01倍\r"
-      - "🇺🇸美国凤凰城2-0.01倍\r"
-      - "🇺🇸美国凤凰城3-0.01倍\r"
-      - "🇺🇸美国凤凰城4-0.01倍\r"
-      - "🇯🇵日本1 | 专线-推荐\r"
-      - "🇯🇵日本2 | 专线-推荐\r"
-      - "🇯🇵日本3 | 专线-推荐\r"
-      - "🇩🇪德国01\r"
-      - "🇩🇪德国02\r"
+      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
+      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
+      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
+      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
+      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
+      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
+      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
+      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
+      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
+      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
+      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - '剩余流量：953.27 GB'
-      - '套餐到期：长期有效'
-      - '🇭🇰香港HKT-hy2'
-      - "🇺🇸美国洛杉矶02-0.1倍\r"
-      - "🇺🇸美国洛杉矶03-0.1倍\r"
-      - "🇺🇸美国洛杉矶04-0.1倍\r"
-      - "🇺🇸美国洛杉矶05-0.1倍\r"
-      - "🇺🇸美国洛杉矶08-0.1倍\r"
-      - "🇺🇸美国凤凰城01-0.01倍\r"
-      - "🇺🇸美国凤凰城02-0.01倍\r"
-      - "🇺🇸美国凤凰城03-0.01倍\r"
-      - "🇺🇸美国凤凰城04-0.01倍\r"
-      - "🇯🇵日本1\r"
-      - "🇯🇵日本2\r"
-      - "🇯🇵日本3\r"
-      - "🇯🇵日本4\r"
-      - "🇯🇵日本5\r"
-      - "🇯🇵日本6\r"
-      - "🇯🇵日本1 | 高速专线\r"
-      - "🇯🇵日本2 | 高速专线\r"
-      - "🇯🇵日本3 | 高速专线\r"
-      - "🇯🇵日本4 | 高速专线\r"
-      - "🇯🇵日本5 | 高速专线\r"
-      - "🇯🇵日本6 | 高速专线\r"
-      - "🇯🇵日本7 | 高速专线\r"
-      - "🇯🇵日本8 | 高速专线\r"
-      - "🇭🇰香港HKT2\r"
-      - "🇸🇬新加坡1 | 高速专线\r"
-      - "🇸🇬新加坡2 | 高速专线\r"
-      - "🇸🇬新加坡3 | 高速专线\r"
-      - "🇸🇬新加坡4 | 高速专线\r"
-      - "🇯🇵AWS日本01 | 双线负载专线-10倍\r"
-      - "🇯🇵AWS日本02 | 双线负载专线-10倍\r"
-      - "🇹🇼台湾\r"
-      - "🇹🇼台湾2\r"
-      - "🇹🇼台湾3\r"
-      - "🇯🇵AWS日本03 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本04 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本05 | 双线负载专线-限时1倍\r"
-      - "🇯🇵日本高速01-0.1倍\r"
-      - "🇯🇵日本高速02-0.1倍\r"
-      - "🇯🇵日本高速03-0.1倍\r"
-      - "🇯🇵日本高速04-0.1倍\r"
-      - "🇯🇵日本高速05-0.1倍\r"
-      - "🇯🇵日本高速06-0.1倍\r"
-      - "🇸🇬新加坡高速01-0.1倍\r"
-      - "🇸🇬新加坡高速02-0.1倍\r"
-      - "🇺🇸美国凤凰城1-0.01倍\r"
-      - "🇺🇸美国凤凰城2-0.01倍\r"
-      - "🇺🇸美国凤凰城3-0.01倍\r"
-      - "🇺🇸美国凤凰城4-0.01倍\r"
-      - "🇯🇵日本1 | 专线-推荐\r"
-      - "🇯🇵日本2 | 专线-推荐\r"
-      - "🇯🇵日本3 | 专线-推荐\r"
-      - "🇩🇪德国01\r"
-      - "🇩🇪德国02\r"
+      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
+      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
+      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
+      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
+      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
+      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
+      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
+      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
+      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
+      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
+      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - '剩余流量：953.27 GB'
-      - '套餐到期：长期有效'
-      - '🇭🇰香港HKT-hy2'
-      - "🇺🇸美国洛杉矶02-0.1倍\r"
-      - "🇺🇸美国洛杉矶03-0.1倍\r"
-      - "🇺🇸美国洛杉矶04-0.1倍\r"
-      - "🇺🇸美国洛杉矶05-0.1倍\r"
-      - "🇺🇸美国洛杉矶08-0.1倍\r"
-      - "🇺🇸美国凤凰城01-0.01倍\r"
-      - "🇺🇸美国凤凰城02-0.01倍\r"
-      - "🇺🇸美国凤凰城03-0.01倍\r"
-      - "🇺🇸美国凤凰城04-0.01倍\r"
-      - "🇯🇵日本1\r"
-      - "🇯🇵日本2\r"
-      - "🇯🇵日本3\r"
-      - "🇯🇵日本4\r"
-      - "🇯🇵日本5\r"
-      - "🇯🇵日本6\r"
-      - "🇯🇵日本1 | 高速专线\r"
-      - "🇯🇵日本2 | 高速专线\r"
-      - "🇯🇵日本3 | 高速专线\r"
-      - "🇯🇵日本4 | 高速专线\r"
-      - "🇯🇵日本5 | 高速专线\r"
-      - "🇯🇵日本6 | 高速专线\r"
-      - "🇯🇵日本7 | 高速专线\r"
-      - "🇯🇵日本8 | 高速专线\r"
-      - "🇭🇰香港HKT2\r"
-      - "🇸🇬新加坡1 | 高速专线\r"
-      - "🇸🇬新加坡2 | 高速专线\r"
-      - "🇸🇬新加坡3 | 高速专线\r"
-      - "🇸🇬新加坡4 | 高速专线\r"
-      - "🇯🇵AWS日本01 | 双线负载专线-10倍\r"
-      - "🇯🇵AWS日本02 | 双线负载专线-10倍\r"
-      - "🇹🇼台湾\r"
-      - "🇹🇼台湾2\r"
-      - "🇹🇼台湾3\r"
-      - "🇯🇵AWS日本03 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本04 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本05 | 双线负载专线-限时1倍\r"
-      - "🇯🇵日本高速01-0.1倍\r"
-      - "🇯🇵日本高速02-0.1倍\r"
-      - "🇯🇵日本高速03-0.1倍\r"
-      - "🇯🇵日本高速04-0.1倍\r"
-      - "🇯🇵日本高速05-0.1倍\r"
-      - "🇯🇵日本高速06-0.1倍\r"
-      - "🇸🇬新加坡高速01-0.1倍\r"
-      - "🇸🇬新加坡高速02-0.1倍\r"
-      - "🇺🇸美国凤凰城1-0.01倍\r"
-      - "🇺🇸美国凤凰城2-0.01倍\r"
-      - "🇺🇸美国凤凰城3-0.01倍\r"
-      - "🇺🇸美国凤凰城4-0.01倍\r"
-      - "🇯🇵日本1 | 专线-推荐\r"
-      - "🇯🇵日本2 | 专线-推荐\r"
-      - "🇯🇵日本3 | 专线-推荐\r"
-      - "🇩🇪德国01\r"
-      - "🇩🇪德国02\r"
+      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
+      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
+      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
+      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
+      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
+      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
+      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
+      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
+      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
+      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
+      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -533,62 +218,17 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - '剩余流量：953.27 GB'
-      - '套餐到期：长期有效'
-      - '🇭🇰香港HKT-hy2'
-      - "🇺🇸美国洛杉矶02-0.1倍\r"
-      - "🇺🇸美国洛杉矶03-0.1倍\r"
-      - "🇺🇸美国洛杉矶04-0.1倍\r"
-      - "🇺🇸美国洛杉矶05-0.1倍\r"
-      - "🇺🇸美国洛杉矶08-0.1倍\r"
-      - "🇺🇸美国凤凰城01-0.01倍\r"
-      - "🇺🇸美国凤凰城02-0.01倍\r"
-      - "🇺🇸美国凤凰城03-0.01倍\r"
-      - "🇺🇸美国凤凰城04-0.01倍\r"
-      - "🇯🇵日本1\r"
-      - "🇯🇵日本2\r"
-      - "🇯🇵日本3\r"
-      - "🇯🇵日本4\r"
-      - "🇯🇵日本5\r"
-      - "🇯🇵日本6\r"
-      - "🇯🇵日本1 | 高速专线\r"
-      - "🇯🇵日本2 | 高速专线\r"
-      - "🇯🇵日本3 | 高速专线\r"
-      - "🇯🇵日本4 | 高速专线\r"
-      - "🇯🇵日本5 | 高速专线\r"
-      - "🇯🇵日本6 | 高速专线\r"
-      - "🇯🇵日本7 | 高速专线\r"
-      - "🇯🇵日本8 | 高速专线\r"
-      - "🇭🇰香港HKT2\r"
-      - "🇸🇬新加坡1 | 高速专线\r"
-      - "🇸🇬新加坡2 | 高速专线\r"
-      - "🇸🇬新加坡3 | 高速专线\r"
-      - "🇸🇬新加坡4 | 高速专线\r"
-      - "🇯🇵AWS日本01 | 双线负载专线-10倍\r"
-      - "🇯🇵AWS日本02 | 双线负载专线-10倍\r"
-      - "🇹🇼台湾\r"
-      - "🇹🇼台湾2\r"
-      - "🇹🇼台湾3\r"
-      - "🇯🇵AWS日本03 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本04 | 双线负载专线-限时1倍\r"
-      - "🇯🇵AWS日本05 | 双线负载专线-限时1倍\r"
-      - "🇯🇵日本高速01-0.1倍\r"
-      - "🇯🇵日本高速02-0.1倍\r"
-      - "🇯🇵日本高速03-0.1倍\r"
-      - "🇯🇵日本高速04-0.1倍\r"
-      - "🇯🇵日本高速05-0.1倍\r"
-      - "🇯🇵日本高速06-0.1倍\r"
-      - "🇸🇬新加坡高速01-0.1倍\r"
-      - "🇸🇬新加坡高速02-0.1倍\r"
-      - "🇺🇸美国凤凰城1-0.01倍\r"
-      - "🇺🇸美国凤凰城2-0.01倍\r"
-      - "🇺🇸美国凤凰城3-0.01倍\r"
-      - "🇺🇸美国凤凰城4-0.01倍\r"
-      - "🇯🇵日本1 | 专线-推荐\r"
-      - "🇯🇵日本2 | 专线-推荐\r"
-      - "🇯🇵日本3 | 专线-推荐\r"
-      - "🇩🇪德国01\r"
-      - "🇩🇪德国02\r"
+      - '%5BHy2%5D%E6%97%A5%E6%9C%AC01'
+      - '%5BHy2%5D%E9%9F%A9%E5%9B%BD01'
+      - '%5BHy2%5D%E5%BE%B7%E5%9B%BD01'
+      - '%5BHy2%5D%E6%82%89%E5%B0%BC01'
+      - '%5BHy2%5D%E6%B3%95%E5%9B%BD01'
+      - '%5BHy2%5D%E7%BE%8E%E5%9B%BD01'
+      - '%5BHy2%5D%E8%BF%AA%E6%8B%9C01'
+      - '%5BHy2%5D%E5%8D%B0%E5%BA%A601'
+      - '%5BHy2%5D%E8%8B%B1%E5%9B%BD01'
+      - '%5BHy2%5D%E6%96%B0%E5%8A%A0%E5%9D%A101'
+      - '%5BHy2%5D%E5%B7%B4%E8%A5%BF01'
 
 rules:
 # 本地/局域网地址
