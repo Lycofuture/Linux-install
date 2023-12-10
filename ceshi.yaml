@@ -1,7 +1,7 @@
 ####################################
 # 创建者：v2rayse.com
 # 客户端：Clash.Meta
-# 创建时间：2023-12-10 13:22:10
+# 创建时间：2023-12-10 15:56:24
 # 使用模版：V2RaySE 默认模版
 # 节点数量：11
 ####################################
@@ -86,116 +86,116 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"[Hy2]日本01","type":"hysteria2","server":"jp2.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"jp2.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"[Hy2]韩国01","type":"hysteria2","server":"kr2.xiaoliyu.cyou","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"kr2.xiaoliyu.cyou","skip-cert-verify":true}
-  - {"name":"[Hy2]德国01","type":"hysteria2","server":"de1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"de1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"[Hy2]悉尼01","type":"hysteria2","server":"au1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"au1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"[Hy2]法国01","type":"hysteria2","server":"fr1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"fr1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"[Hy2]美国01","type":"hysteria2","server":"us1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"us1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"[Hy2]迪拜01","type":"hysteria2","server":"ae1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"ae1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"[Hy2]印度01","type":"hysteria2","server":"in1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"in1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"[Hy2]英国01","type":"hysteria2","server":"uk1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"uk1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"[Hy2]新加坡01","type":"hysteria2","server":"sg1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"sg1.xiaoliyu.us","skip-cert-verify":true}
-  - {"name":"[Hy2]巴西01","type":"hysteria2","server":"bra1.xiaoliyu.us","port":2052,"password":"8da06f0b-0c2e-444a-b644-e99d222bb073","sni":"bra1.xiaoliyu.us","skip-cert-verify":true}
+  - {"name":"HY2协议白嫖网站：便宜机场.co","type":"hysteria2","server":"sg.xn--wtq35pfyd55o.club","port":20001,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"新加坡-hy2-01","type":"hysteria2","server":"sg.xn--wtq35pfyd55o.club","port":20001,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"美国-hy2-01","type":"hysteria2","server":"us.xn--wtq35pfyd55o.club","port":20001,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"美国-hy2-02","type":"hysteria2","server":"us.xn--wtq35pfyd55o.club","port":20009,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"新加坡-hy2-02","type":"hysteria2","server":"sg.xn--wtq35pfyd55o.club","port":20009,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"美国-hy2-03","type":"hysteria2","server":"us.xn--wtq35pfyd55o.club","port":30009,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"美国-hy2-04","type":"hysteria2","server":"us.xn--wtq35pfyd55o.club","port":30209,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"美国-hy2-05","type":"hysteria2","server":"us.xn--wtq35pfyd55o.club","port":30219,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"新加坡-hy2-03","type":"hysteria2","server":"sg.xn--wtq35pfyd55o.club","port":20029,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"新加坡-hy2-04","type":"hysteria2","server":"sg.xn--wtq35pfyd55o.club","port":20129,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
+  - {"name":"新加坡-hy2-05","type":"hysteria2","server":"sg.xn--wtq35pfyd55o.club","port":20139,"password":"0f6d197c-87ba-49ba-b6ac-8e3f03d7a409","sni":"1231231.1234567890spcloud.com","skip-cert-verify":true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - '[Hy2]日本01'
-      - '[Hy2]韩国01'
-      - '[Hy2]德国01'
-      - '[Hy2]悉尼01'
-      - '[Hy2]法国01'
-      - '[Hy2]美国01'
-      - '[Hy2]迪拜01'
-      - '[Hy2]印度01'
-      - '[Hy2]英国01'
-      - '[Hy2]新加坡01'
-      - '[Hy2]巴西01'
+      - HY2协议白嫖网站：便宜机场.co
+      - 新加坡-hy2-01
+      - 美国-hy2-01
+      - 美国-hy2-02
+      - 新加坡-hy2-02
+      - 美国-hy2-03
+      - 美国-hy2-04
+      - 美国-hy2-05
+      - 新加坡-hy2-03
+      - 新加坡-hy2-04
+      - 新加坡-hy2-05
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - '[Hy2]日本01'
-      - '[Hy2]韩国01'
-      - '[Hy2]德国01'
-      - '[Hy2]悉尼01'
-      - '[Hy2]法国01'
-      - '[Hy2]美国01'
-      - '[Hy2]迪拜01'
-      - '[Hy2]印度01'
-      - '[Hy2]英国01'
-      - '[Hy2]新加坡01'
-      - '[Hy2]巴西01'
+      - HY2协议白嫖网站：便宜机场.co
+      - 新加坡-hy2-01
+      - 美国-hy2-01
+      - 美国-hy2-02
+      - 新加坡-hy2-02
+      - 美国-hy2-03
+      - 美国-hy2-04
+      - 美国-hy2-05
+      - 新加坡-hy2-03
+      - 新加坡-hy2-04
+      - 新加坡-hy2-05
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - '[Hy2]日本01'
-      - '[Hy2]韩国01'
-      - '[Hy2]德国01'
-      - '[Hy2]悉尼01'
-      - '[Hy2]法国01'
-      - '[Hy2]美国01'
-      - '[Hy2]迪拜01'
-      - '[Hy2]印度01'
-      - '[Hy2]英国01'
-      - '[Hy2]新加坡01'
-      - '[Hy2]巴西01'
+      - HY2协议白嫖网站：便宜机场.co
+      - 新加坡-hy2-01
+      - 美国-hy2-01
+      - 美国-hy2-02
+      - 新加坡-hy2-02
+      - 美国-hy2-03
+      - 美国-hy2-04
+      - 美国-hy2-05
+      - 新加坡-hy2-03
+      - 新加坡-hy2-04
+      - 新加坡-hy2-05
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - '[Hy2]日本01'
-      - '[Hy2]韩国01'
-      - '[Hy2]德国01'
-      - '[Hy2]悉尼01'
-      - '[Hy2]法国01'
-      - '[Hy2]美国01'
-      - '[Hy2]迪拜01'
-      - '[Hy2]印度01'
-      - '[Hy2]英国01'
-      - '[Hy2]新加坡01'
-      - '[Hy2]巴西01'
+      - HY2协议白嫖网站：便宜机场.co
+      - 新加坡-hy2-01
+      - 美国-hy2-01
+      - 美国-hy2-02
+      - 新加坡-hy2-02
+      - 美国-hy2-03
+      - 美国-hy2-04
+      - 美国-hy2-05
+      - 新加坡-hy2-03
+      - 新加坡-hy2-04
+      - 新加坡-hy2-05
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - '[Hy2]日本01'
-      - '[Hy2]韩国01'
-      - '[Hy2]德国01'
-      - '[Hy2]悉尼01'
-      - '[Hy2]法国01'
-      - '[Hy2]美国01'
-      - '[Hy2]迪拜01'
-      - '[Hy2]印度01'
-      - '[Hy2]英国01'
-      - '[Hy2]新加坡01'
-      - '[Hy2]巴西01'
+      - HY2协议白嫖网站：便宜机场.co
+      - 新加坡-hy2-01
+      - 美国-hy2-01
+      - 美国-hy2-02
+      - 新加坡-hy2-02
+      - 美国-hy2-03
+      - 美国-hy2-04
+      - 美国-hy2-05
+      - 新加坡-hy2-03
+      - 新加坡-hy2-04
+      - 新加坡-hy2-05
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - '[Hy2]日本01'
-      - '[Hy2]韩国01'
-      - '[Hy2]德国01'
-      - '[Hy2]悉尼01'
-      - '[Hy2]法国01'
-      - '[Hy2]美国01'
-      - '[Hy2]迪拜01'
-      - '[Hy2]印度01'
-      - '[Hy2]英国01'
-      - '[Hy2]新加坡01'
-      - '[Hy2]巴西01'
+      - HY2协议白嫖网站：便宜机场.co
+      - 新加坡-hy2-01
+      - 美国-hy2-01
+      - 美国-hy2-02
+      - 新加坡-hy2-02
+      - 美国-hy2-03
+      - 美国-hy2-04
+      - 美国-hy2-05
+      - 新加坡-hy2-03
+      - 新加坡-hy2-04
+      - 新加坡-hy2-05
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -218,17 +218,17 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - '[Hy2]日本01'
-      - '[Hy2]韩国01'
-      - '[Hy2]德国01'
-      - '[Hy2]悉尼01'
-      - '[Hy2]法国01'
-      - '[Hy2]美国01'
-      - '[Hy2]迪拜01'
-      - '[Hy2]印度01'
-      - '[Hy2]英国01'
-      - '[Hy2]新加坡01'
-      - '[Hy2]巴西01'
+      - HY2协议白嫖网站：便宜机场.co
+      - 新加坡-hy2-01
+      - 美国-hy2-01
+      - 美国-hy2-02
+      - 新加坡-hy2-02
+      - 美国-hy2-03
+      - 美国-hy2-04
+      - 美国-hy2-05
+      - 新加坡-hy2-03
+      - 新加坡-hy2-04
+      - 新加坡-hy2-05
 
 rules:
 # 本地/局域网地址
