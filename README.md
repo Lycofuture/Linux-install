@@ -200,3 +200,6 @@ bash <(curl -L https://raw.githubusercontent.com/angristan/openvpn-install/maste
 ```bash
 bash <(curl -Ls https://gitlab.com/rwkgyg/sing-box-yg/raw/main/sb.sh)
 ```
+```
+bash <(curl -fsSL https://git.io/hysteria.sh)
+```
