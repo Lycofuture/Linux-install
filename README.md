@@ -204,5 +204,8 @@ bash <(curl -fsSL https://gitlab.com/rwkgyg/sing-box-yg/raw/main/sb.sh)
 bash <(curl -fsSL https://git.io/hysteria.sh)
 ```
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/hijkpw/scripts/master/ss.sh)
+```
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/hijkpw/scripts/master/ssr.sh)
 ```
