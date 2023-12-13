@@ -1,9 +1,9 @@
 ####################################
 # 创建者：v2rayse.com
 # 客户端：Clash.Meta
-# 创建时间：2023-12-13 16:42:53
+# 创建时间：2023-12-13 20:30:40
 # 使用模版：V2RaySE 默认模版
-# 节点数量：47
+# 节点数量：39
 ####################################
 # !!当前配置文件请使用基于 Clash.Meta 内核程序
 mixed-port: 7890
@@ -86,368 +86,312 @@ dns:
       - 0.0.0.0/32
 
 proxies:
-  - {"name":"CA_1","type":"ss","server":"129.153.60.217","port":22554,"password":"5d314e57-fccb-4cbc-89df-71eb158c2b77","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"GB_2","type":"ss","server":"sg.colacloud.site","port":20152,"password":"ba3d636a-eeb9-4a6e-9755-c7eac5228c81","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"US_3","type":"vless","server":"5.161.198.1","port":6006,"udp":true,"uuid":"9789674e-6903-415a-ba07-1db4d207607c","tls":true,"servername":"lit.dev","network":"tcp","reality-opts":{"public-key":"xjsFF_ujrEnqVcR8pbV4aAnHHInbUJ9epkbT76d_7Fc","short-id":"9e20a9863c3c8d7d"},"client-fingerprint":"chrome"}
-  - {"name":"GB_4","type":"ss","server":"sg.colacloud.site","port":20153,"password":"ba3d636a-eeb9-4a6e-9755-c7eac5228c81","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"KR_5","type":"ss","server":"kr.colacloud.site","port":20352,"password":"ba3d636a-eeb9-4a6e-9755-c7eac5228c81","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"US_6","type":"vmess","server":"cdn0.host-speed.net","port":80,"cipher":"auto","uuid":"fd64710a-35ea-4b90-9fdd-9072e6c2ba71","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"cdn.vpnsell.beauty"}}}
-  - {"name":"UA_7","type":"vless","server":"193.203.202.7","port":443,"uuid":"ec35852e-9b67-40bb-a98c-d3003dbfccd7","tls":false,"network":"tcp"}
-  - {"name":"DE_8","type":"vless","server":"116.203.126.111","port":6006,"udp":true,"uuid":"9789674e-6903-415a-ba07-1db4d207607c","tls":true,"servername":"lit.dev","network":"tcp","reality-opts":{"public-key":"xjsFF_ujrEnqVcR8pbV4aAnHHInbUJ9epkbT76d_7Fc","short-id":"9e20a9863c3c8d7d"},"client-fingerprint":"chrome"}
-  - {"name":"US_9","type":"vmess","server":"162.159.62.69","port":443,"cipher":"auto","uuid":"370b54e1-cc9b-4abf-9c86-7d0523239b9a","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/elhm","headers":{"host":"sn1.publcenem.shop"}}}
-  - {"name":"CN_10","type":"ss","server":"221.215.48.114","port":2377,"password":"t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv","cipher":"chacha20-ietf-poly1305","plugin":"obfs-local","plugin-opts":{"mode":"websocket"}}
-  - {"name":"JP_11","type":"ss","server":"52.199.249.206","port":2377,"password":"t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv","cipher":"chacha20-ietf-poly1305","plugin":"obfs-local","plugin-opts":{"mode":"websocket"}}
-  - {"name":"CN_12","type":"ss","server":"k5sq2cvklnxipx3g.jichangjingxuan.com","port":51002,"password":"cc05f21d-238f-4fdb-abe0-ed07fcc6b360","cipher":"aes-128-gcm"}
-  - {"name":"SG_13","type":"trojan","server":"185.230.245.210","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
-  - {"name":"SG_14","type":"trojan","server":"185.230.245.212","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
-  - {"name":"SG_15","type":"trojan","server":"185.230.245.213","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
-  - {"name":"SG_16","type":"trojan","server":"185.230.245.211","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
-  - {"name":"JP_17","type":"trojan","server":"54.168.244.142","port":3306,"udp":true,"password":"9b95dd82e288c47c","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai_8"}}}
-  - {"name":"SG_18","type":"trojan","server":"47.128.218.196","port":443,"udp":true,"password":"8c33b282-5881-459a-a52f-c760c87434d7","sni":"download.xn--mes358acgm99l.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SG_19","type":"trojan","server":"52.221.225.212","port":443,"udp":true,"password":"8c33b282-5881-459a-a52f-c760c87434d7","sni":"download.xn--mes358acgm99l.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"JP_20","type":"trojan","server":"18.179.39.119","port":443,"udp":true,"password":"8c33b282-5881-459a-a52f-c760c87434d7","sni":"download.xn--mes358acgm99l.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"FR_21","type":"hysteria","server":"51.158.54.46","port":11926,"sni":"youku.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"Trz2alKwzCImRAXI3nXfpo1ylpHfqOL8s1vageWKoyjjvWeMVs","up":11,"down":55}
-  - {"name":"US_22","type":"hysteria","server":"173.234.25.52","port":20164,"sni":"www.microsoft.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F","up":50,"down":100}
-  - {"name":"AL_23","type":"hysteria","server":"109.104.152.149","port":48406,"sni":"www.amazon.cn","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"xfNhrunYJ9GvDXCTktY2bIwhc1EyeyyAbiUMx1UtBOWgI4cMVB","up":11,"down":55}
-  - {"name":"US_24","type":"hysteria2","server":"15.204.49.157","port":4434,"password":"sharecentrepro","sni":"ushy2.sharecentre.online","skip-cert-verify":true}
-  - {"name":"US_25","type":"hysteria","server":"167.160.90.251","port":48089,"skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":50,"down":80}
-  - {"name":"GB_26","type":"hysteria","server":"62.204.54.81","port":42691,"sni":"telegramEUT-VPN.ddns.net","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":5,"down":10}
-  - {"name":"US_27","type":"vmess","server":"103.21.244.109","port":80,"cipher":"none","uuid":"d112c7f8-8234-11ee-b962-0242ac120002","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/d112c7f8-8234-11ee-b962-0242ac120002-vmess","headers":{"host":"speed.qwer3322.top"}}}
-  - {"name":"KR_28","type":"hysteria2","server":"seoul1-2500m.yljc.online","port":30004,"password":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","sni":"1.nodes.yljc.online","skip-cert-verify":true}
-  - {"name":"KR_29","type":"hysteria2","server":"2500m.seoul.node.yljc.online","port":30018,"password":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","sni":"1.nodes.yljc.online","skip-cert-verify":true}
-  - {"name":"US_30","type":"hysteria2","server":"do-sanfrancisco2.yljc.online","port":30021,"password":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","sni":"fl.nodes.yljc.online","skip-cert-verify":true}
-  - {"name":"CN_31","type":"ss","server":"36.150.27.108","port":27261,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"CN_32","type":"ss","server":"gtm.ktmwan.com","port":27261,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"FR_33","type":"ss","server":"135.125.172.153","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
-  - {"name":"US_34","type":"vmess","server":"162.159.134.234","port":8880,"cipher":"auto","uuid":"2f1435e0-a3e6-40c7-bc4f-05f5befeb789","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"free.1alphaomega.org"}}}
-  - {"name":"FR_35","type":"ss","server":"135.125.172.139","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
-  - {"name":"CN_36","type":"ss","server":"183.236.51.20","port":27261,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"US_37","type":"trojan","server":"z-v1-zzzh.ashx.net","port":443,"udp":true,"password":"wkmY1R4EcP","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"KR_38","type":"trojan","server":"unlk1.lvwf8n-hh8e-2300-nmoo-d2e9naobeacn.9d8f269f96b25232-759cbb36d6548597.kaufen","port":20152,"udp":true,"password":"d56cb8dc-e932-4d57-bd90-1381a1245f90","sni":"13-231-155-134.nhost.00cdn.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"US_39","type":"vless","server":"de4.vlessx.xyz","port":2095,"uuid":"656abef6-704a-44c1-ba87-afab36fdf042","tls":false,"network":"ws","ws-opts":{"path":"TG.【ccbaohe.com】 永久免费机场节点"}}
-  - {"name":"RU_40","type":"vless","server":"176.120.64.12","port":80,"uuid":"f2823d10-2fa8-4064-ab49-bf69250ee309","tls":false,"network":"ws","ws-opts":{"path":"/"}}
-  - {"name":"CN_41","type":"vmess","server":"82.156.229.205","port":8080,"cipher":"auto","uuid":"2910049a-6a62-4cb8-d2aa-4bbccf7cb8bb","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/vtwo","headers":{"host":"82.156.229.205"}}}
-  - {"name":"CN_42","type":"ss","server":"183.236.51.20","port":27251,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"CN_43","type":"ss","server":"183.236.51.20","port":27252,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"CN_44","type":"ss","server":"183.236.51.20","port":27254,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"CN_45","type":"ss","server":"183.236.51.20","port":27260,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"CN_46","type":"ss","server":"183.236.51.20","port":27262,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"US_47","type":"vless","server":"de4.vlessx.xyz","port":2082,"uuid":"656abef6-704a-44c1-ba87-afab36fdf042","tls":false,"network":"ws","ws-opts":{"path":"TG.【ccbaohe.com】 永久免费机场节点"}}
+  - {"name":"US_1","type":"vless","server":"5.161.198.1","port":6006,"udp":true,"uuid":"9789674e-6903-415a-ba07-1db4d207607c","tls":true,"servername":"lit.dev","network":"tcp","reality-opts":{"public-key":"xjsFF_ujrEnqVcR8pbV4aAnHHInbUJ9epkbT76d_7Fc","short-id":"9e20a9863c3c8d7d"},"client-fingerprint":"chrome"}
+  - {"name":"US_2","type":"vmess","server":"cdn0.host-speed.net","port":80,"cipher":"auto","uuid":"fd64710a-35ea-4b90-9fdd-9072e6c2ba71","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"cdn.vpnsell.beauty"}}}
+  - {"name":"UA_3","type":"vless","server":"193.203.202.7","port":443,"uuid":"ec35852e-9b67-40bb-a98c-d3003dbfccd7","tls":false,"network":"tcp"}
+  - {"name":"DE_4","type":"vless","server":"116.203.126.111","port":6006,"udp":true,"uuid":"9789674e-6903-415a-ba07-1db4d207607c","tls":true,"servername":"lit.dev","network":"tcp","reality-opts":{"public-key":"xjsFF_ujrEnqVcR8pbV4aAnHHInbUJ9epkbT76d_7Fc","short-id":"9e20a9863c3c8d7d"},"client-fingerprint":"chrome"}
+  - {"name":"CN_5","type":"ss","server":"221.215.48.114","port":2377,"password":"t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv","cipher":"chacha20-ietf-poly1305","plugin":"obfs-local","plugin-opts":{"mode":"websocket"}}
+  - {"name":"CN_6","type":"ss","server":"k5sq2cvklnxipx3g.jichangjingxuan.com","port":51002,"password":"cc05f21d-238f-4fdb-abe0-ed07fcc6b360","cipher":"aes-128-gcm"}
+  - {"name":"SG_7","type":"trojan","server":"185.230.245.210","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
+  - {"name":"SG_8","type":"trojan","server":"185.230.245.212","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
+  - {"name":"SG_9","type":"trojan","server":"185.230.245.213","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
+  - {"name":"SG_10","type":"trojan","server":"185.230.245.211","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
+  - {"name":"JP_11","type":"trojan","server":"54.168.244.142","port":3306,"udp":true,"password":"9b95dd82e288c47c","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai_8"}}}
+  - {"name":"SG_12","type":"trojan","server":"47.128.218.196","port":443,"udp":true,"password":"8c33b282-5881-459a-a52f-c760c87434d7","sni":"download.xn--mes358acgm99l.com","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SG_13","type":"trojan","server":"52.221.225.212","port":443,"udp":true,"password":"8c33b282-5881-459a-a52f-c760c87434d7","sni":"download.xn--mes358acgm99l.com","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"JP_14","type":"trojan","server":"18.179.39.119","port":443,"udp":true,"password":"8c33b282-5881-459a-a52f-c760c87434d7","sni":"download.xn--mes358acgm99l.com","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"FR_15","type":"hysteria","server":"51.158.54.46","port":11926,"sni":"youku.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"Trz2alKwzCImRAXI3nXfpo1ylpHfqOL8s1vageWKoyjjvWeMVs","up":11,"down":55}
+  - {"name":"US_16","type":"hysteria","server":"173.234.25.52","port":20164,"sni":"www.microsoft.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F","up":50,"down":100}
+  - {"name":"AL_17","type":"hysteria","server":"109.104.152.149","port":48406,"sni":"www.amazon.cn","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"xfNhrunYJ9GvDXCTktY2bIwhc1EyeyyAbiUMx1UtBOWgI4cMVB","up":11,"down":55}
+  - {"name":"US_18","type":"hysteria2","server":"15.204.49.157","port":4434,"password":"sharecentrepro","sni":"ushy2.sharecentre.online","skip-cert-verify":true}
+  - {"name":"US_19","type":"hysteria","server":"167.160.90.251","port":48089,"skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":50,"down":80}
+  - {"name":"GB_20","type":"hysteria","server":"62.204.54.81","port":42691,"sni":"telegramEUT-VPN.ddns.net","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"dongtaiwang.com","up":5,"down":10}
+  - {"name":"US_21","type":"vmess","server":"103.21.244.109","port":80,"cipher":"none","uuid":"d112c7f8-8234-11ee-b962-0242ac120002","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/d112c7f8-8234-11ee-b962-0242ac120002-vmess","headers":{"host":"speed.qwer3322.top"}}}
+  - {"name":"KR_22","type":"hysteria2","server":"seoul1-2500m.yljc.online","port":30004,"password":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","sni":"1.nodes.yljc.online","skip-cert-verify":true}
+  - {"name":"KR_23","type":"hysteria2","server":"2500m.seoul.node.yljc.online","port":30018,"password":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","sni":"1.nodes.yljc.online","skip-cert-verify":true}
+  - {"name":"US_24","type":"hysteria2","server":"do-sanfrancisco2.yljc.online","port":30021,"password":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","sni":"fl.nodes.yljc.online","skip-cert-verify":true}
+  - {"name":"CN_25","type":"ss","server":"36.150.27.108","port":27261,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"CN_26","type":"ss","server":"gtm.ktmwan.com","port":27261,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"FR_27","type":"ss","server":"135.125.172.153","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
+  - {"name":"FR_28","type":"ss","server":"135.125.172.139","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
+  - {"name":"CN_29","type":"ss","server":"183.236.51.20","port":27261,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"US_30","type":"trojan","server":"z-v1-zzzh.ashx.net","port":443,"udp":true,"password":"wkmY1R4EcP","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"US_31","type":"vless","server":"de4.vlessx.xyz","port":2095,"uuid":"656abef6-704a-44c1-ba87-afab36fdf042","tls":false,"network":"ws","ws-opts":{"path":"TG.【ccbaohe.com】 永久免费机场节点"}}
+  - {"name":"RU_32","type":"vless","server":"176.120.64.12","port":80,"uuid":"f2823d10-2fa8-4064-ab49-bf69250ee309","tls":false,"network":"ws","ws-opts":{"path":"/"}}
+  - {"name":"CN_33","type":"vmess","server":"82.156.229.205","port":8080,"cipher":"auto","uuid":"2910049a-6a62-4cb8-d2aa-4bbccf7cb8bb","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/vtwo","headers":{"host":"82.156.229.205"}}}
+  - {"name":"CN_34","type":"ss","server":"183.236.51.20","port":27251,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"CN_35","type":"ss","server":"183.236.51.20","port":27252,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"CN_36","type":"ss","server":"183.236.51.20","port":27254,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"CN_37","type":"ss","server":"183.236.51.20","port":27260,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"CN_38","type":"ss","server":"183.236.51.20","port":27262,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"US_39","type":"vless","server":"de4.vlessx.xyz","port":2082,"uuid":"656abef6-704a-44c1-ba87-afab36fdf042","tls":false,"network":"ws","ws-opts":{"path":"TG.【ccbaohe.com】 永久免费机场节点"}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - CA_1
-      - GB_2
-      - US_3
-      - GB_4
-      - KR_5
-      - US_6
-      - UA_7
-      - DE_8
-      - US_9
-      - CN_10
+      - US_1
+      - US_2
+      - UA_3
+      - DE_4
+      - CN_5
+      - CN_6
+      - SG_7
+      - SG_8
+      - SG_9
+      - SG_10
       - JP_11
-      - CN_12
+      - SG_12
       - SG_13
-      - SG_14
-      - SG_15
-      - SG_16
-      - JP_17
-      - SG_18
-      - SG_19
-      - JP_20
-      - FR_21
-      - US_22
-      - AL_23
+      - JP_14
+      - FR_15
+      - US_16
+      - AL_17
+      - US_18
+      - US_19
+      - GB_20
+      - US_21
+      - KR_22
+      - KR_23
       - US_24
-      - US_25
-      - GB_26
-      - US_27
-      - KR_28
-      - KR_29
+      - CN_25
+      - CN_26
+      - FR_27
+      - FR_28
+      - CN_29
       - US_30
-      - CN_31
-      - CN_32
-      - FR_33
-      - US_34
-      - FR_35
+      - US_31
+      - RU_32
+      - CN_33
+      - CN_34
+      - CN_35
       - CN_36
-      - US_37
-      - KR_38
+      - CN_37
+      - CN_38
       - US_39
-      - RU_40
-      - CN_41
-      - CN_42
-      - CN_43
-      - CN_44
-      - CN_45
-      - CN_46
-      - US_47
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - CA_1
-      - GB_2
-      - US_3
-      - GB_4
-      - KR_5
-      - US_6
-      - UA_7
-      - DE_8
-      - US_9
-      - CN_10
+      - US_1
+      - US_2
+      - UA_3
+      - DE_4
+      - CN_5
+      - CN_6
+      - SG_7
+      - SG_8
+      - SG_9
+      - SG_10
       - JP_11
-      - CN_12
+      - SG_12
       - SG_13
-      - SG_14
-      - SG_15
-      - SG_16
-      - JP_17
-      - SG_18
-      - SG_19
-      - JP_20
-      - FR_21
-      - US_22
-      - AL_23
+      - JP_14
+      - FR_15
+      - US_16
+      - AL_17
+      - US_18
+      - US_19
+      - GB_20
+      - US_21
+      - KR_22
+      - KR_23
       - US_24
-      - US_25
-      - GB_26
-      - US_27
-      - KR_28
-      - KR_29
+      - CN_25
+      - CN_26
+      - FR_27
+      - FR_28
+      - CN_29
       - US_30
-      - CN_31
-      - CN_32
-      - FR_33
-      - US_34
-      - FR_35
+      - US_31
+      - RU_32
+      - CN_33
+      - CN_34
+      - CN_35
       - CN_36
-      - US_37
-      - KR_38
+      - CN_37
+      - CN_38
       - US_39
-      - RU_40
-      - CN_41
-      - CN_42
-      - CN_43
-      - CN_44
-      - CN_45
-      - CN_46
-      - US_47
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - CA_1
-      - GB_2
-      - US_3
-      - GB_4
-      - KR_5
-      - US_6
-      - UA_7
-      - DE_8
-      - US_9
-      - CN_10
+      - US_1
+      - US_2
+      - UA_3
+      - DE_4
+      - CN_5
+      - CN_6
+      - SG_7
+      - SG_8
+      - SG_9
+      - SG_10
       - JP_11
-      - CN_12
+      - SG_12
       - SG_13
-      - SG_14
-      - SG_15
-      - SG_16
-      - JP_17
-      - SG_18
-      - SG_19
-      - JP_20
-      - FR_21
-      - US_22
-      - AL_23
+      - JP_14
+      - FR_15
+      - US_16
+      - AL_17
+      - US_18
+      - US_19
+      - GB_20
+      - US_21
+      - KR_22
+      - KR_23
       - US_24
-      - US_25
-      - GB_26
-      - US_27
-      - KR_28
-      - KR_29
+      - CN_25
+      - CN_26
+      - FR_27
+      - FR_28
+      - CN_29
       - US_30
-      - CN_31
-      - CN_32
-      - FR_33
-      - US_34
-      - FR_35
+      - US_31
+      - RU_32
+      - CN_33
+      - CN_34
+      - CN_35
       - CN_36
-      - US_37
-      - KR_38
+      - CN_37
+      - CN_38
       - US_39
-      - RU_40
-      - CN_41
-      - CN_42
-      - CN_43
-      - CN_44
-      - CN_45
-      - CN_46
-      - US_47
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - CA_1
-      - GB_2
-      - US_3
-      - GB_4
-      - KR_5
-      - US_6
-      - UA_7
-      - DE_8
-      - US_9
-      - CN_10
+      - US_1
+      - US_2
+      - UA_3
+      - DE_4
+      - CN_5
+      - CN_6
+      - SG_7
+      - SG_8
+      - SG_9
+      - SG_10
       - JP_11
-      - CN_12
+      - SG_12
       - SG_13
-      - SG_14
-      - SG_15
-      - SG_16
-      - JP_17
-      - SG_18
-      - SG_19
-      - JP_20
-      - FR_21
-      - US_22
-      - AL_23
+      - JP_14
+      - FR_15
+      - US_16
+      - AL_17
+      - US_18
+      - US_19
+      - GB_20
+      - US_21
+      - KR_22
+      - KR_23
       - US_24
-      - US_25
-      - GB_26
-      - US_27
-      - KR_28
-      - KR_29
+      - CN_25
+      - CN_26
+      - FR_27
+      - FR_28
+      - CN_29
       - US_30
-      - CN_31
-      - CN_32
-      - FR_33
-      - US_34
-      - FR_35
+      - US_31
+      - RU_32
+      - CN_33
+      - CN_34
+      - CN_35
       - CN_36
-      - US_37
-      - KR_38
+      - CN_37
+      - CN_38
       - US_39
-      - RU_40
-      - CN_41
-      - CN_42
-      - CN_43
-      - CN_44
-      - CN_45
-      - CN_46
-      - US_47
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - CA_1
-      - GB_2
-      - US_3
-      - GB_4
-      - KR_5
-      - US_6
-      - UA_7
-      - DE_8
-      - US_9
-      - CN_10
+      - US_1
+      - US_2
+      - UA_3
+      - DE_4
+      - CN_5
+      - CN_6
+      - SG_7
+      - SG_8
+      - SG_9
+      - SG_10
       - JP_11
-      - CN_12
+      - SG_12
       - SG_13
-      - SG_14
-      - SG_15
-      - SG_16
-      - JP_17
-      - SG_18
-      - SG_19
-      - JP_20
-      - FR_21
-      - US_22
-      - AL_23
+      - JP_14
+      - FR_15
+      - US_16
+      - AL_17
+      - US_18
+      - US_19
+      - GB_20
+      - US_21
+      - KR_22
+      - KR_23
       - US_24
-      - US_25
-      - GB_26
-      - US_27
-      - KR_28
-      - KR_29
+      - CN_25
+      - CN_26
+      - FR_27
+      - FR_28
+      - CN_29
       - US_30
-      - CN_31
-      - CN_32
-      - FR_33
-      - US_34
-      - FR_35
+      - US_31
+      - RU_32
+      - CN_33
+      - CN_34
+      - CN_35
       - CN_36
-      - US_37
-      - KR_38
+      - CN_37
+      - CN_38
       - US_39
-      - RU_40
-      - CN_41
-      - CN_42
-      - CN_43
-      - CN_44
-      - CN_45
-      - CN_46
-      - US_47
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - CA_1
-      - GB_2
-      - US_3
-      - GB_4
-      - KR_5
-      - US_6
-      - UA_7
-      - DE_8
-      - US_9
-      - CN_10
+      - US_1
+      - US_2
+      - UA_3
+      - DE_4
+      - CN_5
+      - CN_6
+      - SG_7
+      - SG_8
+      - SG_9
+      - SG_10
       - JP_11
-      - CN_12
+      - SG_12
       - SG_13
-      - SG_14
-      - SG_15
-      - SG_16
-      - JP_17
-      - SG_18
-      - SG_19
-      - JP_20
-      - FR_21
-      - US_22
-      - AL_23
+      - JP_14
+      - FR_15
+      - US_16
+      - AL_17
+      - US_18
+      - US_19
+      - GB_20
+      - US_21
+      - KR_22
+      - KR_23
       - US_24
-      - US_25
-      - GB_26
-      - US_27
-      - KR_28
-      - KR_29
+      - CN_25
+      - CN_26
+      - FR_27
+      - FR_28
+      - CN_29
       - US_30
-      - CN_31
-      - CN_32
-      - FR_33
-      - US_34
-      - FR_35
+      - US_31
+      - RU_32
+      - CN_33
+      - CN_34
+      - CN_35
       - CN_36
-      - US_37
-      - KR_38
+      - CN_37
+      - CN_38
       - US_39
-      - RU_40
-      - CN_41
-      - CN_42
-      - CN_43
-      - CN_44
-      - CN_45
-      - CN_46
-      - US_47
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -470,53 +414,45 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - CA_1
-      - GB_2
-      - US_3
-      - GB_4
-      - KR_5
-      - US_6
-      - UA_7
-      - DE_8
-      - US_9
-      - CN_10
+      - US_1
+      - US_2
+      - UA_3
+      - DE_4
+      - CN_5
+      - CN_6
+      - SG_7
+      - SG_8
+      - SG_9
+      - SG_10
       - JP_11
-      - CN_12
+      - SG_12
       - SG_13
-      - SG_14
-      - SG_15
-      - SG_16
-      - JP_17
-      - SG_18
-      - SG_19
-      - JP_20
-      - FR_21
-      - US_22
-      - AL_23
+      - JP_14
+      - FR_15
+      - US_16
+      - AL_17
+      - US_18
+      - US_19
+      - GB_20
+      - US_21
+      - KR_22
+      - KR_23
       - US_24
-      - US_25
-      - GB_26
-      - US_27
-      - KR_28
-      - KR_29
+      - CN_25
+      - CN_26
+      - FR_27
+      - FR_28
+      - CN_29
       - US_30
-      - CN_31
-      - CN_32
-      - FR_33
-      - US_34
-      - FR_35
+      - US_31
+      - RU_32
+      - CN_33
+      - CN_34
+      - CN_35
       - CN_36
-      - US_37
-      - KR_38
+      - CN_37
+      - CN_38
       - US_39
-      - RU_40
-      - CN_41
-      - CN_42
-      - CN_43
-      - CN_44
-      - CN_45
-      - CN_46
-      - US_47
 
 rules:
 # 本地/局域网地址
