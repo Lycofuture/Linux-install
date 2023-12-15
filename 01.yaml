@@ -1,9 +1,9 @@
 ####################################
 # 创建者：v2rayse.com
 # 客户端：Clash.Meta
-# 创建时间：2023-12-14 19:12:55
+# 创建时间：2023-12-15 10:20:52
 # 使用模版：V2RaySE 默认模版
-# 节点数量：81
+# 节点数量：70
 ####################################
 # !!当前配置文件请使用基于 Clash.Meta 内核程序
 mixed-port: 7890
@@ -86,48 +86,50 @@ dns:
       - 0.0.0.0/32
 
 proxies:
+  - {"name":"JP_隧道中转_1","type":"trojan","server":"jp1.djjsvip.cfd","port":443,"udp":true,"password":"94fe4445-fc3f-4dd4-9bac-438b54f994c9","sni":"download.xn--mes358acgm99l.com","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"TW_隧道中转_24","type":"vmess","server":"nb21.ntbq.dynu.net","port":443,"cipher":"auto","uuid":"44c8ddcc-5d3c-44b1-9250-eff4c8e2b903","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/b21","headers":{"host":"nb21.ntbq.dynu.net"}}}
+  - {"name":"TW_隧道中转_30","type":"trojan","server":"download1tw.windowsupdatea.com","port":443,"udp":true,"password":"e9391493-54bf-4fff-b6c5-945dc7442971","sni":"glc-tw1.windowsupdatea.com","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"TW_隧道中转_32","type":"vmess","server":"b12.spwvpn.link","port":443,"cipher":"auto","uuid":"44c8ddcc-5d3c-44b1-9250-eff4c8e2b903","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/b12","headers":{"host":"b12.spwvpn.link"}}}
+  - {"name":"TW_隧道中转_33","type":"vmess","server":"b13.spwvpn.link","port":443,"cipher":"auto","uuid":"44c8ddcc-5d3c-44b1-9250-eff4c8e2b903","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/b13","headers":{"host":"b13.spwvpn.link"}}}
+  - {"name":"CN_隧道中转_34","type":"vmess","server":"120.233.43.33","port":16620,"cipher":"auto","uuid":"c2c76420-257f-492a-b20f-6560f3bfa78d","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"d4d028243c73047d9171bacb9b0439e8.mobgslb.tbcache.com"}}}
+  - {"name":"HK_隧道中转_35","type":"trojan","server":"download2hkt.windowsupdatea.com","port":443,"udp":true,"password":"e9391493-54bf-4fff-b6c5-945dc7442971","sni":"glc-hkt2.windowsupdatea.com","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"HK_隧道中转_37","type":"trojan","server":"download1hkt.windowsupdatea.com","port":443,"udp":true,"password":"e9391493-54bf-4fff-b6c5-945dc7442971","sni":"glc-hkt1.windowsupdatea.com","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"US_幻魔_3","type":"vmess","server":"xxx1.forwardv2raytelegramchannel.fun","port":2095,"cipher":"auto","uuid":"4616c742-65ed-41d6-b5a9-70ae57649922","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@M3HDIO1"}}
+  - {"name":"US_幻魔_4","type":"vmess","server":"xxx1.forwardv2raytelegramchannel.fun","port":2086,"cipher":"auto","uuid":"6dfdee17-27aa-4fb1-a883-c7361ab64537","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@M3HDIO1"}}
+  - {"name":"US_幻魔_5","type":"vmess","server":"xxx1.forwardv2raytelegramchannel.fun","port":2082,"cipher":"auto","uuid":"0d4e062b-3645-4574-b8cf-1c6b05cd3057","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@M3HDIO1"}}
+  - {"name":"US_幻魔_6","type":"vmess","server":"xxx1.forwardv2raytelegramchannel.fun","port":2052,"cipher":"auto","uuid":"cb2197af-6766-4d4d-8fa0-0ec448ee4ac2","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@M3HDIO1"}}
+  - {"name":"US_幻魔_7","type":"vmess","server":"xxx1.forwardv2raytelegramchannel.fun","port":8880,"cipher":"auto","uuid":"1fa6f2b6-26d2-4010-a906-46904455520c","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@M3HDIO1"}}
+  - {"name":"US_幻魔_8","type":"vmess","server":"xxx1.forwardv2raytelegramchannel.fun","port":8080,"cipher":"auto","uuid":"959a2205-966d-4e47-b014-468bd2030eab","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@M3HDIO1"}}
+  - {"name":"US_幻魔_9","type":"vmess","server":"xxx1.forwardv2raytelegramchannel.fun","port":80,"cipher":"auto","uuid":"c50b9e71-87c4-4592-8716-1aa87d275670","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@M3HDIO1"}}
+  - {"name":"US_幻魔_10","type":"vmess","server":"xxx1.forwardv2raytelegramchannel.fun","port":2083,"cipher":"auto","uuid":"82148100-fb60-48bc-b747-553ae8938099","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@M3HDIO1"}}
+  - {"name":"US_幻魔_11","type":"vmess","server":"xxx1.forwardv2raytelegramchannel.fun","port":8443,"cipher":"auto","uuid":"f657b587-359c-495a-a7c0-820bde2ad680","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/@M3HDIO1"}}
+  - {"name":"CN_77","type":"trojan","server":"other.kunlun-ppg.com","port":10845,"udp":true,"password":"0b43019c-2831-4234-83ee-b50b44d0bdc8","sni":"alibaba-node.cn","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"CN_85","type":"trojan","server":"other.kunlun-ppg.com","port":10844,"udp":true,"password":"0b43019c-2831-4234-83ee-b50b44d0bdc8","sni":"alibaba-node.cn","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"CN_630","type":"trojan","server":"other.kunlun-ppg.com","port":10841,"udp":true,"password":"0b43019c-2831-4234-83ee-b50b44d0bdc8","sni":"alibaba-node.cn","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"CN_642","type":"trojan","server":"other.kunlun-ppg.com","port":10836,"udp":true,"password":"0b43019c-2831-4234-83ee-b50b44d0bdc8","sni":"alibaba-node.cn","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"US_777","type":"ss","server":"52.33.95.19","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
+  - {"name":"DE_隧道中转_2","type":"trojan","server":"213.202.216.14","port":443,"udp":true,"password":"94fe4445-fc3f-4dd4-9bac-438b54f994c9","sni":"downloadde.xn--mes358acgm99l.com","skip-cert-verify":true,"network":"tcp"}
+  - {"name":"JP_隧道中转_3","type":"trojan","server":"jp2.djjsvip.cfd","port":443,"udp":true,"password":"94fe4445-fc3f-4dd4-9bac-438b54f994c9","sni":"download.xn--mes358acgm99l.com","skip-cert-verify":true,"network":"tcp"}
   - {"name":"BY_1","type":"ss","server":"178.172.217.15","port":51348,"password":"wCaozrFeyIc19uHTc3sQqhPfy35IwsJGJ1BBhbS7qH4JLZDj","cipher":"chacha20-ietf-poly1305"}
   - {"name":"FR_2","type":"ss","server":"135.125.172.139","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
   - {"name":"FR_3","type":"ss","server":"135.125.172.153","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
-  - {"name":"FR_4","type":"ss","server":"57.128.32.79","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
-  - {"name":"GB_5","type":"ss","server":"46.250.237.91","port":443,"password":"OjX8SBwAwXLL4onQw0Bt2s","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"JP_6","type":"ss","server":"52.195.170.51","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"KR_7","type":"ss","server":"43.201.104.144","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"KR_8","type":"ss","server":"43.201.110.52","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"KR_9","type":"ss","server":"43.201.46.242","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"KR_10","type":"ss","server":"43.202.56.250","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"KR_11","type":"ss","server":"52.78.207.28","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"LU_12","type":"trojan","server":"188.42.145.182","port":443,"udp":true,"password":"097f6b5f-bcf9-4a24-9f0d-d1feaa638d86","sni":"3jp5.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/jp5","headers":{"host":"3jp5.pqjc.buzz"}}}
-  - {"name":"FR_13","type":"ss","server":"146.59.111.185","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
   - {"name":"SG_14","type":"ss","server":"13.250.30.209","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"SG_15","type":"ss","server":"52.221.217.97","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"US_16","type":"trojan","server":"209.46.30.215","port":443,"udp":true,"password":"097f6b5f-bcf9-4a24-9f0d-d1feaa638d86","sni":"2jp3.pqjc.buzz","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/pq/jp3","headers":{"host":"2jp3.pqjc.buzz"}}}
-  - {"name":"US_17","type":"ss","server":"52.33.95.19","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"US_18","type":"ss","server":"54.70.3.6","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"SG_19","type":"ss","server":"13.212.204.117","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"KR_20","type":"ss","server":"43.201.53.4","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"KR_21","type":"ss","server":"43.202.3.93","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"SG_22","type":"ss","server":"52.221.191.251","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"DE_23","type":"vmess","server":"85.208.104.22","port":40400,"cipher":"auto","uuid":"eb6f75a1-3cee-4935-c76c-115114a36c09","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/eb6f75a1"}}
-  - {"name":"CA_24","type":"vmess","server":"142.171.136.39","port":56536,"cipher":"auto","uuid":"60b09967-1069-469b-a4b2-8aa1744d0175","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/60b09967"}}
-  - {"name":"US_25","type":"trojan","server":"50.112.229.201","port":22222,"udp":true,"password":"telegram-id-directvpn","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SG_26","type":"ss","server":"13.212.204.117","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"SG_27","type":"ss","server":"18.142.250.63","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"SG_28","type":"ss","server":"52.221.200.66","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"SG_29","type":"ss","server":"13.250.125.29","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"DE_30","type":"vmess","server":"85.208.104.22","port":40400,"cipher":"auto","uuid":"eb6f75a1-3cee-4935-c76c-115114a36c09","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/eb6f75a1"}}
-  - {"name":"CA_31","type":"vmess","server":"142.171.136.39","port":56536,"cipher":"auto","uuid":"60b09967-1069-469b-a4b2-8aa1744d0175","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/60b09967"}}
-  - {"name":"GB_32","type":"ss","server":"46.250.237.91","port":443,"password":"OjX8SBwAwXLL4onQw0Bt2s","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"HK_33","type":"vmess","server":"47.242.109.138","port":443,"cipher":"auto","uuid":"9dc41e4b-53a8-a442-e911-4bc5f490f2cd","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/myblog"}}
   - {"name":"FR_34","type":"ss","server":"51.158.195.96","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
-  - {"name":"US_35","type":"ss","server":"52.33.95.19","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
   - {"name":"CN_36","type":"ss","server":"125.88.212.59","port":33567,"password":"56633687-3c35-4bae-9a15-efff8eb67f98","cipher":"chacha20-ietf-poly1305"}
   - {"name":"DE_37","type":"ss","server":"89.187.169.38","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
-  - {"name":"SG_38","type":"trojan","server":"45.32.124.52","port":443,"udp":true,"password":"eb2e1cf1-ed01-4392-9c9f-ec0ea37c7221","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"DE_39","type":"vless","server":"116.203.126.111","port":6006,"udp":true,"uuid":"9789674e-6903-415a-ba07-1db4d207607c","tls":true,"servername":"lit.dev","network":"tcp","reality-opts":{"public-key":"xjsFF_ujrEnqVcR8pbV4aAnHHInbUJ9epkbT76d_7Fc","short-id":"9e20a9863c3c8d7d"},"client-fingerprint":"chrome"}
   - {"name":"US_40","type":"vless","server":"5.161.198.1","port":6006,"udp":true,"uuid":"9789674e-6903-415a-ba07-1db4d207607c","tls":true,"servername":"lit.dev","network":"tcp","reality-opts":{"public-key":"xjsFF_ujrEnqVcR8pbV4aAnHHInbUJ9epkbT76d_7Fc","short-id":"9e20a9863c3c8d7d"},"client-fingerprint":"chrome"}
   - {"name":"SE_41","type":"vless","server":"13.50.244.179","port":8443,"udp":true,"uuid":"f553d0ca-701d-4f95-90e9-2851d055291e","tls":true,"servername":"www.makers.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"yf2etABxrsgZA39WKB4FKGbbpx6s9kvhqcTKH1C7El8","short-id":"3c"},"client-fingerprint":"chrome"}
-  - {"name":"SE_42","type":"vless","server":"13.48.6.143","port":8443,"udp":true,"uuid":"f553d0ca-701d-4f95-90e9-2851d055291e","tls":true,"servername":"www.makers.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"HXdn7Iaw_2Sst44AWbxzwhDEl5AOctcxgbgENoFcRyY","short-id":"3c"},"client-fingerprint":"chrome"}
   - {"name":"SE_43","type":"vless","server":"16.16.216.183","port":8443,"udp":true,"uuid":"f553d0ca-701d-4f95-90e9-2851d055291e","tls":true,"servername":"www.makers.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"blermiuK2ipP6IVGMjaoZVUoFlRoWErTzT6Fy5aQ_zE","short-id":"3c"},"client-fingerprint":"chrome"}
   - {"name":"SE_44","type":"vless","server":"16.171.68.104","port":8443,"udp":true,"uuid":"f553d0ca-701d-4f95-90e9-2851d055291e","tls":true,"servername":"www.makers.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"GXKIIr17WrXhs2CVdF3UEn9v38KA8TfOeXRIkW0LsmM","short-id":"3c"},"client-fingerprint":"chrome"}
   - {"name":"CN_45","type":"ss","server":"k5sq2cvklnxipx3g.jichangjingxuan.com","port":51002,"password":"cc05f21d-238f-4fdb-abe0-ed07fcc6b360","cipher":"aes-128-gcm"}
@@ -135,28 +137,15 @@ proxies:
   - {"name":"SG_47","type":"trojan","server":"185.230.245.212","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
   - {"name":"SG_48","type":"trojan","server":"185.230.245.213","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
   - {"name":"SG_49","type":"trojan","server":"185.230.245.211","port":3306,"udp":true,"password":"d07a02a06191c99f","sni":"n2.gladns.com","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/gateway/connect","headers":{"host":"TG.WangCai2"}}}
-  - {"name":"FR_50","type":"ss","server":"135.125.172.153","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
-  - {"name":"FR_51","type":"ss","server":"135.125.172.139","port":443,"password":"asdKkaskJKfnsa","cipher":"aes-256-cfb"}
   - {"name":"CN_52","type":"vmess","server":"82.156.229.205","port":8080,"cipher":"auto","uuid":"2910049a-6a62-4cb8-d2aa-4bbccf7cb8bb","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/vtwo","headers":{"host":"82.156.229.205"}}}
   - {"name":"CN_53","type":"ss","server":"183.236.51.20","port":27260,"password":"c0c85654-646c-48f8-9141-ba9b70d0c928","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"KR_54","type":"vless","server":"kr2.wbno1.xyz","port":26103,"udp":true,"uuid":"e5589394-b6fa-436b-9c88-6e8a1d2308f9","tls":true,"servername":"rox.gnjoy.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"x52Kuzh5K_ot6Uz6V7SdB0KN-gprZUocAFDU9DCT6jI","short-id":"59eb0af8"},"client-fingerprint":"chrome"}
   - {"name":"KR_55","type":"vless","server":"2500m.seoul.node.yljc.online","port":443,"udp":true,"uuid":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","tls":true,"servername":"www.oracle.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"yhyFU_eBwXa7LEnHVLq099MJa0Gid6RQ7Mq1ZqC8rms","short-id":"47597714b20b56a2"},"client-fingerprint":"ios"}
   - {"name":"GB_56","type":"vless","server":"singapore1-2500m.yljc.online","port":443,"udp":true,"uuid":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","tls":true,"servername":"www.oracle.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"yhyFU_eBwXa7LEnHVLq099MJa0Gid6RQ7Mq1ZqC8rms","short-id":"47597714b20b56a2"},"client-fingerprint":"safari"}
   - {"name":"GB_57","type":"vless","server":"singapore3-500m.yljc.online","port":443,"udp":true,"uuid":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","tls":true,"servername":"www.oracle.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"yhyFU_eBwXa7LEnHVLq099MJa0Gid6RQ7Mq1ZqC8rms","short-id":"47597714b20b56a2"},"client-fingerprint":"safari"}
   - {"name":"GB_58","type":"vless","server":"2500m.frankfurt.node.yljc.online","port":443,"udp":true,"uuid":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","tls":true,"servername":"www.oracle.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"yhyFU_eBwXa7LEnHVLq099MJa0Gid6RQ7Mq1ZqC8rms","short-id":"47597714b20b56a2"},"client-fingerprint":"qq"}
-  - {"name":"GB_59","type":"vless","server":"frankfurt2-500m.yljc.online","port":443,"udp":true,"uuid":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","tls":true,"servername":"www.oracle.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"yhyFU_eBwXa7LEnHVLq099MJa0Gid6RQ7Mq1ZqC8rms","short-id":"47597714b20b56a2"},"client-fingerprint":"edge"}
   - {"name":"US_60","type":"vless","server":"do-sanfrancisco1.yljc.online","port":443,"udp":true,"uuid":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","tls":true,"servername":"www.oracle.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"yhyFU_eBwXa7LEnHVLq099MJa0Gid6RQ7Mq1ZqC8rms","short-id":"47597714b20b56a2"},"client-fingerprint":"edge"}
   - {"name":"US_61","type":"vless","server":"do-sanfrancisco2.yljc.online","port":443,"udp":true,"uuid":"c43d01ee-f31e-4d3e-a7a0-c440ce5276e6","tls":true,"servername":"www.oracle.com","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"yhyFU_eBwXa7LEnHVLq099MJa0Gid6RQ7Mq1ZqC8rms","short-id":"47597714b20b56a2"},"client-fingerprint":"firefox"}
-  - {"name":"CN_62","type":"vmess","server":"dnspsdhaitun.ncsuwei.top","port":14000,"cipher":"auto","uuid":"186fd07d-b82d-3007-93bc-84751f2d0027","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/ef483582-6269-468c-93af-c511eccb8a69","headers":{"host":"dnspsdhaitun.ncsuwei.top"}}}
-  - {"name":"CN_63","type":"vmess","server":"dnspsdhaitun.ncsuwei.top","port":13002,"cipher":"auto","uuid":"183ea9e9-c718-3f43-9244-0da1d60b2fcd","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/ef483582-6269-468c-93af-c511eccb8a69","headers":{"host":"dnspsdhaitun.ncsuwei.top"}}}
-  - {"name":"US_64","type":"vless","server":"de4.vlessx.xyz","port":2095,"uuid":"656abef6-704a-44c1-ba87-afab36fdf042","tls":false,"network":"ws","ws-opts":{"path":"TG.【ccbaohe.com】 永久免费机场节点"}}
-  - {"name":"US_65","type":"vless","server":"de4.vlessx.xyz","port":2082,"uuid":"656abef6-704a-44c1-ba87-afab36fdf042","tls":false,"network":"ws","ws-opts":{"path":"TG.【ccbaohe.com】 永久免费机场节点"}}
-  - {"name":"CN_66","type":"vmess","server":"dnspsdhaitun.ncsuwei.top","port":11302,"cipher":"auto","uuid":"186fd07d-b82d-3007-93bc-84751f2d0027","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/ef483582-6269-468c-93af-c512ec2b8a61","headers":{"host":"dnspsdhaitun.ncsuwei.top"}}}
-  - {"name":"CN_67","type":"vmess","server":"dnspsdhaitun.ncsuwei.top","port":14109,"cipher":"auto","uuid":"186fd07d-b82d-3007-93bc-84751f2d0027","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/12e884bf-1622-7ceb-3009-7d47fdfs2f9a5","headers":{"host":"dnspsdhaitun.ncsuwei.top"}}}
-  - {"name":"CA_68","type":"trojan","server":"frontend.kuangbiaoyun.com","port":40003,"udp":true,"password":"57edfecf-5694-4a34-8072-54a4f0636a62","sni":"frontend.kuangbiaoyun.com","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"IT_69","type":"vless","server":"45.84.196.14","port":8443,"udp":true,"uuid":"a09a4046-c48a-4301-80f2-7850ee6ceed2","tls":true,"servername":"www.speedtest.net","flow":"xtls-rprx-vision","network":"tcp","reality-opts":{"public-key":"iKyQ8X8Ktz4Dv5H1dBpEYAyQ_cKPAFjB9HPXZpZrDRI","short-id":"a6b01931"},"client-fingerprint":"chrome"}
   - {"name":"RU_70","type":"vmess","server":"ru.summer123.top","port":443,"cipher":"none","uuid":"6d64ce0c-116d-4986-b47c-2085dfd4bdc8","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/hrpevws"}}
-  - {"name":"RU_71","type":"hysteria2","server":"ru.summer123.top","port":21775,"password":"6d64ce0c-116d-4986-b47c-2085dfd4bdc8","sni":"ru.summer123.top","skip-cert-verify":true}
   - {"name":"FR_72","type":"hysteria","server":"51.158.54.46","port":11926,"sni":"youku.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"Trz2alKwzCImRAXI3nXfpo1ylpHfqOL8s1vageWKoyjjvWeMVs","up":11,"down":55}
   - {"name":"US_73","type":"hysteria","server":"173.234.25.52","port":20164,"sni":"www.microsoft.com","skip-cert-verify":true,"alpn":["h3"],"protocol":"udp","auth_str":"Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F","up":50,"down":100}
   - {"name":"US_74","type":"hysteria2","server":"15.204.49.157","port":4434,"password":"sharecentrepro","sni":"ushy2.sharecentre.online","skip-cert-verify":true}
@@ -173,48 +162,50 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
+      - JP_隧道中转_1
+      - TW_隧道中转_24
+      - TW_隧道中转_30
+      - TW_隧道中转_32
+      - TW_隧道中转_33
+      - CN_隧道中转_34
+      - HK_隧道中转_35
+      - HK_隧道中转_37
+      - US_幻魔_3
+      - US_幻魔_4
+      - US_幻魔_5
+      - US_幻魔_6
+      - US_幻魔_7
+      - US_幻魔_8
+      - US_幻魔_9
+      - US_幻魔_10
+      - US_幻魔_11
+      - CN_77
+      - CN_85
+      - CN_630
+      - CN_642
+      - US_777
+      - DE_隧道中转_2
+      - JP_隧道中转_3
       - BY_1
       - FR_2
       - FR_3
-      - FR_4
-      - GB_5
-      - JP_6
       - KR_7
       - KR_8
-      - KR_9
-      - KR_10
       - KR_11
-      - LU_12
-      - FR_13
       - SG_14
       - SG_15
-      - US_16
-      - US_17
       - US_18
-      - SG_19
       - KR_20
       - KR_21
       - SG_22
-      - DE_23
-      - CA_24
-      - US_25
-      - SG_26
       - SG_27
       - SG_28
       - SG_29
-      - DE_30
-      - CA_31
-      - GB_32
-      - HK_33
       - FR_34
-      - US_35
       - CN_36
       - DE_37
-      - SG_38
-      - DE_39
       - US_40
       - SE_41
-      - SE_42
       - SE_43
       - SE_44
       - CN_45
@@ -222,28 +213,15 @@ proxy-groups:
       - SG_47
       - SG_48
       - SG_49
-      - FR_50
-      - FR_51
       - CN_52
       - CN_53
-      - KR_54
       - KR_55
       - GB_56
       - GB_57
       - GB_58
-      - GB_59
       - US_60
       - US_61
-      - CN_62
-      - CN_63
-      - US_64
-      - US_65
-      - CN_66
-      - CN_67
-      - CA_68
-      - IT_69
       - RU_70
-      - RU_71
       - FR_72
       - US_73
       - US_74
@@ -260,48 +238,50 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
+      - JP_隧道中转_1
+      - TW_隧道中转_24
+      - TW_隧道中转_30
+      - TW_隧道中转_32
+      - TW_隧道中转_33
+      - CN_隧道中转_34
+      - HK_隧道中转_35
+      - HK_隧道中转_37
+      - US_幻魔_3
+      - US_幻魔_4
+      - US_幻魔_5
+      - US_幻魔_6
+      - US_幻魔_7
+      - US_幻魔_8
+      - US_幻魔_9
+      - US_幻魔_10
+      - US_幻魔_11
+      - CN_77
+      - CN_85
+      - CN_630
+      - CN_642
+      - US_777
+      - DE_隧道中转_2
+      - JP_隧道中转_3
       - BY_1
       - FR_2
       - FR_3
-      - FR_4
-      - GB_5
-      - JP_6
       - KR_7
       - KR_8
-      - KR_9
-      - KR_10
       - KR_11
-      - LU_12
-      - FR_13
       - SG_14
       - SG_15
-      - US_16
-      - US_17
       - US_18
-      - SG_19
       - KR_20
       - KR_21
       - SG_22
-      - DE_23
-      - CA_24
-      - US_25
-      - SG_26
       - SG_27
       - SG_28
       - SG_29
-      - DE_30
-      - CA_31
-      - GB_32
-      - HK_33
       - FR_34
-      - US_35
       - CN_36
       - DE_37
-      - SG_38
-      - DE_39
       - US_40
       - SE_41
-      - SE_42
       - SE_43
       - SE_44
       - CN_45
@@ -309,28 +289,15 @@ proxy-groups:
       - SG_47
       - SG_48
       - SG_49
-      - FR_50
-      - FR_51
       - CN_52
       - CN_53
-      - KR_54
       - KR_55
       - GB_56
       - GB_57
       - GB_58
-      - GB_59
       - US_60
       - US_61
-      - CN_62
-      - CN_63
-      - US_64
-      - US_65
-      - CN_66
-      - CN_67
-      - CA_68
-      - IT_69
       - RU_70
-      - RU_71
       - FR_72
       - US_73
       - US_74
@@ -347,48 +314,50 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
+      - JP_隧道中转_1
+      - TW_隧道中转_24
+      - TW_隧道中转_30
+      - TW_隧道中转_32
+      - TW_隧道中转_33
+      - CN_隧道中转_34
+      - HK_隧道中转_35
+      - HK_隧道中转_37
+      - US_幻魔_3
+      - US_幻魔_4
+      - US_幻魔_5
+      - US_幻魔_6
+      - US_幻魔_7
+      - US_幻魔_8
+      - US_幻魔_9
+      - US_幻魔_10
+      - US_幻魔_11
+      - CN_77
+      - CN_85
+      - CN_630
+      - CN_642
+      - US_777
+      - DE_隧道中转_2
+      - JP_隧道中转_3
       - BY_1
       - FR_2
       - FR_3
-      - FR_4
-      - GB_5
-      - JP_6
       - KR_7
       - KR_8
-      - KR_9
-      - KR_10
       - KR_11
-      - LU_12
-      - FR_13
       - SG_14
       - SG_15
-      - US_16
-      - US_17
       - US_18
-      - SG_19
       - KR_20
       - KR_21
       - SG_22
-      - DE_23
-      - CA_24
-      - US_25
-      - SG_26
       - SG_27
       - SG_28
       - SG_29
-      - DE_30
-      - CA_31
-      - GB_32
-      - HK_33
       - FR_34
-      - US_35
       - CN_36
       - DE_37
-      - SG_38
-      - DE_39
       - US_40
       - SE_41
-      - SE_42
       - SE_43
       - SE_44
       - CN_45
@@ -396,28 +365,15 @@ proxy-groups:
       - SG_47
       - SG_48
       - SG_49
-      - FR_50
-      - FR_51
       - CN_52
       - CN_53
-      - KR_54
       - KR_55
       - GB_56
       - GB_57
       - GB_58
-      - GB_59
       - US_60
       - US_61
-      - CN_62
-      - CN_63
-      - US_64
-      - US_65
-      - CN_66
-      - CN_67
-      - CA_68
-      - IT_69
       - RU_70
-      - RU_71
       - FR_72
       - US_73
       - US_74
@@ -433,48 +389,50 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
+      - JP_隧道中转_1
+      - TW_隧道中转_24
+      - TW_隧道中转_30
+      - TW_隧道中转_32
+      - TW_隧道中转_33
+      - CN_隧道中转_34
+      - HK_隧道中转_35
+      - HK_隧道中转_37
+      - US_幻魔_3
+      - US_幻魔_4
+      - US_幻魔_5
+      - US_幻魔_6
+      - US_幻魔_7
+      - US_幻魔_8
+      - US_幻魔_9
+      - US_幻魔_10
+      - US_幻魔_11
+      - CN_77
+      - CN_85
+      - CN_630
+      - CN_642
+      - US_777
+      - DE_隧道中转_2
+      - JP_隧道中转_3
       - BY_1
       - FR_2
       - FR_3
-      - FR_4
-      - GB_5
-      - JP_6
       - KR_7
       - KR_8
-      - KR_9
-      - KR_10
       - KR_11
-      - LU_12
-      - FR_13
       - SG_14
       - SG_15
-      - US_16
-      - US_17
       - US_18
-      - SG_19
       - KR_20
       - KR_21
       - SG_22
-      - DE_23
-      - CA_24
-      - US_25
-      - SG_26
       - SG_27
       - SG_28
       - SG_29
-      - DE_30
-      - CA_31
-      - GB_32
-      - HK_33
       - FR_34
-      - US_35
       - CN_36
       - DE_37
-      - SG_38
-      - DE_39
       - US_40
       - SE_41
-      - SE_42
       - SE_43
       - SE_44
       - CN_45
@@ -482,28 +440,15 @@ proxy-groups:
       - SG_47
       - SG_48
       - SG_49
-      - FR_50
-      - FR_51
       - CN_52
       - CN_53
-      - KR_54
       - KR_55
       - GB_56
       - GB_57
       - GB_58
-      - GB_59
       - US_60
       - US_61
-      - CN_62
-      - CN_63
-      - US_64
-      - US_65
-      - CN_66
-      - CN_67
-      - CA_68
-      - IT_69
       - RU_70
-      - RU_71
       - FR_72
       - US_73
       - US_74
@@ -519,48 +464,50 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
+      - JP_隧道中转_1
+      - TW_隧道中转_24
+      - TW_隧道中转_30
+      - TW_隧道中转_32
+      - TW_隧道中转_33
+      - CN_隧道中转_34
+      - HK_隧道中转_35
+      - HK_隧道中转_37
+      - US_幻魔_3
+      - US_幻魔_4
+      - US_幻魔_5
+      - US_幻魔_6
+      - US_幻魔_7
+      - US_幻魔_8
+      - US_幻魔_9
+      - US_幻魔_10
+      - US_幻魔_11
+      - CN_77
+      - CN_85
+      - CN_630
+      - CN_642
+      - US_777
+      - DE_隧道中转_2
+      - JP_隧道中转_3
       - BY_1
       - FR_2
       - FR_3
-      - FR_4
-      - GB_5
-      - JP_6
       - KR_7
       - KR_8
-      - KR_9
-      - KR_10
       - KR_11
-      - LU_12
-      - FR_13
       - SG_14
       - SG_15
-      - US_16
-      - US_17
       - US_18
-      - SG_19
       - KR_20
       - KR_21
       - SG_22
-      - DE_23
-      - CA_24
-      - US_25
-      - SG_26
       - SG_27
       - SG_28
       - SG_29
-      - DE_30
-      - CA_31
-      - GB_32
-      - HK_33
       - FR_34
-      - US_35
       - CN_36
       - DE_37
-      - SG_38
-      - DE_39
       - US_40
       - SE_41
-      - SE_42
       - SE_43
       - SE_44
       - CN_45
@@ -568,28 +515,15 @@ proxy-groups:
       - SG_47
       - SG_48
       - SG_49
-      - FR_50
-      - FR_51
       - CN_52
       - CN_53
-      - KR_54
       - KR_55
       - GB_56
       - GB_57
       - GB_58
-      - GB_59
       - US_60
       - US_61
-      - CN_62
-      - CN_63
-      - US_64
-      - US_65
-      - CN_66
-      - CN_67
-      - CA_68
-      - IT_69
       - RU_70
-      - RU_71
       - FR_72
       - US_73
       - US_74
@@ -605,48 +539,50 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
+      - JP_隧道中转_1
+      - TW_隧道中转_24
+      - TW_隧道中转_30
+      - TW_隧道中转_32
+      - TW_隧道中转_33
+      - CN_隧道中转_34
+      - HK_隧道中转_35
+      - HK_隧道中转_37
+      - US_幻魔_3
+      - US_幻魔_4
+      - US_幻魔_5
+      - US_幻魔_6
+      - US_幻魔_7
+      - US_幻魔_8
+      - US_幻魔_9
+      - US_幻魔_10
+      - US_幻魔_11
+      - CN_77
+      - CN_85
+      - CN_630
+      - CN_642
+      - US_777
+      - DE_隧道中转_2
+      - JP_隧道中转_3
       - BY_1
       - FR_2
       - FR_3
-      - FR_4
-      - GB_5
-      - JP_6
       - KR_7
       - KR_8
-      - KR_9
-      - KR_10
       - KR_11
-      - LU_12
-      - FR_13
       - SG_14
       - SG_15
-      - US_16
-      - US_17
       - US_18
-      - SG_19
       - KR_20
       - KR_21
       - SG_22
-      - DE_23
-      - CA_24
-      - US_25
-      - SG_26
       - SG_27
       - SG_28
       - SG_29
-      - DE_30
-      - CA_31
-      - GB_32
-      - HK_33
       - FR_34
-      - US_35
       - CN_36
       - DE_37
-      - SG_38
-      - DE_39
       - US_40
       - SE_41
-      - SE_42
       - SE_43
       - SE_44
       - CN_45
@@ -654,28 +590,15 @@ proxy-groups:
       - SG_47
       - SG_48
       - SG_49
-      - FR_50
-      - FR_51
       - CN_52
       - CN_53
-      - KR_54
       - KR_55
       - GB_56
       - GB_57
       - GB_58
-      - GB_59
       - US_60
       - US_61
-      - CN_62
-      - CN_63
-      - US_64
-      - US_65
-      - CN_66
-      - CN_67
-      - CA_68
-      - IT_69
       - RU_70
-      - RU_71
       - FR_72
       - US_73
       - US_74
@@ -708,48 +631,50 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
+      - JP_隧道中转_1
+      - TW_隧道中转_24
+      - TW_隧道中转_30
+      - TW_隧道中转_32
+      - TW_隧道中转_33
+      - CN_隧道中转_34
+      - HK_隧道中转_35
+      - HK_隧道中转_37
+      - US_幻魔_3
+      - US_幻魔_4
+      - US_幻魔_5
+      - US_幻魔_6
+      - US_幻魔_7
+      - US_幻魔_8
+      - US_幻魔_9
+      - US_幻魔_10
+      - US_幻魔_11
+      - CN_77
+      - CN_85
+      - CN_630
+      - CN_642
+      - US_777
+      - DE_隧道中转_2
+      - JP_隧道中转_3
       - BY_1
       - FR_2
       - FR_3
-      - FR_4
-      - GB_5
-      - JP_6
       - KR_7
       - KR_8
-      - KR_9
-      - KR_10
       - KR_11
-      - LU_12
-      - FR_13
       - SG_14
       - SG_15
-      - US_16
-      - US_17
       - US_18
-      - SG_19
       - KR_20
       - KR_21
       - SG_22
-      - DE_23
-      - CA_24
-      - US_25
-      - SG_26
       - SG_27
       - SG_28
       - SG_29
-      - DE_30
-      - CA_31
-      - GB_32
-      - HK_33
       - FR_34
-      - US_35
       - CN_36
       - DE_37
-      - SG_38
-      - DE_39
       - US_40
       - SE_41
-      - SE_42
       - SE_43
       - SE_44
       - CN_45
@@ -757,28 +682,15 @@ proxy-groups:
       - SG_47
       - SG_48
       - SG_49
-      - FR_50
-      - FR_51
       - CN_52
       - CN_53
-      - KR_54
       - KR_55
       - GB_56
       - GB_57
       - GB_58
-      - GB_59
       - US_60
       - US_61
-      - CN_62
-      - CN_63
-      - US_64
-      - US_65
-      - CN_66
-      - CN_67
-      - CA_68
-      - IT_69
       - RU_70
-      - RU_71
       - FR_72
       - US_73
       - US_74
