@@ -1,152 +1,356 @@
-port: 7890
+mixed-port: 7890
+unified-delay: false
+geodata-mode: true
+tcp-concurrent: false
+find-process-mode: strict
+global-client-fingerprint: chrome
+
 allow-lan: true
 mode: rule
 log-level: info
-unified-delay: true
-global-client-fingerprint: chrome
+ipv6: true
+
+external-controller: 127.0.0.1:9090
+
+geox-url:
+  geoip: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: false
+  sniff:
+    TLS:
+      ports: [443]
+    HTTP:
+      ports: [80]
+      override-destination: true
+
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - 'any:53'
+  auto-route: true
+  auto-detect-interface: true
+
 dns:
   enable: true
-  listen: :53
+  listen: 0.0.0.0:1053
   ipv6: true
   enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter:
+    - '*'
+    - '+.lan'
   default-nameserver:
     - 223.5.5.5
-    - 8.8.8.8
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-  fallback:
-    - https://1.0.0.1/dns-query
-    - tls://dns.google
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 240.0.0.0/4
-proxies:
-- name: vless-reality-vision节点
-  type: vless
-  server: 185.77.225.87
-  port: 61885
-  uuid: 79941fc5-955f-482c-95ca-482fee3959f8
-  network: tcp
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: www.yahoo.com
-  reality-opts:
-    public-key: TYuqH5UdiRhXqg8GAGn3IruHdymFghuIe8TlNky8-lM
-    short-id: 14387e0e
-  client-fingerprint: chrome
-- name: vmess-ws节点
-  type: vmess
-  server: 185.77.225.87
-  port: 2052
-  uuid: 79941fc5-955f-482c-95ca-482fee3959f8
-  alterId: 0
-  cipher: auto
-  udp: true
-  tls: false
-  network: ws
-  servername: www.bing.com
-  ws-opts:
-    path: "79941fc5-955f-482c-95ca-482fee3959f8-vm"
-    headers:
-      Host: www.bing.com
-- name: hysteria2节点
-  type: hysteria2
-  server: 185.77.225.87
-  port: 4445
-  password: 79941fc5-955f-482c-95ca-482fee3959f8
-  alpn:
-    - h3
-  sni: www.bing.com
-  skip-cert-verify: true
-  fast-open: true
-- name: tuic5节点
-  server: 185.77.225.87
-  port: 50683
-  type: tuic
-  uuid: 79941fc5-955f-482c-95ca-482fee3959f8
-  password: 79941fc5-955f-482c-95ca-482fee3959f8
-  alpn: [h3]
-  disable-sni: true
-  reduce-rtt: true
-  udp-relay-mode: native
-  congestion-controller: bbr
-  sni: www.bing.com
-  skip-cert-verify: true
-- name: Hys-hy
-  type: hysteria
-  server: 185.77.225.87
-  ports: 47000-48000
-  auth_str: eN3FBCXCJjfyUzUpxlfCfb6ZNSLveBILdtW8P2dTCvl5GQVu2t
-  alpn:
-    - h3
-  protocol: udp
-  up: 11
-  down: 55
-  sni: wechat.com
-  skip-cert-verify: true
-  recv_window_conn: 5767168
-  recv_window: 23068672
-  disable_mtu_discovery: true
-  fast-open: true
-- name: ssr
-  type: ssr
-  server: 185.77.225.87
-  port: 37053
-  password: KDStOaBPYVVpG5Dg
-  cipher: aes-256-cfb
-  obfs: plain
-  protocol: origin
-- name: ss
-  type: ss
-  server: 185.77.225.87
-  port: 56899
-  password: 9rQiI7XQFdaOJxw1
-  cipher: aes-256-gcm
+    - 'tls://8.8.4.4#DNS_Proxy'
+    - 'tls://1.0.0.1#DNS_Proxy'
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query#h3=true
+  nameserver-policy:
+    "geosite:cn,private":
+      - 223.5.5.5
+      - 114.114.114.114
+      - https://dns.alidns.com/dns-query#h3=true
+
+proxy-providers:
+  lkglbtenqc_provider:
+    type: http
+    path: ./lkglbtenqc_provider.yaml
+    url: https://ru.summer123.top/s/clashMeta/f97edc0b98394a049562c2b272e4c7a5
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+
 proxy-groups:
-- name: 负载均衡
-  type: load-balance
-  url: https://cp.cloudflare.com/generate_204
-  interval: 300
-  strategy: round-robin
-  proxies:
-    - vless-reality-vision节点
-    - vmess-ws节点
-    - hysteria2节点
-    - tuic5节点
-    - Hys-hy
-    - ssr
-    - ss
-- name: 自动选择
-  type: url-test
-  url: https://cp.cloudflare.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-    - vless-reality-vision节点
-    - vmess-ws节点
-    - hysteria2节点
-    - tuic5节点
-    - Hys-hy
-    - ssr
-    - ss
-- name: 🌍选择代理节点
-  type: select
-  proxies:
-    - 负载均衡
-    - 自动选择
-    - vless-reality-vision节点
-    - vmess-ws节点
-    - hysteria2节点
-    - tuic5节点
-    - Hys-hy
-    - ssr
-    - ss
+  - name: 手动切换
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies: null
+  - name: 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 36000
+    tolerance: 50
+    use:
+      - lkglbtenqc_provider
+    proxies: null
+
+  - name: 全球代理
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 手动切换
+      - 自动选择
+
+  - name: 流媒体
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 手动切换
+      - 自动选择
+      - DIRECT
+  - name: DNS_Proxy
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 自动选择
+      - DIRECT
+
+  - name: Telegram
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 手动切换
+      - 自动选择
+  - name: Google
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 手动切换
+      - 自动选择
+      - DIRECT
+  - name: YouTube
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 手动切换
+      - 自动选择
+  - name: Netflix
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 流媒体
+      - 手动切换
+      - 自动选择
+  - name: Spotify
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 流媒体
+      - 手动切换
+      - 自动选择
+      - DIRECT
+  - name: HBO
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 流媒体
+      - 手动切换
+      - 自动选择
+  - name: Bing
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 自动选择
+  - name: OpenAI
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 自动选择
+      - 手动切换
+  - name: Disney
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 流媒体
+      - 手动切换
+      - 自动选择
+  - name: GitHub
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - 手动切换
+      - 自动选择
+      - DIRECT
+
+  - name: 国内媒体
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - DIRECT
+  - name: 本地直连
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - DIRECT
+      - 自动选择
+  - name: 漏网之鱼
+    type: select
+    use:
+      - lkglbtenqc_provider
+    proxies:
+      - DIRECT
+      - 手动切换
+      - 自动选择
+rule-providers:
+  lan:
+    type: http
+    behavior: classical
+    interval: 86400
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
+    path: ./Rules/lan.yaml
+  reject:
+    type: http
+    behavior: domain
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt
+    path: ./ruleset/direct.yaml
+    interval: 86400
+  private:
+    type: http
+    behavior: domain
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt
+    path: ./ruleset/private.yaml
+    interval: 86400
+  gfw:
+    type: http
+    behavior: domain
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+  greatfire:
+    type: http
+    behavior: domain
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt
+    path: ./ruleset/greatfire.yaml
+    interval: 86400
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+  applications:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt
+    path: ./ruleset/applications.yaml
+    interval: 86400
+  Disney:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+    path: ./ruleset/disney.yaml
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    path: ./ruleset/netflix.yaml
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    path: ./ruleset/youtube.yaml
+    interval: 86400
+  HBO:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
+    path: ./ruleset/hbo.yaml
+    interval: 86400
+  OpenAI:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    path: ./ruleset/openai.yaml
+    interval: 86400
+  Bing:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
+    path: ./ruleset/bing.yaml
+    interval: 86400
+  Google:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    path: ./ruleset/google.yaml
+    interval: 86400
+  GitHub:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+    path: ./ruleset/github.yaml
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
+    path: ./ruleset/spotify.yaml
+    interval: 86400
+  ChinaMaxDomain:
+    type: http
+    behavior: domain
+    interval: 86400
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml
+    path: ./Rules/ChinaMaxDomain.yaml
+  ChinaMaxIPNoIPv6:
+    type: http
+    behavior: ipcidr
+    interval: 86400
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_IP_No_IPv6.yaml
+    path: ./Rules/ChinaMaxIPNoIPv6.yaml
 rules:
-  - GEOIP,LAN,DIRECT
-  - GEOIP,CN,DIRECT
-  - MATCH,🌍选择代理节点
+  - RULE-SET,YouTube,YouTube,no-resolve
+  - RULE-SET,Google,Google,no-resolve
+  - RULE-SET,GitHub,GitHub
+  - RULE-SET,telegramcidr,Telegram,no-resolve
+  - RULE-SET,Spotify,Spotify,no-resolve
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,HBO,HBO
+  - RULE-SET,Bing,Bing
+  - RULE-SET,OpenAI,OpenAI
+  - RULE-SET,Disney,Disney
+  - RULE-SET,proxy,全球代理
+  - RULE-SET,gfw,全球代理
+  - RULE-SET,applications,本地直连
+  - RULE-SET,ChinaMaxDomain,本地直连
+  - RULE-SET,ChinaMaxIPNoIPv6,本地直连,no-resolve
+  - RULE-SET,lan,本地直连,no-resolve
+  - GEOIP,CN,本地直连
+  - MATCH,漏网之鱼
