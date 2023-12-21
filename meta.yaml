@@ -64,7 +64,7 @@ proxy-providers:
   lkglbtenqc_provider:
     type: http
     path: ./lkglbtenqc_provider.yaml
-    url: https://ru.summer123.top/s/clashMeta/f97edc0b98394a049562c2b272e4c7a5
+    url: https://raw.githubusercontent.com/Lycofuture/Linux-install/main/meta.config
     interval: 3600
     health-check:
       enable: false
