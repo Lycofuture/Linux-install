@@ -64,7 +64,7 @@ proxy-providers:
   lkglbtenqc_provider:
     type: http
     path: ./lkglbtenqc_provider.yaml
-    url: https://raw.githubusercontent.com/Lycofuture/Linux-install/main/meta.config
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Lycofuture/Linux-install/main/meta.config
     interval: 3600
     health-check:
       enable: false
