@@ -124,6 +124,15 @@ proxy-providers:
       enable: false
       url: http://www.gstatic.com/generate_204
       interval: 300
+  CyberAirport:
+    type: http
+    path: ./v2ray.yaml
+    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https://cyberairport.net/api/v1/client/subscribe?token=3d90fa9974dd2c5a15a95c25befe5427&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
 proxy-groups:
   - name: 手动切换
     type: select
@@ -135,6 +144,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies: null
   - name: 自动选择
     type: url-test
@@ -149,6 +159,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies: null
   - name: 全球代理
     type: select
@@ -160,6 +171,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 手动切换
       - 自动选择
@@ -173,6 +185,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 手动切换
       - 自动选择
@@ -187,6 +200,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 自动选择
       - DIRECT
@@ -200,6 +214,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 手动切换
       - 自动选择
@@ -213,6 +228,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 手动切换
       - 自动选择
@@ -227,6 +243,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 手动切换
       - 自动选择
@@ -240,6 +257,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 流媒体
       - 手动切换
@@ -254,6 +272,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 流媒体
       - 手动切换
@@ -269,6 +288,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 流媒体
       - 手动切换
@@ -283,6 +303,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 自动选择
   - name: OpenAI
@@ -295,6 +316,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 自动选择
       - 手动切换
@@ -308,6 +330,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 流媒体
       - 手动切换
@@ -322,6 +345,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - 手动切换
       - 自动选择
@@ -336,6 +360,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - DIRECT
   - name: 本地直连
@@ -348,6 +373,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - DIRECT
       - 自动选择
@@ -361,6 +387,7 @@ proxy-groups:
       - mianfei4
       - mianfei5
       - v2ray
+      - CyberAirport
     proxies:
       - DIRECT
       - 手动切换
