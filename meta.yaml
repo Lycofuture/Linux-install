@@ -70,12 +70,61 @@ proxy-providers:
       enable: false
       url: http://www.gstatic.com/generate_204
       interval: 300
-
+  mianfei:
+    type: http
+    path: ./mianfei.yaml
+    url: https://fku-ppg.co.uk/
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  mianfei2:
+    type: http
+    path: ./mianfei2.yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/mfbpn/tg_mfbpn_sub/main/trial.yaml
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  mianfei3:
+    type: http
+    path: ./mianfei3.yaml
+    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https://raw.githubusercontent.com/Alizhangs/kuaileshiguang/main/README.md&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  mianfei4:
+    type: http
+    path: ./mianfei4.yaml
+    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https://jiang.netlify.app/&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  mianfei5:
+    type: http
+    path: ./mianfei5.yaml
+    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https://api.yebekhe.link/telegramDonated/&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
 proxy-groups:
   - name: 手动切换
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies: null
   - name: 自动选择
     type: url-test
@@ -84,12 +133,22 @@ proxy-groups:
     tolerance: 50
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies: null
 
   - name: 全球代理
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 手动切换
       - 自动选择
@@ -98,6 +157,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 手动切换
       - 自动选择
@@ -106,6 +170,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 自动选择
       - DIRECT
@@ -114,6 +183,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 手动切换
       - 自动选择
@@ -121,6 +195,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 手动切换
       - 自动选择
@@ -129,6 +208,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 手动切换
       - 自动选择
@@ -136,6 +220,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 流媒体
       - 手动切换
@@ -144,6 +233,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 流媒体
       - 手动切换
@@ -153,6 +247,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 流媒体
       - 手动切换
@@ -161,12 +260,22 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 自动选择
   - name: OpenAI
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 自动选择
       - 手动切换
@@ -174,6 +283,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 流媒体
       - 手动切换
@@ -182,6 +296,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - 手动切换
       - 自动选择
@@ -191,12 +310,22 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - DIRECT
   - name: 本地直连
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - DIRECT
       - 自动选择
@@ -204,6 +333,11 @@ proxy-groups:
     type: select
     use:
       - lkglbtenqc_provider
+      - mianfei
+      - mianfei2
+      - mianfei3
+      - mianfei4
+      - mianfei5
     proxies:
       - DIRECT
       - 手动切换
