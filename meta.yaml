@@ -161,9 +161,12 @@ proxy-groups:
       - v2ray
       - CyberAirport
     proxies: null
-  - name: 全球代理
-    type: select
-    use:
+  - name: 负载均衡
+    type: load-balance
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    strategy: round-robin
+    proxies:
       - lkglbtenqc_provider
       - mianfei
       - mianfei2
@@ -172,226 +175,46 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
-    proxies:
-      - 手动切换
-      - 自动选择
-  - name: 流媒体
+  - name: lkglbtenqc_provider
     type: select
     use:
       - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 手动切换
-      - 自动选择
-      - DIRECT
-  - name: DNS_Proxy
+    proxies: null
+  - name: mianfei
     type: select
     use:
-      - lkglbtenqc_provider
       - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 自动选择
-      - DIRECT
-  - name: Telegram
+    proxies: null
+  - name: mianfei2
     type: select
     use:
-      - lkglbtenqc_provider
-      - mianfei
       - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 手动切换
-      - 自动选择
-  - name: Google
+    proxies: null
+  - name: mianfei3
     type: select
     use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
       - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 手动切换
-      - 自动选择
-      - DIRECT
-  - name: YouTube
+    proxies: null
+  - name: mianfei4
     type: select
     use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
       - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 手动切换
-      - 自动选择
-  - name: Netflix
+    proxies: null
+  - name: mianfei5
     type: select
     use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
       - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 流媒体
-      - 手动切换
-      - 自动选择
-  - name: Spotify
+    proxies: null
+  - name: v2ray
     type: select
     use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
       - v2ray
-      - CyberAirport
-    proxies:
-      - 流媒体
-      - 手动切换
-      - 自动选择
-      - DIRECT
-  - name: HBO
+    proxies: null
+  - name: CyberAirport
     type: select
     use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
       - CyberAirport
-    proxies:
-      - 流媒体
-      - 手动切换
-      - 自动选择
-  - name: Bing
-    type: select
-    use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 自动选择
-  - name: OpenAI
-    type: select
-    use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 自动选择
-      - 手动切换
-  - name: Disney
-    type: select
-    use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 流媒体
-      - 手动切换
-      - 自动选择
-  - name: GitHub
-    type: select
-    use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - 手动切换
-      - 自动选择
-      - DIRECT
-  - name: 国内媒体
-    type: select
-    use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - DIRECT
-  - name: 本地直连
-    type: select
-    use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - DIRECT
-      - 自动选择
-  - name: 漏网之鱼
-    type: select
-    use:
-      - lkglbtenqc_provider
-      - mianfei
-      - mianfei2
-      - mianfei3
-      - mianfei4
-      - mianfei5
-      - v2ray
-      - CyberAirport
-    proxies:
-      - DIRECT
-      - 手动切换
-      - 自动选择
+    proxies: null
 rule-providers:
   lan:
     type: http
@@ -520,21 +343,11 @@ rule-providers:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_IP_No_IPv6.yaml
     path: ./Rules/ChinaMaxIPNoIPv6.yaml
 rules:
-  - RULE-SET,YouTube,YouTube,no-resolve
-  - RULE-SET,Google,Google,no-resolve
-  - RULE-SET,GitHub,GitHub
-  - RULE-SET,telegramcidr,Telegram,no-resolve
-  - RULE-SET,Spotify,Spotify,no-resolve
-  - RULE-SET,Netflix,Netflix
-  - RULE-SET,HBO,HBO
-  - RULE-SET,Bing,Bing
-  - RULE-SET,OpenAI,OpenAI
-  - RULE-SET,Disney,Disney
-  - RULE-SET,proxy,全球代理
-  - RULE-SET,gfw,全球代理
-  - RULE-SET,applications,本地直连
-  - RULE-SET,ChinaMaxDomain,本地直连
-  - RULE-SET,ChinaMaxIPNoIPv6,本地直连,no-resolve
-  - RULE-SET,lan,本地直连,no-resolve
-  - GEOIP,CN,本地直连
-  - MATCH,漏网之鱼
+  - DOMAIN-SUFFIX,google.com,auto
+  - DOMAIN-KEYWORD,ad,REJECT
+  - GEOSITE,google,proxy
+  - GEOSITE,cn,DIRECT
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - GEOIP,lan,DIRECT,no-resolve
+  - MATCH,auto
