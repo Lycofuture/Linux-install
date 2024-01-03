@@ -347,4 +347,4 @@ rules:
   - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - GEOIP,lan,DIRECT,no-resolve
-  - MATCH,手动选择
+  - MATCH,手动切换
