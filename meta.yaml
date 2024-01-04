@@ -145,7 +145,9 @@ proxy-providers:
 proxy-groups:
   - name: 手动切换
     type: select
-    use:
+    use: null
+    proxies: 
+      - 自动选择
       - lkglbtenqc_provider
       - mianfei
       - mianfei2
@@ -154,14 +156,13 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
-      - mianfei6
-    proxies: null
   - name: 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 36000
     tolerance: 50
-    use:
+    use: null
+    proxies: 
       - lkglbtenqc_provider
       - mianfei
       - mianfei2
@@ -170,8 +171,6 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
-      - mianfei6
-    proxies: null
   - name: 负载均衡
     type: load-balance
     url: https://cp.cloudflare.com/generate_204
@@ -186,7 +185,8 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
-      - mianfei6
+      - 自动选择
+      - 手动切换
   - name: lkglbtenqc_provider
     type: select
     use:
@@ -226,11 +226,6 @@ proxy-groups:
     type: select
     use:
       - CyberAirport
-    proxies: null
-  - name: mianfei6
-    type: select
-    use:
-      - mianfei6
     proxies: null
 rule-providers:
   lan:
@@ -360,8 +355,21 @@ rule-providers:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_IP_No_IPv6.yaml
     path: ./Rules/ChinaMaxIPNoIPv6.yaml
 rules:
-  - GEOSITE,cn,DIRECT
-  - GEOIP,LAN,DIRECT
-  - GEOIP,CN,DIRECT
-  - GEOIP,lan,DIRECT,no-resolve
-  - MATCH,手动切换
+  - RULE-SET,YouTube,手动切换,均衡负载,no-resolve
+  - RULE-SET,Google,手动切换,均衡负载,no-resolve
+  - RULE-SET,GitHub,手动切换,均衡负载
+  - RULE-SET,telegramcidr,手动切换,均衡负载,no-resolve
+  - RULE-SET,Spotify,手动切换,均衡负载no-resolve
+  - RULE-SET,Netflix,手动切换,均衡负载
+  - RULE-SET,HBO,手动切换,均衡负载
+  - RULE-SET,Bing,手动切换,均衡负载
+  - RULE-SET,OpenAI,手动切换,均衡负载
+  - RULE-SET,Disney,手动切换,均衡负载
+  - RULE-SET,proxy,手动切换,均衡负载
+  - RULE-SET,gfw,手动切换,均衡负载
+  - RULE-SET,applications,手动切换,均衡负载
+  - RULE-SET,ChinaMaxDomain,手动切换,均衡负载
+  - RULE-SET,ChinaMaxIPNoIPv6,手动切换,均衡负载,no-resolve
+  - RULE-SET,lan,手动切换,均衡负载,no-resolve
+  - GEOIP,CN,手动切换,均衡负载
+  - MATCH,手动切换,均衡负载
