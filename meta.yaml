@@ -115,6 +115,15 @@ proxy-providers:
       enable: false
       url: http://www.gstatic.com/generate_204
       interval: 300
+  mianfei6:
+    type: http
+    path: ./mianfei6.yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/thuhollow2/cn/fab0df1c36dc0258ab4e9ee6f9d5eb54df2559bb/Clash.Meta/clashmconfig2.yaml
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
   v2ray:
     type: http
     path: ./v2ray.yaml
@@ -126,17 +135,8 @@ proxy-providers:
       interval: 300
   CyberAirport:
     type: http
-    path: ./v2ray.yaml
+    path: ./CyberAirport.yaml
     url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https://cyberairport.net/api/v1/client/subscribe?token=3d90fa9974dd2c5a15a95c25befe5427&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini
-    interval: 3600
-    health-check:
-      enable: false
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-  mianfei6:
-    type: http
-    path: ./mianfei2.yaml
-    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/thuhollow2/cn/fab0df1c36dc0258ab4e9ee6f9d5eb54df2559bb/Clash.Meta/clashmconfig2.yaml
     interval: 3600
     health-check:
       enable: false
