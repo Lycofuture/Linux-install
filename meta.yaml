@@ -142,6 +142,15 @@ proxy-providers:
       enable: false
       url: http://www.gstatic.com/generate_204
       interval: 300
+  HK:
+    type: http
+    path: ./hk.yaml
+    url: https://raw.githubusercontent.com/snakem982/proxypool/7a4c70f092d85e1aa43a10fac24ce240bda78183/mihomofb0a5.yaml
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
 proxy-groups:
   - name: 手动切换
     type: select
@@ -157,6 +166,7 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
+      - HK
   - name: 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -172,6 +182,7 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
+      - HK
   - name: 负载均衡
     type: load-balance
     url: https://cp.cloudflare.com/generate_204
@@ -187,6 +198,7 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
+      - HK
   - name: lkglbtenqc_provider
     type: select
     use:
@@ -226,6 +238,11 @@ proxy-groups:
     type: select
     use:
       - CyberAirport
+    proxies: null
+  - name: HK
+    type: select
+    use:
+      - HK
     proxies: null
 rule-providers:
   lan:
