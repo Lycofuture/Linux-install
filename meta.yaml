@@ -366,10 +366,10 @@ rules:
   - RULE-SET,OpenAI,手动切换
   - RULE-SET,Disney,手动切换
   - RULE-SET,proxy,手动切换
-  - RULE-SET,gfw,手动切换
+  - RULE-SET,gfw,DIRECT
   - RULE-SET,applications,手动切换
-  - RULE-SET,ChinaMaxDomain,手动切换
-  - RULE-SET,ChinaMaxIPNoIPv6,手动切换,no-resolve
+  - RULE-SET,ChinaMaxDomain,DIRECT
+  - RULE-SET,ChinaMaxIPNoIPv6,DIRECT,no-resolve
   - RULE-SET,lan,DIRECT,no-resolve
   - GEOIP,CN,DIRECT
   - MATCH,手动切换
