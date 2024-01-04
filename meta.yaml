@@ -133,6 +133,15 @@ proxy-providers:
       enable: false
       url: http://www.gstatic.com/generate_204
       interval: 300
+  mianfei6:
+    type: http
+    path: ./mianfei2.yaml
+    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/thuhollow2/cn/fab0df1c36dc0258ab4e9ee6f9d5eb54df2559bb/Clash.Meta/clashmconfig2.yaml
+    interval: 3600
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
 proxy-groups:
   - name: 手动切换
     type: select
@@ -145,6 +154,7 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
+      - mianfei6
     proxies: null
   - name: 自动选择
     type: url-test
@@ -160,6 +170,7 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
+      - mianfei6
     proxies: null
   - name: 负载均衡
     type: load-balance
@@ -175,6 +186,7 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
+      - mianfei6
   - name: lkglbtenqc_provider
     type: select
     use:
@@ -214,6 +226,11 @@ proxy-groups:
     type: select
     use:
       - CyberAirport
+    proxies: null
+  - name: mianfei6
+    type: select
+    use:
+      - mianfei6
     proxies: null
 rule-providers:
   lan:
