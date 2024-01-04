@@ -148,6 +148,7 @@ proxy-groups:
     use: null
     proxies: 
       - 自动选择
+      - 负载均衡
       - lkglbtenqc_provider
       - mianfei
       - mianfei2
@@ -176,6 +177,7 @@ proxy-groups:
     url: https://cp.cloudflare.com/generate_204
     interval: 300
     strategy: round-robin
+    uae: null
     proxies:
       - lkglbtenqc_provider
       - mianfei
@@ -185,8 +187,6 @@ proxy-groups:
       - mianfei5
       - v2ray
       - CyberAirport
-      - 自动选择
-      - 手动切换
   - name: lkglbtenqc_provider
     type: select
     use:
