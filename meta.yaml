@@ -109,7 +109,7 @@ proxy-providers:
   mianfei5:
     type: http
     path: ./mianfei5.yaml
-    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https://api.yebekhe.link/telegramDonated/&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini
+    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https%3A%2F%2Fapi.yebekhe.link%2FtelegramDonated&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Mini.ini
     interval: 3600
     health-check:
       enable: false
@@ -127,7 +127,7 @@ proxy-providers:
   v2ray:
     type: http
     path: ./v2ray.yaml
-    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https://eliv2ray.cloud/subscribe/eLiV2ray/-channel-eLiV2ray.txt&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini
+    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https%3A%2F%2Feliv2ray.cloud%2Fsubscribe%2FeLiV2ray%2F-channel-eLiV2ray.txt&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Mini.ini
     interval: 3600
     health-check:
       enable: false
@@ -136,7 +136,7 @@ proxy-providers:
   CyberAirport:
     type: http
     path: ./CyberAirport.yaml
-    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https://cyberairport.net/api/v1/client/subscribe?token=3d90fa9974dd2c5a15a95c25befe5427&insert=false&config=https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini
+    url: https://api.ytools.cc/sub?target=clash&new_name=true&url=https%3A%2F%2Fcyberairport.net%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D3d90fa9974dd2c5a15a95c25befe5427&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Mini.ini
     interval: 3600
     health-check:
       enable: false
@@ -387,6 +387,6 @@ rules:
   - RULE-SET,applications,手动切换
   - RULE-SET,ChinaMaxDomain,手动切换
   - RULE-SET,ChinaMaxIPNoIPv6,手动切换
-  - RULE-SET,lan,DIRECT
+  - RULE-SET,lan,DIRECT,no-resolve
   - GEOIP,CN,DIRECT
   - MATCH,手动切换
