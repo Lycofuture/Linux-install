@@ -188,24 +188,3 @@ git push -u origin main
 ```
 </p>
 </details>
-
-## openvpn
-
-```bash
-bash <(curl -L https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh)
-```
-
-## vpn节点
-
-```bash
-bash <(curl -fsSL https://gitlab.com/rwkgyg/sing-box-yg/raw/main/sb.sh)
-```
-```
-bash <(curl -fsSL https://git.io/hysteria.sh)
-```
-```
-bash <(curl -fsSL https://raw.githubusercontent.com/hijkpw/scripts/master/ss.sh)
-```
-```
-bash <(curl -fsSL https://raw.githubusercontent.com/hijkpw/scripts/master/ssr.sh)
-```
