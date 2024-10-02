@@ -164,7 +164,7 @@ global-ua: clash.meta
 ntp:
   enable: true  # 启用 NTP 服务
   write-to-system: false  # 不将时间同步写入系统时间
-  server: time.apple.com  # NTP 服务器地址
+  server: ntp.aliyun.com  # NTP 服务器地址
   port: 123  # NTP 服务端口号
   interval: 30  # 重新同步时间的间隔（单位：分钟）
 
