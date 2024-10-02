@@ -362,7 +362,7 @@ proxy-groups:
 
 rules:
   # 广告拦截
-  - AND,((RULE-SET,anti-AD),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
+  #- AND,((RULE-SET,anti-AD),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
   - AND,((GEOSITE,category-ads-all),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
   - AND,((RULE-SET,AD),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
   - AND,((RULE-SET,Advertising),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
