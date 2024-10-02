@@ -224,8 +224,8 @@ tun:
 dns:
   enable: true  # 启用 DNS 服务
   prefer-h3: true  # 优先使用 HTTP/3 协议进行 DNS 查询
-  use-hosts: false  # 使用本地 hosts 文件中的 DNS 记录
-  use-system-hosts: false  # 使用系统 hosts 文件中的 DNS 记录
+  use-hosts: true  # 使用本地 hosts 文件中的 DNS 记录
+  use-system-hosts: true  # 使用系统 hosts 文件中的 DNS 记录
   respect-rules: true  # 遵循配置的规则进行 DNS 查询
   listen: :1053  # DNS 服务监听的端口
   ipv6: true  # 启用 IPv6 支持
@@ -242,14 +242,14 @@ dns:
 
   default-nameserver:  # 默认 DNS 服务器列表
     - 223.5.5.5  # 阿里 DNS
-    - 119.29.29.29  # 腾讯 DNS
     - '[2400:3200::1]'  # 阿里 IPv6 DNS
-    - '[2402:4e00::]'  # 腾讯 IPV6 DNS
     - system  # 使用系统配置的 DNS
 
   nameserver:  # 指定 DNS 服务器
-    - 'https://dns.alidns.com/dns-query'  # 阿里 DNS
-    - 'https://doh.pub/dns-query'  # 腾讯 DNS
+    - 'tls://dns.google'  # Google 的 TLS DNS
+    - 'tls://1dot1dot1dot1.cloudflare-dns.com'  # Cloudflare 的 TLS DNS
+    - 'tls://dns10.quad9.net'  # Quad9 的 TLS DNS
+    - 'tls://unfiltered.adguard-dns.com'  # AdGuard 的 TLS DNS
     - dhcp://en0  # 使用 DHCP 获取的 DNS
 
   fallback:  # 备用 DNS 服务器
@@ -263,14 +263,8 @@ dns:
     - 'https://dns.alidns.com/dns-query'  # 阿里 DNS
 
   nameserver-policy:  # DNS 服务器策略
-    "geosite:cn":
-      - 'tls://dns.alidns.com'  # 阿里云 TLS DNS
-      - 'tls://dot.pub'  # 腾讯 TLS DNS
-    "geosite:!cn":  # 排除中国大陆的 DNS 请求
-      - 'https://dns.google/dns-query'  # Google DNS
-      - 'https://cloudflare-dns.com/dns-query'  # Cloudflare DNS
-      - 'https://dns10.quad9.net/dns-query'  # Quad9 DNS
-      - 'https://unfiltered.adguard-dns.com/dns-query'  # AdGuard DNS
+    "geosite:cn,private":
+      - 'tls://dns.alidns.com/dns-query'  # 阿里云 TLS DNS
 
   fallback-filter:  # 回退 DNS 策略过滤
     geoip: true  # 启用 GeoIP 过滤
