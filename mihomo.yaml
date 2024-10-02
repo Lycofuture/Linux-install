@@ -1,6 +1,6 @@
 # 延迟检测 URL
 p: &p
-  {type: http, interval: 3600, header: {User-Agent: ["meta", "clash"]}, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, lazy: true}}
+  {type: http, interval: 3600, header: {User-Agent: ["meta", "clash"]}, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, lazy: false}}
 
 # 配置代理提供者
 proxy-providers:
@@ -173,7 +173,7 @@ sniffer:
   enable: true  # 开启网络嗅探器，捕获和分析网络流量
   force-dns-mapping: true  # 强制 DNS 映射，确保 DNS 请求被嗅探器处理
   parse-pure-ip: true  # 解析纯 IP 地址，便于分析 IP 流量
-  override-destination: true  # 禁止覆盖目标地址，保持原有目标地址
+  override-destination: false  # 禁止覆盖目标地址，保持原有目标地址
 
   sniff:  # 嗅探器配置
     HTTP:  # HTTP 协议配置
@@ -197,7 +197,7 @@ tun:
   auto-route: true  # 自动配置路由，确保所有匹配规则的流量通过 TUN 设备转发
   auto-redirect: true  # （可选）自动重定向流量到 TUN 设备，确保非代理流量也能正确处理
   auto-detect-interface: true  # 自动检测系统中的网络接口，适应网络环境变化
-  strict-route: true  # 严格路由模式，启用时仅处理通过指定路由的流量
+  strict-route: false  # 严格路由模式，启用时仅处理通过指定路由的流量
   dns-hijack:  # DNS 劫持配置，确保所有 DNS 请求通过代理处理
     - any:53  # 劫持所有地址上的 UDP 端口 53 的 DNS 请求
     - tcp://any:53  # 劫持所有地址上的 TCP 端口 53 的 DNS 请求
@@ -208,7 +208,7 @@ tun:
   udp-timeout: 300  # 设置 UDP 连接的超时时间，单位为秒
   iproute2-table-index: 2022  # 指定用于路由规则的路由表索引，确保路由表的唯一性
   iproute2-rule-index: 9000  # 指定用于 IP 规则的索引，标识特定路由规则
-  endpoint-independent-nat: true  # 禁用端点独立 NAT，防止连接时出现不必要的 NAT 映射
+  endpoint-independent-nat: false  # 禁用端点独立 NAT，防止连接时出现不必要的 NAT 映射
   include-interface: []  # 定义要包含的网络接口（空值表示包含所有接口）
   exclude-interface: []  # 定义要排除的网络接口（空值表示不排除任何接口）
   route-address:  # TUN 设备的路由地址配置，用于引导特定网络流量通过 TUN
@@ -224,8 +224,8 @@ tun:
 dns:
   enable: true  # 启用 DNS 服务
   prefer-h3: true  # 优先使用 HTTP/3 协议进行 DNS 查询
-  use-hosts: true  # 使用本地 hosts 文件中的 DNS 记录
-  use-system-hosts: true  # 使用系统 hosts 文件中的 DNS 记录
+  use-hosts: false  # 使用本地 hosts 文件中的 DNS 记录
+  use-system-hosts: false  # 使用系统 hosts 文件中的 DNS 记录
   respect-rules: true  # 遵循配置的规则进行 DNS 查询
   listen: :1053  # DNS 服务监听的端口
   ipv6: true  # 启用 IPv6 支持
