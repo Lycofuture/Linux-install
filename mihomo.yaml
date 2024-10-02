@@ -434,10 +434,10 @@ rule-providers:
     url: "https://ghp.ci/https://raw.githubusercontent.com/earoftoast/clash-rules/main/ProgramAD.yaml"
     path: ./ruleset/ProgramAD.yaml
 
-  anti-AD:
-    <<: *domain
-    url: "https://ghp.ci/https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml"
-    path: ./ruleset/anti-AD.yaml
+#  anti-AD:
+#    <<: *domain
+#    url: "https://ghp.ci/https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml"
+#    path: ./ruleset/anti-AD.yaml
 
   anti-AD-white:
     <<: *domain
