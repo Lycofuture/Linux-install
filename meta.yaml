@@ -356,25 +356,28 @@ proxy-groups:
 
 rules:
   # 广告拦截
-  #- AND,((RULE-SET,anti-AD),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((GEOSITE,category-ads-all),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,AD),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,Advertising),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,AdvertisingMiTV),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,BanAD),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,BanEasyList),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,BanEasyListChina),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,BanEasyPrivacy),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,BanProgramAD),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,EasyList),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,EasyListChina),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,EasyPrivacy),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,ProgramAD),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
-  - AND,((RULE-SET,reject),(NOT,(!(RULE-SET,anti-AD-white))),(NOT,(!(RULE-SET,UnBan)))),🚫广告拦截
+  - RULE-SET,anti-AD-white,🎯全球直连 #白名单
+  - RULE-SET,UnBan,🎯全球直连 #白名单
+  - RULE-SET,anti-AD,🚫广告拦截
+  - GEOSITE,category-ads-all,🚫广告拦截
+  - RULE-SET,AD,🚫广告拦截
+  - RULE-SET,Advertising,🚫广告拦截
+  - RULE-SET,AdvertisingMiTV,🚫广告拦截
+  - RULE-SET,BanAD,🚫广告拦截
+  - RULE-SET,BanEasyList,🚫广告拦截
+  - RULE-SET,BanEasyListChina,🚫广告拦截
+  - RULE-SET,BanEasyPrivacy,🚫广告拦截
+  - RULE-SET,BanProgramAD,🚫广告拦截
+  - RULE-SET,EasyList,🚫广告拦截
+  - RULE-SET,EasyListChina,🚫广告拦截
+  - RULE-SET,EasyPrivacy,🚫广告拦截
+  - RULE-SET,ProgramAD,🚫广告拦截
+  - RULE-SET,reject,🚫广告拦截
 
   # 全球直连
-  - AND,((GEOSITE,cn),(NOT,(!(GEOSITE,google)))),🎯全球直连
-  - AND,((RULE-SET,direct),(NOT,(!(GEOSITE,google)))),🎯全球直连
+  - GEOSITE,google,🔰节点选择 # 白名单
+  - GEOSITE,cn,🎯全球直连
+  - RULE-SET,direct,🎯全球直连
   - GEOIP,CN,🎯全球直连,no-resolve
   - GEOIP,PRIVATE,🎯全球直连,no-resolve
   #- GEOSITE,bilibili,🎯全球直连
@@ -428,10 +431,10 @@ rule-providers:
     url: "https://ghp.ci/https://raw.githubusercontent.com/earoftoast/clash-rules/main/ProgramAD.yaml"
     path: ./ruleset/ProgramAD.yaml
 
-#  anti-AD:
-#    <<: *domain
-#    url: "https://ghp.ci/https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml"
-#    path: ./ruleset/anti-AD.yaml
+  anti-AD:
+    <<: *domain
+    url: "https://ghp.ci/https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml"
+    path: ./ruleset/anti-AD.yaml
 
   anti-AD-white:
     <<: *domain
