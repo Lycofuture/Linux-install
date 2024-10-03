@@ -2,20 +2,20 @@
 <p>
  
  - 来源
- - ```url 
-   https://github.com/ngosang/trackerslist
-
-   https://newtrackon.com/list
-
-   https://trackerslist.com/all.txt
-
-   http://github.itzmx.com/1265578519/OpenTracker/master/tracker.txt
-
-   https://tinytorrent.net/best-torrent-tracker-list-updated/
-
-   https://torrenttrackerss.com/torrent-tracker-list/
-
-   http://www.torrenttrackerlist.com/torrent-tracker-list
+ - ```url
+   https://cf.trackerslist.com/best.txt
+   https://cf.trackerslist.com/all.txt
+   https://cf.trackerslist.com/http.txt
+   https://cf.trackerslist.com/nohttp.txt
+   https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_best.txt
+   https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all.txt
+   https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_udp.txt
+   https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_http.txt
+   https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_https.txt
+   https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_ws.txt
+   https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_best_ip.txt
+   https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_ip.txt
+   https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_bad.txt
    ```
    
 </p>
