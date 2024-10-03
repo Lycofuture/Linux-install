@@ -2,7 +2,7 @@
 <p>
  
  - 来源
- - ```url
+```url
    https://cf.trackerslist.com/best.txt
    https://cf.trackerslist.com/all.txt
    https://cf.trackerslist.com/http.txt
@@ -16,7 +16,7 @@
    https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_best_ip.txt
    https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_ip.txt
    https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_bad.txt
-   ```
+```
    
 </p>
 </details>
