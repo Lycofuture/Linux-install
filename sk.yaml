@@ -1,7 +1,7 @@
 proxies:
 - name: "杭州中转"
   type: socks5
-  server: 47.99.181.5
-  port: 7891
+  server: 61.136.164.8
+  port: 10068
   username: user1
   password: pass1
