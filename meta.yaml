@@ -197,7 +197,7 @@ tun:
   auto-route: true  # 自动配置路由，确保所有匹配规则的流量通过 TUN 设备转发
   auto-redirect: true  # （可选）自动重定向流量到 TUN 设备，确保非代理流量也能正确处理
   auto-detect-interface: true  # 自动检测系统中的网络接口，适应网络环境变化
-  strict-route: false  # 严格路由模式，启用时仅处理通过指定路由的流量
+  strict-route: true  # 严格路由模式，启用时仅处理通过指定路由的流量
   dns-hijack:  # DNS 劫持配置，确保所有 DNS 请求通过代理处理
     - any:53  # 劫持所有地址上的 UDP 端口 53 的 DNS 请求
     - tcp://any:53  # 劫持所有地址上的 TCP 端口 53 的 DNS 请求
@@ -236,7 +236,6 @@ dns:
   fake-ip-range: 198.18.0.0/15  # 指定 fake-ip 地址范围
   fake-ip-filter-mode: blacklist  # 使用黑名单模式过滤 fake-ip
   fake-ip-filter:  # fake-ip 过滤列表
-    - '*'  # 所有请求都经过过滤 
     - '+.lan'  # 允许局域网内的请求
     - '+.local'  # 允许本地请求
 
@@ -248,23 +247,18 @@ dns:
   nameserver:  # 指定 DNS 服务器
     - 'tls://dns.google'  # Google 的 TLS DNS
     - 'tls://1dot1dot1dot1.cloudflare-dns.com'  # Cloudflare 的 TLS DNS
-    - 'tls://dns10.quad9.net'  # Quad9 的 TLS DNS
-    - 'tls://unfiltered.adguard-dns.com'  # AdGuard 的 TLS DNS
     - dhcp://en0  # 使用 DHCP 获取的 DNS
 
   fallback:  # 备用 DNS 服务器
-    - 'tls://dns.google'  # Google 的 TLS DNS
-    - 'tls://1dot1dot1dot1.cloudflare-dns.com'  # Cloudflare 的 TLS DNS
     - 'tls://dns10.quad9.net'  # Quad9 的 TLS DNS
     - 'tls://unfiltered.adguard-dns.com'  # AdGuard 的 TLS DNS
-    - dhcp://en0  # 使用 DHCP 获取的备用 DNS
 
   proxy-server-nameserver:  # 代理服务器 DNS 列表
     - 'https://dns.alidns.com/dns-query'  # 阿里 DNS
 
   nameserver-policy:  # DNS 服务器策略
     "geosite:cn,private":
-      - 'tls://dns.alidns.com/dns-query'  # 阿里云 TLS DNS
+      - 'tls://dns.alidns.com'  # 阿里云 TLS DNS
 
   fallback-filter:  # 回退 DNS 策略过滤
     geoip: true  # 启用 GeoIP 过滤
