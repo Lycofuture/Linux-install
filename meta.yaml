@@ -1,6 +1,6 @@
 # 延迟检测 URL
 p: &p
-  {type: http, interval: 3600, header: {User-Agent: ["meta", "clash"]}, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, lazy: false}}
+  {type: http, interval: 3600, header: {User-Agent: ["meta", "clash"]}, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, lazy: true}}
 
 # 配置代理提供者
 proxy-providers:
