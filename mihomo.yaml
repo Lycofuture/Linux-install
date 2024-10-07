@@ -241,20 +241,25 @@ dns:
 
   default-nameserver:  # 默认 DNS 服务器列表
     - 223.5.5.5  # 阿里 DNS
+    - 119.29.29.29  # 腾讯 DNS
     - '[2400:3200::1]'  # 阿里 IPv6 DNS
+    - '[2402:4e00::]'  # 腾讯 IPV6 DNS
     - system  # 使用系统配置的 DNS
 
-  direct-nameserver:
-    - 'https://223.5.5.5/dns-query'  # 阿里 IP DNS
-    - system
-  direct-nameserver-follow-policy: true
+  direct-nameserver:  # 用于direct出口域名解析的 DNS 服务器
+    - 'tls://dns.alidns.com'  # 阿里云 TLS DNS
+    - 'tls://dot.pub'  # 腾讯云 TLS DNS
+    - system  # 使用系统配置的 DNS
+  direct-nameserver-follow-policy: true  # 是否遵循nameserver-policy，默认为不遵守，仅当direct-nameserver不为空时生效
 
   nameserver:  # 指定 DNS 服务器
-    - 'tls://dns.google'  # Google 的 TLS DNS
-    - 'tls://1dot1dot1dot1.cloudflare-dns.com'  # Cloudflare 的 TLS DNS
+    - 'tls://dns.alidns.com'  # 阿里云 TLS DNS
+    - 'tls://dot.pub'  # 腾讯云 TLS DNS
     - dhcp://en0  # 使用 DHCP 获取的 DNS
 
   fallback:  # 备用 DNS 服务器
+    - 'tls://dns.google'  # Google 的 TLS DNS
+    - 'tls://1dot1dot1dot1.cloudflare-dns.com'  # Cloudflare 的 TLS DNS
     - 'tls://dns10.quad9.net'  # Quad9 的 TLS DNS
     - 'tls://unfiltered.adguard-dns.com'  # AdGuard 的 TLS DNS
 
@@ -262,8 +267,12 @@ dns:
     - 'https://dns.alidns.com/dns-query'  # 阿里 DNS
 
   nameserver-policy:  # DNS 服务器策略
-    "RULE-SET:ASNChina":
+    "GEOSITE:cn,private":
       - 'tls://dns.alidns.com'  # 阿里云 TLS DNS
+      - 'tls://dot.pub'  # 腾讯云 TLS DNS
+    "GEOSITE:!cn,!private":
+      - 'tls://dns.google'  # Google 的 TLS DNS
+      - 'tls://1dot1dot1dot1.cloudflare-dns.com'  # Cloudflare 的 TLS DNS
 
   fallback-filter:  # 回退 DNS 策略过滤
     geoip: true  # 启用 GeoIP 过滤
