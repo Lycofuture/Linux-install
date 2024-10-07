@@ -284,6 +284,7 @@ dns:
       - '+.google.com'  # 排除 Google 域名
       - '+.facebook.com'  # 排除 Facebook 域名
       - '+.youtube.com'  # 排除 YouTube 域名
+
 proxies:
   - {name: "🎯全球直连", type: direct, udp: true}
   - {name: "⛔️广告拦截", type: reject, udp: true}
