@@ -21,269 +21,204 @@ u:: &u
     - provider1   # 使用第一个代理提供者
     - provider2   # 使用第二个代理提供者
 
-# http(s) 代理端口
-port: 7890
-
-# socks4/4a/5 代理端口
-socks-port: 7891
-
-# 混合端口配置，通常用于多种协议的代理服务
-mixed-port: 7892
-
-# 重定向端口配置，用于流量重定向
-redir-port: 9797
-
-# 透明代理端口配置，用于透明代理模式
-tproxy-port: 9898
-
-# 允许局域网中的设备访问
-allow-lan: true
-
-# 绑定地址，仅允许其他设备通过这个地址访问
-bind-address: "*"
-
-# 禁止连接的 IP 地址段，黑名单优先级高于白名单
-lan-disallowed-ips: []
-
-# http(s)/socks/mixed代理的用户验证
+port: 7890  # HTTP 代理端口
+socks-port: 7891  # SOCKS5 代理端口
+mixed-port: 10801  # HTTP/SOCKS 混合代理端口
+redir-port: 9797  # 重定向端口，用于透明代理
+tproxy-port: 9898  # TProxy 端口，支持 TUN 模式
+allow-lan: true  # 允许局域网设备连接代理
+bind-address: "*"  # 绑定地址，默认为所有 IP 地址
 authentication:
-  - "user1:pass1"
-  - "user2:pass2"
-
-# 设置允许跳过验证的 IP 段
+  - "username:password"  # HTTP/SOCKS 代理认证，格式为 用户名:密码
 skip-auth-prefixes:
-  - 127.0.0.1/8
-  - ::1/128
-
-# 允许连接的 IP 地址段，仅作用于 allow-lan 为 true 默认值为 0.0.0.0/0和 ::/0
+  - 127.0.0.1/8  # 跳过本地地址的认证
+  - ::1/128  # 跳过 IPv6 本地地址的认证
 lan-allowed-ips:
-  - 0.0.0.0/0
-  - ::/0
-
-# 代理工作模式，'rule' 表示基于规则的模式
-mode: rule
-
-# 日志级别设置，'debug' 表示详细的调试日志
-log-level: debug
-
-# 启用 IPv6 支持
-ipv6: true
-
-# 保持连接的时间间隔，单位是秒, 减少移动设备耗电问题的临时措施。
-keep-alive-interval: 30
-
-# 进程匹配模式
-# always 开启，强制匹配所有进程
-# strict 默认，由 Clash 判断是否开启
-# off 不匹配进程，推荐在路由器上使用此模式
-find-process-mode: always
-
-# 外部控制器配置，设置控制器的地址和端口
-external-controller: :9090
-
-# Unix socket API 监听地址
-external-controller-unix: mihomo.sock
-
-# HTTPS-API 监听地址，需要配置 tls 部分证书和其私钥配置，使用 TLS 也必须填写 external-controller
-external-controller-tls: 127.0.0.1:9443
-
-# 在 RESTful API 端口上开启 DOH 服务器
-external-doh-server: /dns-query
-
-# 密码设置，用于保护外部控制器的访问
-secret: ""
-
-# 外部用户界面配置，'ui' 表示使用默认用户界面
-external-ui: ui
-
-#  自定义外部用户界面名字, 合并为 external-ui/xd
-external-ui-name: xd
-
-# 外部用户界面的 URL，指向一个 GitHub 仓库中的压缩包
-external-ui-url: "https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
-
-# 缓存
+  - 0.0.0.0/0  # 允许局域网访问的 IP 地址范围 (IPv4)
+  - ::/0  # 允许局域网访问的 IP 地址范围 (IPv6)
+lan-disallowed-ips:
+  - 192.168.0.3/32  # 局域网禁止访问的特定 IP 地址
+find-process-mode: strict  # 查找进程模式，严格模式
+mode: rule  # 工作模式为规则模式
+geox-url:  # Geo 数据库配置，用于地理位置和 ASN 匹配
+  geoip: "https://ghp.ci/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"  # GeoIP 数据库
+  geosite: "https://ghp.ci/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"  # GeoSite 数据库
+  mmdb: "https://ghp.ci/https://github.com/Loyalsoldier/geoip/releases/latest/download/Country.mmdb"  # MaxMind GeoLite2 数据库
+  asn: "https://ghp.ci/https://github.com/Loyalsoldier/geoip/blob/release/GeoLite2-ASN.mmdb"  # ASN 数据库
+geo-auto-update: true  # 开启自动更新 Geo 数据库
+geo-update-interval: 24  # Geo 数据库更新间隔 (单位: 小时)
+geosite-matcher: succinct  # Geosite 匹配模式
+log-level: debug  # 日志等级，调试模式
+ipv6: true  # 启用 IPv6
+tls:  # TLS 相关配置
+  certificate: string  # TLS 证书
+  private-key: string  # TLS 私钥
+  custom-certifactes:  # 自定义证书
+    - |
+      -----BEGIN CERTIFICATE-----
+      format/pem...
+      -----END CERTIFICATE-----
+external-controller: 0.0.0.0:9093  # 外部控制端口
+external-controller-tls: 0.0.0.0:9443  # TLS 外部控制端口
+secret: ""  # 控制接口密钥
+external-controller-cors:  # CORS 配置
+  allow-origins:
+    - "*"  # 允许所有来源
+  allow-private-network: true  # 允许私有网络访问
+external-controller-unix: mihomo.sock  # Unix Socket 控制接口
+external-controller-pipe: \\.\pipe\mihomo  # Windows 管道接口
+tcp-concurrent: true  # 启用 TCP 并发连接
+external-ui: ui  # 外部 UI 目录
+external-ui-name: xd  # 外部 UI 名称
+external-ui-url: "https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"  # 外部 UI 下载链接
+external-doh-server: /dns-query  # 外部 DoH 服务器
+interface-name: en0  # 使用的网络接口名称
+global-client-fingerprint: chrome  # 全局客户端指纹为 Chrome
+disable-keep-alive: true  # 启用 Keep-Alive
+keep-alive-idle: 15  # Keep-Alive 空闲时间 (单位: 秒)
+keep-alive-interval: 15  # Keep-Alive 间隔时间 (单位: 秒)
+experimental:  # 实验性功能配置
+  quic-go-disable-gso: true  # 禁用 QUIC 协议中的 GSO (Generic Segmentation Offload) 功能
+hosts:  # 本地 DNS 解析配置
 profile:
-  store-selected: true
-  # 储存 API 对策略组的选择，以供下次启动时使用
-  store-fake-ip: true
-  # 储存 fakeip 映射表，域名再次发生连接时，使用原有映射地址
+  store-selected: true  # 存储已选择的代理组
+  store-fake-ip: true  # 存储 Fake IP 地址
 
-# 是否使用统一延迟设置，false 表示不使用统一延迟
-unified-delay: true
-
-# 是否允许 TCP 并发连接
-tcp-concurrent: true
-
-# 出站接口
-interface-name: eth0
-
-# 路由标记, 为 Linux 下的出站连接提供默认流量标记
-routing-mark: 6666
-
-# 目前仅用于 API 的 https
-tls:
-  certificate: string # 证书 PEM 格式，或者 证书的路径
-  private-key: string # 证书对应的私钥 PEM 格式，或者私钥路径
-
-# 全局客户端指纹设置，'chrome' 表示模拟 Chrome 浏览器的指纹
-global-client-fingerprint: chrome
-
-# 启用地理数据模式，以便根据地理位置进行优化
-geodata-mode: true
-
-# GEO 文件加载模式
-# standard：标准加载器
-# memconservative：专为内存受限 (小内存) 设备优化的加载器 (默认值).
-geodata-loader: memconservative
-
-# 是否自动更新地理位置数据
-geo-auto-update: true
-
-# 地理位置数据更新的时间间隔，单位是小时
-geo-update-interval: 24
-
-# 地理位置数据源的 URL 配置
-geox-url:
-  # GeoIP 数据的 URL，用于获取 IP 地址的地理位置
-  geoip: "https://ghp.ci/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
-
-  # GeoSite 数据的 URL，用于获取网站分类信息
-  geosite: "https://ghp.ci/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
-
-  # MMDB 数据的 URL，用于获取国家级地理位置信息
-  mmdb: "https://ghp.ci/https://github.com/Loyalsoldier/geoip/releases/latest/download/Country.mmdb"
-
-  # ASN 数据库下载地址，用于获取 ASN 信息
-  asn: "https://ghp.ci/https://github.com/Loyalsoldier/geoip/blob/release/GeoLite2-ASN.mmdb"
-
-# 自定全局 UA
-global-ua: clash.meta
-
-# 配置 NTP（网络时间协议）服务
+# 网络时间协议 (NTP) 设置
 ntp:
-  enable: true  # 启用 NTP 服务
-  write-to-system: false  # 不将时间同步写入系统时间
-  server: ntp.aliyun.com  # NTP 服务器地址
-  port: 123  # NTP 服务端口号
-  interval: 30  # 重新同步时间的间隔（单位：分钟）
+  enable: true  # 启用 NTP 功能
+  write-to-system: true  # 将同步的时间写入系统时钟
+  server: ntp.ntsc.ac.cn  # NTP 服务器地址
+  port: 123  # NTP 服务器端口，默认使用 123 端口
+  interval: 30  # 同步时间的间隔 (单位: 分钟)
 
-# 配置网络嗅探器
+# sniffer 配置：用于检测和处理不同协议的流量
 sniffer:
-  enable: true  # 开启网络嗅探器，捕获和分析网络流量
-  force-dns-mapping: true  # 强制 DNS 映射，确保 DNS 请求被嗅探器处理
-  parse-pure-ip: true  # 解析纯 IP 地址，便于分析 IP 流量
-  override-destination: false  # 禁止覆盖目标地址，保持原有目标地址
+  enable: false  # 是否启用 sniffer 侦测功能，默认关闭
+  force-dns-mapping: true  # 强制映射 DNS 解析，即使有 IP 地址，仍将尝试解析域名
+  parse-pure-ip: true  # 尝试将纯 IP 流量解析为域名，便于流量规则的匹配
+  override-destination: false  # 是否覆盖目标地址（在某些情况下可能会破坏流量）
 
-  sniff:  # 嗅探器配置
-    HTTP:  # HTTP 协议配置
-      ports: [80, 8080-8880]  # 监听的 HTTP 端口范围，捕获 HTTP 流量
-      override-destination: true  # 允许覆盖目标地址，以便更改流量去向
-    TLS:  # TLS（传输层安全协议）配置
-      ports: [443, 8443]  # 监听的 TLS 端口，捕获 HTTPS 流量
-    QUIC:  # QUIC 协议配置
-      ports: [443, 8443]  # 监听的 QUIC 端口，捕获 QUIC 流量
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]  # 对 HTTP 流量进行嗅探的端口范围，常用于网站和应用
+      override-destination: true  # 覆盖目标地址以强制流量走代理或规则匹配
+    TLS:
+      ports: [443, 8443]  # 对 HTTPS 流量的端口进行嗅探，通常用于加密连接
+    QUIC:
+      ports: [443, 8443]  # 对 QUIC 协议的流量进行嗅探，QUIC 常用于改进 HTTPS 连接的速度
 
-  force-domain:  # 强制域名嗅探配置
-    - '+.v2ex.com'  # 捕获以 .v2ex.com 结尾的域名流量
+  force-domain:
+    - +.v2ex.com  # 对指定域名强制解析，即使 IP 地址已缓存或已知
 
-  skip-domain:  # 排除的域名配置
-    - Mijia Cloud  # 跳过 Mijia Cloud 域名的流量，避免干扰
+  skip-domain:
+    - Mijia Cloud  # 跳过指定域名，不对其进行嗅探处理（如智能家居流量）
 
-# 配置虚拟网络接口（TUN）
+  skip-src-address:
+    - 192.168.0.3/32  # 跳过来源 IP 地址，不对其进行嗅探
+
+  skip-dst-address:
+    - 192.168.0.3/32  # 跳过目标 IP 地址，不对其进行嗅探
+
+# tun 配置：用于启用 TUN 模式，优化流量路由和 IP 设置
 tun:
-  enable: true  # 启用 TUN 设备，以便创建虚拟网络接口，支持透明代理功能
-  stack: gvisor  # 使用 gvisor 网络栈，可支持 IPv4 和 IPv6 网络栈的流量处理
-  auto-route: true  # 自动配置路由，确保所有匹配规则的流量通过 TUN 设备转发
-  auto-redirect: true  # （可选）自动重定向流量到 TUN 设备，确保非代理流量也能正确处理
-  auto-detect-interface: true  # 自动检测系统中的网络接口，适应网络环境变化
-  strict-route: true  # 严格路由模式，启用时仅处理通过指定路由的流量
-  dns-hijack:  # DNS 劫持配置，确保所有 DNS 请求通过代理处理
-    - any:53  # 劫持所有地址上的 UDP 端口 53 的 DNS 请求
-    - tcp://any:53  # 劫持所有地址上的 TCP 端口 53 的 DNS 请求
-  device: utun0  # TUN 设备的名称，系统将根据此名称创建虚拟网络接口
-  mtu: 9000  # 设置最大传输单元（MTU），定义每个数据包的最大大小
-  gso: true  # 启用大数据包分片（GSO），减少 CPU 负载
-  gso-max-size: 65536  # 设置 GSO 的最大包大小
-  udp-timeout: 300  # 设置 UDP 连接的超时时间，单位为秒
-  iproute2-table-index: 2022  # 指定用于路由规则的路由表索引，确保路由表的唯一性
-  iproute2-rule-index: 9000  # 指定用于 IP 规则的索引，标识特定路由规则
-  endpoint-independent-nat: false  # 禁用端点独立 NAT，防止连接时出现不必要的 NAT 映射
-  include-interface: []  # 定义要包含的网络接口（空值表示包含所有接口）
-  exclude-interface: []  # 定义要排除的网络接口（空值表示不排除任何接口）
-  route-address:  # TUN 设备的路由地址配置，用于引导特定网络流量通过 TUN
-    - 0.0.0.0/1  # 将 IPv4 前半部分的流量 (0.0.0.0 - 127.255.255.255) 路由到 TUN 设备
-    - 128.0.0.0/1  # 将 IPv4 后半部分的流量 (128.0.0.0 - 255.255.255.255) 路由到 TUN 设备
-    - "::/1"  # 将 IPv6 前半部分的流量 (:: - 7FFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF) 路由到 TUN 设备
-    - "8000::/1"  # 将 IPv6 后半部分的流量 (8000:: - FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF) 路由到 TUN 设备
-  route-exclude-address:  # 排除特定网络流量不通过 TUN 设备，通常用于保留本地流量
-    - 192.168.0.0/16  # 排除 IPv4 局域网地址范围，避免将内网流量发送到 TUN 设备
-    - fc00::/7  # 排除 IPv6 本地链路地址，避免干扰本地 IPv6 通信
+  enable: true  # 启用 TUN 模式，用于透明代理
+  stack: gvisor  # 使用空间网络栈处理流量，可用值： system/gvisor/mixed
+  auto-route: true  # 自动根据流量选择最佳路由
+  auto-redirect: true  # 自动重定向不匹配规则的流量
+  auto-detect-interface: true  # 自动检测并使用适当的网络接口
+  dns-hijack:
+    - any:53  # 劫持所有 53 端口的 DNS 请求
+    - tcp://any:53  # 劫持所有 TCP 53 端口的 DNS 请求
+  device: utun0  # 指定 TUN 设备名称，默认为 utun0
+  mtu: 9000  # 设置最大传输单元 (MTU)，提高网络吞吐量
+  strict-route: true  # 强制使用严格路由，避免流量被错误路由
+  gso: true  # 启用通用分段卸载 (GSO)，提高网络性能
+  gso-max-size: 65536  # 设置 GSO 最大分段大小为 65536 字节
+  udp-timeout: 300  # 设置 UDP 超时时间为 300 秒，优化 NAT 映射
+  iproute2-table-index: 2022  # 使用指定的路由表索引 (iproute2)
+  iproute2-rule-index: 9000  # 设置路由规则的索引 (iproute2)
+  endpoint-independent-nat: false  # 禁用基于端点的 NAT 独立性
+  route-address-set: []
+  #  - ruleset-1 # 使用指定规则集管理路由
+  route-exclude-address-set: []
+  #  - ruleset-2  # 排除指定规则集中的地址
+  route-address:
+    - 0.0.0.0/1  # 路由 IPv4 流量，覆盖第一半部分地址
+    - 128.0.0.0/1  # 路由 IPv4 流量，覆盖第二半部分地址
+    - "::/1"  # 路由 IPv6 流量，覆盖第一半部分地址
+    - "8000::/1"  # 路由 IPv6 流量，覆盖第二半部分地址
+  route-exclude-address:
+    - 192.168.0.0/16  # 排除私有 IPv4 地址范围
+    - fc00::/7  # 排除私有 IPv6 地址范围
+  include-interface: []
+  #  - eth0  # 仅包含 eth0 接口的流量
+  exclude-interface: []
+  #  - eth1  # 排除 eth1 接口的流量
+  include-uid: []
+  #  - 0  # 包含 UID 为 0（通常是 root 用户）的流量
+  include-uid-range: []
+  #  - 1000:9999  # 包含 UID 范围为 1000:9999 的流量
+  exclude-uid: []
+  #  - 1000  # 排除 UID 为 1000 的流量
+  exclude-uid-range: []
+  #  - 1000:9999  # 排除 UID 范围为 1000:9999 的流量
+  include-android-user: []
+  #  - 0  # 包含 Android 用户 ID 为 0 的流量
+  #  - 10  # 包含 Android 用户 ID 为 10 的流量
+  include-package: []
+  #  - com.android.chrome  # 仅包含指定 Android 应用 (Chrome) 的流量
+  exclude-package: []
+  #  - com.android.captiveportallogin  # 排除指定 Android 应用 (Captive Portal) 的流量
 
-# 配置 DNS
+# DNS 配置：控制 DNS 查询行为，支持增强模式和假 IP 功能
 dns:
-  enable: true  # 启用 DNS 服务
-  prefer-h3: true  # 优先使用 HTTP/3 协议进行 DNS 查询
-  use-hosts: true  # 使用本地 hosts 文件中的 DNS 记录
-  use-system-hosts: true  # 使用系统 hosts 文件中的 DNS 记录
-  respect-rules: true  # 遵循配置的规则进行 DNS 查询
-  listen: :1053  # DNS 服务监听的端口
-  ipv6: true  # 启用 IPv6 支持
-
-  # 路由器建议使用 redir-host 以实现最佳兼容性
-  # 其他设备可以使用 fake-ip 模式
-  enhanced-mode: redir-host  # 使用 fake-ip 模式以避免 DNS 污染
-  fake-ip-range: 198.18.0.0/15  # 指定 fake-ip 地址范围
-  fake-ip-filter-mode: blacklist  # 使用黑名单模式过滤 fake-ip
-  fake-ip-filter:  # fake-ip 过滤列表
-    - '+.lan'  # 允许局域网内的请求
-    - '+.local'  # 允许本地请求
-
-  default-nameserver:  # 默认 DNS 服务器列表
-    - 223.5.5.5  # 阿里 DNS
-    - 119.29.29.29  # 腾讯 DNS
-    - '[2400:3200::1]'  # 阿里 IPv6 DNS
-    - '[2402:4e00::]'  # 腾讯 IPV6 DNS
-    - system  # 使用系统配置的 DNS
-
-  direct-nameserver:  # 用于direct出口域名解析的 DNS 服务器
-    - 'tls://dns.alidns.com'  # 阿里云 TLS DNS
-    - 'tls://dot.pub'  # 腾讯云 TLS DNS
-    - system  # 使用系统配置的 DNS
-  direct-nameserver-follow-policy: true  # 是否遵循nameserver-policy，默认为不遵守，仅当direct-nameserver不为空时生效
-
-  nameserver:  # 指定 DNS 服务器
-    - 'tls://dns.alidns.com'  # 阿里云 TLS DNS
-    - 'tls://dot.pub'  # 腾讯云 TLS DNS
-    - dhcp://en0  # 使用 DHCP 获取的 DNS
-
-  fallback:  # 备用 DNS 服务器
-    - 'tls://dns.google'  # Google 的 TLS DNS
-    - 'tls://1dot1dot1dot1.cloudflare-dns.com'  # Cloudflare 的 TLS DNS
-    - 'tls://dns10.quad9.net'  # Quad9 的 TLS DNS
-    - 'tls://unfiltered.adguard-dns.com'  # AdGuard 的 TLS DNS
-
-  proxy-server-nameserver:  # 代理服务器 DNS 列表
-    - 'https://dns.alidns.com/dns-query'  # 阿里 DNS
-
-  nameserver-policy:  # DNS 服务器策略
-    "GEOSITE:cn,private":
-      - 'tls://dns.alidns.com'  # 阿里云 TLS DNS
-      - 'tls://dot.pub'  # 腾讯云 TLS DNS
-    "GEOSITE:!cn,!private":
-      - 'tls://dns.google'  # Google 的 TLS DNS
-      - 'tls://1dot1dot1dot1.cloudflare-dns.com'  # Cloudflare 的 TLS DNS
-
-  fallback-filter:  # 回退 DNS 策略过滤
-    geoip: true  # 启用 GeoIP 过滤
-    geoip-code: cn  # 设定 GeoIP 代码为中国
-    geosite:  # 过滤的地理位置站点
-      - gfw  # 排除中国地理位置的站点
-    ipcidr: ['240.0.0.0/4']  # 排除的 IP CIDR 范围
-    domain:  # 排除的域名列表
-      - '+.google.com'  # 排除 Google 域名
-      - '+.facebook.com'  # 排除 Facebook 域名
-      - '+.youtube.com'  # 排除 YouTube 域名
+  enable: true  # 启用 DNS 模块
+  prefer-h3: false  # 是否优先使用 HTTP/3 进行 DNS 查询
+  use-hosts: true  # 使用配置中的 hosts 文件条目
+  use-system-hosts: true  # 使用系统的 hosts 文件条目
+  respect-rules: false  # 不强制遵守流量规则时解析域名
+  listen: 0.0.0.0:1053  # 本地 DNS 监听端口，默认是 1053 端口
+  ipv6: true  # 启用 IPv6 DNS 解析，避免 IPv6 地址的解析请求
+  default-nameserver:
+    - 223.5.5.5  # 默认使用阿里 DNS 服务器（中国）
+    - "[2400:3200::1]"  # 默认 IPv6 DNS 服务器，使用阿里云的公共 DNS
+  enhanced-mode: redir-host  # 启用增强模式，使用假 IP 技术
+  fake-ip-range: 198.18.0.1/16  # 假 IP 的地址范围，用于伪装未匹配域名的 IP
+  fake-ip-filter-mode: blacklist  # 假 IP 过滤模式：使用黑名单模式
+  fake-ip-filter:
+    - "*.lan"  # 局域网域名不使用假 IP，确保本地网络正常解析
+  nameserver-policy:
+    "GEOSITE:cn,private":  # 针对中国和私有域名使用特定 DNS 策略
+      - "tls://dns.alidns.com"  # 使用阿里 DNS 的加密传输协议
+    "GEOSITE:!cn,!private":  # 非中国和非私有域名使用不同的 DNS 服务器
+      - "tls://dns.google"  # Google DNS over TLS
+      - "tls://1dot1dot1dot1.cloudflare-dns.com"  # Cloudflare DNS over TLS
+      - "tls://cloudflare-dns.com"
+      - "tls://one.one.one.one"  # 另一个 Cloudflare DNS 服务器
+  nameserver:
+    - "tls://dns.alidns.com"  # 默认的 DNS over TLS 服务器，使用阿里 DNS
+  fallback:
+    - "tls://dns.google"  # 回退 DNS 服务器，使用 Google DNS
+    - "tls://1dot1dot1dot1.cloudflare-dns.com"  # Cloudflare DNS 作为回退
+    - "tls://cloudflare-dns.com"
+    - "tls://one.one.one.one"
+  proxy-server-nameserver:
+    - "https://dns.alidns.com/dns-query"  # 代理服务器使用的 DNS over HTTPS
+  direct-nameserver:
+    - system  # 直连时使用系统默认的 DNS 服务器
+  direct-nameserver-follow-policy: false  # 禁止直连遵循 nameserver-policy 策略
+  fallback-filter:
+    geoip: true  # 启用基于地理位置的 IP 过滤
+    geoip-code: CN  # 使用中国作为地理位置过滤的国家代码
+    geosite:
+      - gfw  # 使用防火长城 (GFW) 规则进行域名过滤
+    ipcidr:
+      - 240.0.0.0/4  # 排除某些保留的 IP 范围
+    domain:
+      - "+.google.com"  # 将 Google 域名添加到回退 DNS 过滤
+      - "+.facebook.com"  # 将 Facebook 域名添加到回退 DNS 过滤
+      - "+.youtube.com"  # 将 YouTube 域名添加到回退 DNS 过滤
 
 proxies:
   - {name: "🎯全球直连", type: direct, udp: true}
