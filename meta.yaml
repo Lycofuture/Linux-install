@@ -40,6 +40,8 @@ lan-disallowed-ips:
   - 192.168.0.3/32  # 局域网禁止访问的特定 IP 地址
 find-process-mode: strict  # 查找进程模式，严格模式
 mode: rule  # 工作模式为规则模式
+geodata-mode: true  # GEOIP 数据模式，mmdb 或者 dat
+geodata-loader: memconservative  # GEO 文件加载模式
 geox-url:  # Geo 数据库配置，用于地理位置和 ASN 匹配
   geoip: "https://ghp.ci/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"  # GeoIP 数据库
   geosite: "https://ghp.ci/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"  # GeoSite 数据库
@@ -48,6 +50,8 @@ geox-url:  # Geo 数据库配置，用于地理位置和 ASN 匹配
 geo-auto-update: true  # 开启自动更新 Geo 数据库
 geo-update-interval: 24  # Geo 数据库更新间隔 (单位: 小时)
 geosite-matcher: succinct  # Geosite 匹配模式
+global-ua: clash.meta  # 自定全局 UA
+etag-support: true  # 外部资源下载的 ETag 支持
 log-level: debug  # 日志等级，调试模式
 ipv6: true  # 启用 IPv6
 tls:  # TLS 相关配置
@@ -67,12 +71,14 @@ external-controller-cors:  # CORS 配置
   allow-private-network: true  # 允许私有网络访问
 external-controller-unix: mihomo.sock  # Unix Socket 控制接口
 external-controller-pipe: \\.\pipe\mihomo  # Windows 管道接口
+unified-delay: true  # 开启统一延迟时
 tcp-concurrent: true  # 启用 TCP 并发连接
 external-ui: ui  # 外部 UI 目录
 external-ui-name: xd  # 外部 UI 名称
 external-ui-url: "https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"  # 外部 UI 下载链接
 external-doh-server: /dns-query  # 外部 DoH 服务器
 interface-name: en0  # 使用的网络接口名称
+routing-mark: 6666  # 路由标记
 global-client-fingerprint: chrome  # 全局客户端指纹为 Chrome
 disable-keep-alive: true  # 启用 Keep-Alive
 keep-alive-idle: 15  # Keep-Alive 空闲时间 (单位: 秒)
