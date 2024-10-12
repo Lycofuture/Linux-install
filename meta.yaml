@@ -212,7 +212,7 @@ dns:
   proxy-server-nameserver:
     - "https://dns.alidns.com/dns-query"  # 代理服务器使用的 DNS over HTTPS
   direct-nameserver:
-    - system  # 直连时使用系统默认的 DNS 服务器
+    - "tls://dns.alidns.com"  # 直连使用阿里 DNS over TLS 服务器
   direct-nameserver-follow-policy: false  # 禁止直连遵循 nameserver-policy 策略
   fallback-filter:
     geoip: true  # 启用基于地理位置的 IP 过滤
@@ -324,32 +324,14 @@ rules:
   - RULE-SET,reject,🚫广告拦截
 
   # 全球直连
-  - GEOSITE,google,🔰节点选择 # 白名单
-  - GEOSITE,cn,🎯全球直连
-  - RULE-SET,direct,🎯全球直连
   - GEOIP,CN,🎯全球直连,no-resolve
   - GEOIP,PRIVATE,🎯全球直连,no-resolve
-  #- GEOSITE,bilibili,🎯全球直连
-  #- GEOSITE,china-list,🎯全球直连
-  #- GEOSITE,steam@cn,🎯全球直连
-  - RULE-SET,apple,🎯全球直连
-  - RULE-SET,applications,🎯全球直连
-  - RULE-SET,Bilibili,🎯全球直连
-  - RULE-SET,ChinaDomain,🎯全球直连
-  - RULE-SET,ChinaIp,🎯全球直连,no-resolve
-  - RULE-SET,ChinaIpV6,🎯全球直连
-  - RULE-SET,ChinaMedia,🎯全球直连
-  - RULE-SET,cncidr,🎯全球直连,no-resolve
-  - RULE-SET,icloud,🎯全球直连
-  - RULE-SET,lancidr,🎯全球直连,no-resolve
-  - RULE-SET,private,🎯全球直连
   - RULE-SET,ASNChina,🎯全球直连
 
   # 节点代理
   - MATCH,🔰节点选择
 
 rule-anchor:
-  ip: &ip {type: http, interval: 600, behavior: ipcidr, format: yaml}
   domain: &domain {type: http, interval: 600, behavior: domain, format: yaml}
   classical: &classical {type: http, interval: 600, behavior: classical, format: yaml}
 
@@ -390,46 +372,10 @@ rule-providers:
     url: "https://ghp.ci/https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-for-clash.yaml"
     path: ./ruleset/anti-AD-white.yaml
 
-  apple:
-    <<: *domain
-    url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
-    path: ./ruleset/apple.yaml
-
-  direct:
-    <<: *domain
-    url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
-    path: ./ruleset/direct.yaml
-
-  icloud:
-    <<: *domain
-    url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt"
-    path: ./ruleset/icloud.yaml
-
-  private:
-    <<: *domain
-    url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt"
-    path: ./ruleset/private.yaml
-
   reject:
     <<: *domain
     url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
     path: ./ruleset/reject.yaml
-
-  # IP规则
-  ChinaIp:
-    <<: *ip
-    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaIp.yaml"
-    path: ./ruleset/ChinaIp.yaml
-
-  cncidr:
-    <<: *ip
-    url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
-    path: ./ruleset/cncidr.yaml
-
-  lancidr:
-    <<: *ip
-    url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
-    path: ./ruleset/lancidr.yaml
 
   # 嵌套规则
   Advertising:
@@ -441,11 +387,6 @@ rule-providers:
     <<: *classical
     url: "https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingMiTV/AdvertisingMiTV.yaml"
     path: ./ruleset/AdvertisingMiTV.yaml
-
-  applications:
-    <<: *classical
-    url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt"
-    path: ./ruleset/applications.yaml
 
   ASNChina:
     <<: *classical
@@ -476,26 +417,6 @@ rule-providers:
     <<: *classical
     url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanProgramAD.yaml"
     path: ./ruleset/BanProgramAD.yaml
-
-  Bilibili:
-    <<: *classical
-    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Bilibili.yaml"
-    path: ./ruleset/Bilibili.yaml
-
-  ChinaDomain:
-    <<: *classical
-    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaDomain.yaml"
-    path: ./ruleset/ChinaDomain.yaml
-
-  ChinaIpV6:
-    <<: *classical
-    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaIpV6.yaml"
-    path: ./ruleset/ChinaIpV6.yaml
-
-  ChinaMedia:
-    <<: *classical
-    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaMedia.yaml"
-    path: ./ruleset/ChinaMedia.yaml
     
   UnBan:
     <<: *classical
