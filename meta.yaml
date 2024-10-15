@@ -212,7 +212,8 @@ dns:
   proxy-server-nameserver:
     - "https://dns.alidns.com/dns-query"  # 代理服务器使用的 DNS over HTTPS
   direct-nameserver:
-    - "tls://dns.alidns.com"  # 直连使用阿里 DNS over TLS 服务器
+    - dhcp://en0
+    - system
   direct-nameserver-follow-policy: false  # 禁止直连遵循 nameserver-policy 策略
   fallback-filter:
     geoip: true  # 启用基于地理位置的 IP 过滤
