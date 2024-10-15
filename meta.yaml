@@ -195,9 +195,9 @@ dns:
   fake-ip-filter:
     - "*.lan"  # 局域网域名不使用假 IP，确保本地网络正常解析
   nameserver-policy:
-    "GEOSITE:cn,private":  # 针对中国和私有域名使用特定 DNS 策略
+    "geosite:cn,private":  # 针对中国和私有域名使用特定 DNS 策略
       - "tls://dns.alidns.com"  # 使用阿里 DNS 的加密传输协议
-    "GEOSITE:!cn,!private":  # 非中国和非私有域名使用不同的 DNS 服务器
+    "geosite:!cn,!private":  # 非中国和非私有域名使用不同的 DNS 服务器
       - "tls://dns.google"  # Google DNS over TLS
       - "tls://1dot1dot1dot1.cloudflare-dns.com"  # Cloudflare DNS over TLS
       - "tls://cloudflare-dns.com"
