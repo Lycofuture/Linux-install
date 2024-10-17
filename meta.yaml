@@ -52,7 +52,7 @@ geo-update-interval: 24  # Geo 数据库更新间隔 (单位: 小时)
 geosite-matcher: succinct  # Geosite 匹配模式
 global-ua: clash.meta  # 自定全局 UA
 etag-support: true  # 外部资源下载的 ETag 支持
-log-level: debug  # 日志等级，调试模式
+log-level: info  # 日志等级
 ipv6: true  # 启用 IPv6
 tls:  # TLS 相关配置
   certificate: string  # TLS 证书
@@ -86,6 +86,7 @@ keep-alive-interval: 15  # Keep-Alive 间隔时间 (单位: 秒)
 experimental:  # 实验性功能配置
   quic-go-disable-gso: true  # 禁用 QUIC 协议中的 GSO (Generic Segmentation Offload) 功能
 hosts:  # 本地 DNS 解析配置
+
 profile:
   store-selected: true  # 存储已选择的代理组
   store-fake-ip: true  # 存储 Fake IP 地址
@@ -180,10 +181,10 @@ tun:
 # DNS 配置：控制 DNS 查询行为，支持增强模式和假 IP 功能
 dns:
   enable: true  # 启用 DNS 模块
-  prefer-h3: false  # 是否优先使用 HTTP/3 进行 DNS 查询
+  prefer-h3: true  # 是否优先使用 HTTP/3 进行 DNS 查询
   use-hosts: true  # 使用配置中的 hosts 文件条目
   use-system-hosts: true  # 使用系统的 hosts 文件条目
-  respect-rules: false  # 不强制遵守流量规则时解析域名
+  respect-rules: true  # dns 连接遵守路由规则，需配置 proxy-server-nameserver
   listen: 0.0.0.0:1053  # 本地 DNS 监听端口，默认是 1053 端口
   ipv6: true  # 启用 IPv6 DNS 解析，避免 IPv6 地址的解析请求
   default-nameserver:
@@ -199,22 +200,18 @@ dns:
       - "tls://dns.alidns.com"  # 使用阿里 DNS 的加密传输协议
     "geosite:!cn,!private":  # 非中国和非私有域名使用不同的 DNS 服务器
       - "tls://dns.google"  # Google DNS over TLS
-      - "tls://1dot1dot1dot1.cloudflare-dns.com"  # Cloudflare DNS over TLS
-      - "tls://cloudflare-dns.com"
-      - "tls://one.one.one.one"  # 另一个 Cloudflare DNS 服务器
+      - "tls://cloudflare-dns.com"  # Cloudflare DNS over TLS
   nameserver:
     - "tls://dns.alidns.com"  # 默认的 DNS over TLS 服务器，使用阿里 DNS
   fallback:
     - "tls://dns.google"  # 回退 DNS 服务器，使用 Google DNS
-    - "tls://1dot1dot1dot1.cloudflare-dns.com"  # Cloudflare DNS 作为回退
-    - "tls://cloudflare-dns.com"
-    - "tls://one.one.one.one"
+    - "tls://cloudflare-dns.com"  # Cloudflare DNS 作为回退
   proxy-server-nameserver:
-    - "https://dns.alidns.com/dns-query"  # 代理服务器使用的 DNS over HTTPS
+    - "tls://dns.alidns.com"  # 直连使用阿里 DNS over TLS 服务器
   direct-nameserver:
     - dhcp://en0
     - system
-  direct-nameserver-follow-policy: false  # 禁止直连遵循 nameserver-policy 策略
+  direct-nameserver-follow-policy: true  # 直连遵循 nameserver-policy 策略
   fallback-filter:
     geoip: true  # 启用基于地理位置的 IP 过滤
     geoip-code: CN  # 使用中国作为地理位置过滤的国家代码
@@ -226,6 +223,11 @@ dns:
       - "+.google.com"  # 将 Google 域名添加到回退 DNS 过滤
       - "+.facebook.com"  # 将 Facebook 域名添加到回退 DNS 过滤
       - "+.youtube.com"  # 将 YouTube 域名添加到回退 DNS 过滤
+    rule-set:
+      - ProxyGFWlist
+      - ProxyLite
+      - ProxyMedia
+      
 
 proxies:
   - {name: "🎯全球直连", type: direct, udp: true}
@@ -325,14 +327,26 @@ rules:
   - RULE-SET,reject,🚫广告拦截
 
   # 全球直连
+  - RULE-SET,Apple,🎯全球直连
+  - RULE-SET,ChinaDomain,🎯全球直连
+  - RULE-SET,ChinaIpV6,🎯全球直连
+  - RULE-SET,ChinaMedia,🎯全球直连
+  - RULE-SET,Download,🎯全球直连
+  - RULE-SET,LocalAreaNetwork,🎯全球直连
+  - RULE-SET,MJJ,🎯全球直连
+  - RULE-SET,ASNChina,🎯全球直连
+  - GEOSITE,CN,🎯全球直连
+  - GEOSITE,PRIVATE,🎯全球直连
+  - RULE-SET,ChinaIp,🎯全球直连,no-resolve
+  - RULE-SET,ChinaCompanyIp,🎯全球直连,no-resolve
   - GEOIP,CN,🎯全球直连,no-resolve
   - GEOIP,PRIVATE,🎯全球直连,no-resolve
-  - RULE-SET,ASNChina,🎯全球直连
 
   # 节点代理
   - MATCH,🚀节点选择
 
 rule-anchor:
+  ipcidr: &ipcidr {type: http, interval: 600, behavior: ipcidr, format: yaml}
   domain: &domain {type: http, interval: 600, behavior: domain, format: yaml}
   classical: &classical {type: http, interval: 600, behavior: classical, format: yaml}
 
@@ -377,6 +391,17 @@ rule-providers:
     <<: *domain
     url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
     path: ./ruleset/reject.yaml
+
+  # IP规则
+  ChinaIp:
+    <<: *ipcidr
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaIp.yaml"
+    path: ./ruleset/ChinaIp.yaml
+
+  ChinaCompanyIp:
+    <<: *ipcidr
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaCompanyIp.yaml"
+    path: ./ruleset/ChinaCompanyIp.yaml
 
   # 嵌套规则
   Advertising:
@@ -423,3 +448,53 @@ rule-providers:
     <<: *classical
     url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/UnBan.yaml"
     path: ./ruleset/UnBan.yaml
+  
+  Apple:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Apple.yaml"
+    path: ./ruleset/Apple.yaml
+
+  ChinaDomain:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaDomain.yaml"
+    path: ./ruleset/ChinaDomain.yaml
+
+  ChinaIpV6:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaIpV6.yaml"
+    path: ./ruleset/ChinaIpV6.yaml
+    
+  ChinaMedia:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaMedia.yaml"
+    path: ./ruleset/ChinaMedia.yaml
+    
+  Download:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Download.yaml"
+    path: ./ruleset/Download.yaml
+    
+  LocalAreaNetwork:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/LocalAreaNetwork.yaml"
+    path: ./ruleset/LocalAreaNetwork.yaml
+    
+  MJJ:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/MJJ.yaml"
+    path: ./ruleset/MJJ.yaml
+    
+  ProxyGFWlist:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml"
+    path: ./ruleset/ProxyGFWlist.yaml
+    
+  ProxyLite:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ProxyLite.yaml"
+    path: ./ruleset/ProxyLite.yaml
+    
+  ProxyMedia:
+    <<: *classical
+    url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ProxyMedia.yaml"
+    path: ./ruleset/ProxyMedia.yaml
