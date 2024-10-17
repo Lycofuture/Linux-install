@@ -231,12 +231,10 @@ dns:
 
 proxies:
   - {name: "🎯全球直连", type: direct, udp: true}
-  - {name: "⛔️广告拦截", type: reject, udp: true}
+  - {name: "🚫广告拦截", type: reject, udp: true}
 
 proxy-groups:
   - {name: 🚀节点选择, type: select, proxies: [🎯全球直连, ♻️自动选择, ⚡️均衡负载, 🔯故障转移, 📦全部节点, 🇭🇰香港, 🇹🇼台湾, 🇯🇵日本, 🇺🇸美国, 🇸🇬新加坡, 🇺🇸洛杉矶, 🇬🇧英国, 🇩🇪德国, 🇫🇷法国, 🇨🇦加拿大, 🇦🇺澳大利亚, 🇰🇷韩国, 🇷🇺俄罗斯, 🇳🇱荷兰, 🇮🇳印度, 🇲🇾马来西亚, 🇵🇱波兰, 🇪🇪爱沙尼亚, 🇦🇪阿联酋, 🇳🇬尼日利亚, 🇧🇬保加利亚, 🇸🇨塞舌尔, 🇪🇸西班牙, 🇻🇳越南, 🇸🇽荷属圣马丁, 🇲🇴澳门, 🇵🇭菲律宾, 🇹🇭泰国, 🇲🇳蒙古, 🌐其它地区]}
-
-  - {name: 🚫广告拦截, type: select, proxies: [⛔️广告拦截, 🎯全球直连, 🚀节点选择]}
 
   - {name: ♻️自动选择, <<: *u, interval: 2, type: url-test}
 
@@ -308,9 +306,10 @@ proxy-groups:
 
 rules:
   # 广告拦截
-  - RULE-SET,anti-AD-white,🎯全球直连 #白名单
+  - RULE-SET,Anti-AD-white,🎯全球直连 #白名单
   - RULE-SET,UnBan,🎯全球直连 #白名单
-  - RULE-SET,anti-AD,🚫广告拦截
+  - RULE-SET,Anti-AD,🚫广告拦截
+  - RULE-SET,Adblock,🚫广告拦截
   - GEOSITE,category-ads-all,🚫广告拦截
   - RULE-SET,AD,🚫广告拦截
   - RULE-SET,Advertising,🚫广告拦截
@@ -324,7 +323,7 @@ rules:
   - RULE-SET,EasyListChina,🚫广告拦截
   - RULE-SET,EasyPrivacy,🚫广告拦截
   - RULE-SET,ProgramAD,🚫广告拦截
-  - RULE-SET,reject,🚫广告拦截
+  - RULE-SET,Reject,🚫广告拦截
 
   # 全球直连
   - RULE-SET,Apple,🎯全球直连
@@ -338,7 +337,7 @@ rules:
   - GEOSITE,CN,🎯全球直连
   - GEOSITE,PRIVATE,🎯全球直连
   - RULE-SET,ChinaIp,🎯全球直连,no-resolve
-  - RULE-SET,ChinaCompanyIp,🎯全球直连,no-resolve
+  #- RULE-SET,ChinaCompanyIp,🎯全球直连,no-resolve
   - GEOIP,CN,🎯全球直连,no-resolve
   - GEOIP,PRIVATE,🎯全球直连,no-resolve
 
@@ -377,20 +376,25 @@ rule-providers:
     url: "https://ghp.ci/https://raw.githubusercontent.com/earoftoast/clash-rules/main/ProgramAD.yaml"
     path: ./ruleset/ProgramAD.yaml
 
-  anti-AD:
+  Anti-AD:
     <<: *domain
     url: "https://ghp.ci/https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml"
-    path: ./ruleset/anti-AD.yaml
+    path: ./ruleset/Anti-AD.yaml
 
-  anti-AD-white:
+  Anti-AD-white:
     <<: *domain
     url: "https://ghp.ci/https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-for-clash.yaml"
-    path: ./ruleset/anti-AD-white.yaml
+    path: ./ruleset/Anti-AD-white.yaml
 
-  reject:
+  Reject:
     <<: *domain
     url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
-    path: ./ruleset/reject.yaml
+    path: ./ruleset/Reject.yaml
+
+  Adblock:
+    <<: *domain
+    url: "https://ghp.ci/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.yaml"
+    path: ./ruleset/Adblock.yaml
 
   # IP规则
   ChinaIp:
@@ -443,7 +447,7 @@ rule-providers:
     <<: *classical
     url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanProgramAD.yaml"
     path: ./ruleset/BanProgramAD.yaml
-    
+
   UnBan:
     <<: *classical
     url: "https://ghp.ci/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/UnBan.yaml"
