@@ -199,12 +199,12 @@ dns:
     "geosite:cn,private":  # 针对中国和私有域名使用特定 DNS 策略
       - "tls://dns.alidns.com"  # 使用阿里 DNS 的加密传输协议
     "geosite:!cn,!private":  # 非中国和非私有域名使用不同的 DNS 服务器
+      - "tls://public.dns.iij.jp"  # IIJ DNS over TLS
       - "tls://dns.google"  # Google DNS over TLS
       - "tls://cloudflare-dns.com"  # Cloudflare DNS over TLS
   nameserver:
     - "tls://dns.alidns.com"  # 默认的 DNS over TLS 服务器，使用阿里 DNS
   fallback:
-    - "tls://dns.google"  # 回退 DNS 服务器，使用 Google DNS
     - "tls://cloudflare-dns.com"  # Cloudflare DNS 作为回退
   proxy-server-nameserver:
     - "tls://dns.alidns.com"  # 阿里 DNS over TLS 服务器
