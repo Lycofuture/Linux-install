@@ -342,10 +342,10 @@ rules:
   - GEOSITE,GFW,🚀节点选择
   - GEOSITE,CN,🎯全球直连
   - GEOSITE,PRIVATE,🎯全球直连
-  - RULE-SET,ChinaIp,🎯全球直连
-  - RULE-SET,ChinaCompanyIp,🎯全球直连
-  - GEOIP,CN,🎯全球直连
-  - GEOIP,PRIVATE,🎯全球直连
+  - RULE-SET,ChinaIp,🎯全球直连,no-resolve
+  - RULE-SET,ChinaCompanyIp,🎯全球直连,no-resolve
+  - GEOIP,CN,🎯全球直连,no-resolve
+  - GEOIP,PRIVATE,🎯全球直连,no-resolve
 
   # 节点代理
   - MATCH,🚀节点选择
