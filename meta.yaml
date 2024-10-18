@@ -330,10 +330,11 @@ rules:
   - RULE-SET,ChinaDomain,🎯全球直连
   - RULE-SET,ChinaIpV6,🎯全球直连
   - RULE-SET,ChinaMedia,🎯全球直连
+  - RULE-SET,ChinaIp,🎯全球直连,no-resolve
+  - RULE-SET,ChinaCompanyIp,🎯全球直连,no-resolve
   - RULE-SET,Download,🎯全球直连
   - RULE-SET,LocalAreaNetwork,🎯全球直连
   - RULE-SET,MJJ,🎯全球直连
-  - RULE-SET,ASNChina,🎯全球直连
   - RULE-SET,ASNChina,🎯全球直连
   - RULE-SET,ProxyGFWlist,🚀节点选择
   - RULE-SET,ProxyLite,🚀节点选择
@@ -342,8 +343,6 @@ rules:
   - GEOSITE,GFW,🚀节点选择
   - GEOSITE,CN,🎯全球直连
   - GEOSITE,PRIVATE,🎯全球直连
-  - RULE-SET,ChinaIp,🎯全球直连,no-resolve
-  - RULE-SET,ChinaCompanyIp,🎯全球直连,no-resolve
   - GEOIP,CN,🎯全球直连,no-resolve
   - GEOIP,PRIVATE,🎯全球直连,no-resolve
 
