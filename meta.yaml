@@ -77,8 +77,8 @@ external-ui: ui  # 外部 UI 目录
 external-ui-name: xd  # 外部 UI 名称
 external-ui-url: "https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"  # 外部 UI 下载链接
 external-doh-server: /dns-query  # 外部 DoH 服务器
-interface-name: rmnet_data2  # 使用的网络接口名称
-routing-mark: 16777216  # 路由标记
+# interface-name: rmnet_data2  # 使用的网络接口名称
+# routing-mark: 16777216  # 路由标记
 global-client-fingerprint: chrome  # 全局客户端指纹为 Chrome
 disable-keep-alive: true  # 启用 Keep-Alive
 keep-alive-idle: 15  # Keep-Alive 空闲时间 (单位: 秒)
