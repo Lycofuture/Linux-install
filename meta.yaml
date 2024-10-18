@@ -207,7 +207,7 @@ dns:
     - "tls://dns.google"  # 回退 DNS 服务器，使用 Google DNS
     - "tls://cloudflare-dns.com"  # Cloudflare DNS 作为回退
   proxy-server-nameserver:
-    - "tls://dns.alidns.com"  # 直连使用阿里 DNS over TLS 服务器
+    - "tls://dns.alidns.com"  # 阿里 DNS over TLS 服务器
   direct-nameserver:
     - dhcp://en0
     - system
@@ -334,12 +334,18 @@ rules:
   - RULE-SET,LocalAreaNetwork,🎯全球直连
   - RULE-SET,MJJ,🎯全球直连
   - RULE-SET,ASNChina,🎯全球直连
+  - RULE-SET,ASNChina,🎯全球直连
+  - RULE-SET,ProxyGFWlist,🚀节点选择
+  - RULE-SET,ProxyLite,🚀节点选择
+  - RULE-SET,ProxyMedia,🚀节点选择
+  - RULE-SET,GFW,🚀节点选择
+  - GEOSITE,GFW,🚀节点选择
   - GEOSITE,CN,🎯全球直连
   - GEOSITE,PRIVATE,🎯全球直连
-  - RULE-SET,ChinaIp,🎯全球直连,no-resolve
-  #- RULE-SET,ChinaCompanyIp,🎯全球直连,no-resolve
-  - GEOIP,CN,🎯全球直连,no-resolve
-  - GEOIP,PRIVATE,🎯全球直连,no-resolve
+  - RULE-SET,ChinaIp,🎯全球直连
+  - RULE-SET,ChinaCompanyIp,🎯全球直连
+  - GEOIP,CN,🎯全球直连
+  - GEOIP,PRIVATE,🎯全球直连
 
   # 节点代理
   - MATCH,🚀节点选择
@@ -395,6 +401,11 @@ rule-providers:
     <<: *domain
     url: "https://ghp.ci/https://raw.githubusercontent.com/REIJI007/AdBlock_Rule_For_Clash/main/adblock_reject.yaml"
     path: ./ruleset/Adblock.yaml
+
+  GFW:
+    <<: *domain
+    url: "https://ghp.ci/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt"
+    path: ./ruleset/GFW.yaml
 
   # IP规则
   ChinaIp:
