@@ -1,0 +1,8 @@
+{
+  "name": "linux-install",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "node-xlsx": "^0.23.0"
+  }
+}
