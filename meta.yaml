@@ -1,0 +1,589 @@
+# 延迟检测 URL
+p: &p
+  {type: http, interval: 3600, header: {User-Agent: ["meta", "clash.meta", "Clash/v1.18.0", "clash"]}, health-check: {enable: true, url: https://www.gstatic.com/generate_204, interval: 300, timeout: 5000, lazy: true}}
+
+# 配置代理提供者
+proxy-providers:
+  # 第一个代理提供者
+  # provider1:
+  #  <<: *p  # 继承通用配置
+  #  url: "https://ghgo.xyz/https://raw.githubusercontent.com/mfbpn/tg_mfbpn_sub/main/trial.yaml"
+
+  # 第二个代理提供者
+  # provider2:
+  #  <<: *p  # 继承通用配置
+  #  url: "https://ghgo.xyz/https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml"
+
+  provider3:
+    <<: *p  # 继承通用配置
+    url: "https://vless.mot.cloudns.biz/token"
+
+# URL 测试配置
+u:: &u
+  type: url-test  # 测试类型
+  use:
+  #  - provider1   # 使用第一个代理提供者
+  #  - provider2   # 使用第二个代理提供者
+    - provider3   # 使用第三个代理提供者
+
+port: 7890  # HTTP 代理端口
+socks-port: 7891  # SOCKS5 代理端口
+mixed-port: 10801  # HTTP/SOCKS 混合代理端口
+redir-port: 9797  # 重定向端口，用于透明代理
+tproxy-port: 9898  # TProxy 端口，支持 TUN 模式
+allow-lan: true  # 允许局域网设备连接代理
+bind-address: "*"  # 绑定地址，默认为所有 IP 地址
+authentication:
+  - "username:password"  # HTTP/SOCKS 代理认证，格式为 用户名:密码
+skip-auth-prefixes:
+  - 127.0.0.1/8  # 跳过本地地址的认证
+  - ::1/128  # 跳过 IPv6 本地地址的认证
+lan-allowed-ips:
+  - 0.0.0.0/0  # 允许局域网访问的 IP 地址范围 (IPv4)
+  - ::/0  # 允许局域网访问的 IP 地址范围 (IPv6)
+lan-disallowed-ips:
+  - 192.168.0.3/32  # 局域网禁止访问的特定 IP 地址
+find-process-mode: strict  # 查找进程模式，严格模式
+mode: rule  # 工作模式为规则模式
+geodata-mode: true  # GEOIP 数据模式，mmdb 或者 dat
+geodata-loader: memconservative  # GEO 文件加载模式
+geox-url:  # Geo 数据库配置，用于地理位置和 ASN 匹配
+  geoip: "https://ghgo.xyz/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"  # GeoIP 数据库
+  geosite: "https://ghgo.xyz/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"  # GeoSite 数据库
+  mmdb: "https://ghgo.xyz/https://github.com/Loyalsoldier/geoip/releases/latest/download/Country.mmdb"  # MaxMind GeoLite2 数据库
+  asn: "https://ghgo.xyz/https://github.com/Loyalsoldier/geoip/blob/release/GeoLite2-ASN.mmdb"  # ASN 数据库
+geo-auto-update: true  # 开启自动更新 Geo 数据库
+geo-update-interval: 24  # Geo 数据库更新间隔 (单位: 小时)
+geosite-matcher: succinct  # Geosite 匹配模式
+global-ua: clash.meta  # 自定全局 UA
+etag-support: true  # 外部资源下载的 ETag 支持
+log-level: info  # 日志等级
+ipv6: true  # 启用 IPv6
+tls:  # TLS 相关配置
+  certificate: string  # TLS 证书
+  private-key: string  # TLS 私钥
+  custom-certifactes:  # 自定义证书
+    - |
+      -----BEGIN CERTIFICATE-----
+      format/pem...
+      -----END CERTIFICATE-----
+
+external-controller: 0.0.0.0:9093  # 外部控制端口
+external-controller-tls: 0.0.0.0:9443  # TLS 外部控制端口
+secret: ""  # 控制接口密钥
+external-controller-cors:  # CORS 配置
+  allow-origins:
+    - "*"  # 允许所有来源
+  allow-private-network: true  # 允许私有网络访问
+external-controller-unix: mihomo.sock  # Unix Socket 控制接口
+external-controller-pipe: \\.\pipe\mihomo  # Windows 管道接口
+unified-delay: true  # 开启统一延迟时
+tcp-concurrent: true  # 启用 TCP 并发连接
+external-ui: ui  # 外部 UI 目录
+external-ui-name: xd  # 外部 UI 名称
+external-ui-url: "https://ghgo.xyz/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"  # 外部 UI 下载链接
+external-doh-server: /dns-query  # 外部 DoH 服务器
+interface-name:  # 使用的网络接口名称
+routing-mark:  # 路由标记
+global-client-fingerprint: chrome  # 全局客户端指纹为 Chrome
+disable-keep-alive: true  # 启用 Keep-Alive
+keep-alive-idle: 15  # Keep-Alive 空闲时间 (单位: 秒)
+keep-alive-interval: 15  # Keep-Alive 间隔时间 (单位: 秒)
+experimental:  # 实验性功能配置
+  quic-go-disable-gso: true  # 禁用 QUIC 协议中的 GSO (Generic Segmentation Offload) 功能
+hosts:  # 本地 DNS 解析配置
+profile:
+  store-selected: true  # 存储已选择的代理组
+  store-fake-ip: true  # 存储 Fake IP 地址
+
+# 网络时间协议 (NTP) 设置
+ntp:
+  enable: true  # 启用 NTP 功能
+  write-to-system: true  # 将同步的时间写入系统时钟
+  server: ntp.ntsc.ac.cn  # NTP 服务器地址
+  port: 123  # NTP 服务器端口，默认使用 123 端口
+  interval: 30  # 同步时间的间隔 (单位: 分钟)
+
+# sniffer 配置：用于检测和处理不同协议的流量
+sniffer:
+  enable: true  # 是否启用 sniffer 侦测功能，默认关闭
+  force-dns-mapping: true  # 强制映射 DNS 解析，即使有 IP 地址，仍将尝试解析域名
+  parse-pure-ip: true  # 尝试将纯 IP 流量解析为域名，便于流量规则的匹配
+  override-destination: false  # 是否覆盖目标地址（在某些情况下可能会破坏流量）
+
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]  # 对 HTTP 流量进行嗅探的端口范围，常用于网站和应用
+      override-destination: true  # 覆盖目标地址以强制流量走代理或规则匹配
+    TLS:
+      ports: [443, 8443]  # 对 HTTPS 流量的端口进行嗅探，通常用于加密连接
+    QUIC:
+      ports: [443, 8443]  # 对 QUIC 协议的流量进行嗅探，QUIC 常用于改进 HTTPS 连接的速度
+
+  force-domain:
+    - +.v2ex.com  # 对指定域名强制解析，即使 IP 地址已缓存或已知
+
+  skip-domain:
+    - Mijia Cloud  # 跳过指定域名，不对其进行嗅探处理（如智能家居流量）
+
+  skip-src-address:
+    - 192.168.0.3/32  # 跳过来源 IP 地址，不对其进行嗅探
+
+  skip-dst-address:
+    - 192.168.0.3/32  # 跳过目标 IP 地址，不对其进行嗅探
+
+# tun 配置：用于启用 TUN 模式，优化流量路由和 IP 设置
+tun:
+  enable: true  # 启用 TUN 模式，用于透明代理
+  stack: gvisor  # 使用空间网络栈处理流量，可用值： system/gvisor/mixed
+  auto-route: true  # 自动根据流量选择最佳路由
+  auto-redirect: true  # 自动重定向不匹配规则的流量
+  auto-detect-interface: true  # 自动检测并使用适当的网络接口
+  dns-hijack:
+    - any:53  # 劫持所有 53 端口的 DNS 请求
+    - tcp://any:53  # 劫持所有 TCP 53 端口的 DNS 请求
+  device: utun0  # 指定 TUN 设备名称，默认为 utun0
+  mtu: 9000  # 设置最大传输单元 (MTU)，提高网络吞吐量
+  strict-route: true  # 强制使用严格路由，避免流量被错误路由
+  gso: true  # 启用通用分段卸载 (GSO)，提高网络性能
+  gso-max-size: 65536  # 设置 GSO 最大分段大小为 65536 字节
+  udp-timeout: 300  # 设置 UDP 超时时间为 300 秒，优化 NAT 映射
+  iproute2-table-index: 2022  # 使用指定的路由表索引 (iproute2)
+  iproute2-rule-index: 9000  # 设置路由规则的索引 (iproute2)
+  endpoint-independent-nat: false  # 禁用基于端点的 NAT 独立性
+  route-address-set:   # 使用指定规则集管理路由
+  route-exclude-address-set:   # 排除指定规则集中的地址
+  route-address:
+    - 0.0.0.0/1  # 路由 IPv4 流量，覆盖第一半部分地址
+    - 128.0.0.0/1  # 路由 IPv4 流量，覆盖第二半部分地址
+    - "::/1"  # 路由 IPv6 流量，覆盖第一半部分地址
+    - "8000::/1"  # 路由 IPv6 流量，覆盖第二半部分地址
+  route-exclude-address:
+    - 192.168.0.0/16  # 排除私有 IPv4 地址范围
+    - fc00::/7  # 排除私有 IPv6 地址范围
+  include-interface: 
+  #  - eth0  # 仅包含 eth0 接口的流量
+  exclude-interface: 
+  #  - eth1  # 排除 eth1 接口的流量
+  include-uid: 
+  #  - 0  # 包含 UID 为 0（通常是 root 用户）的流量
+  include-uid-range: 
+  #  - 1000:9999  # 包含 UID 范围为 1000:9999 的流量
+  exclude-uid: 
+  #  - 1000  # 排除 UID 为 1000 的流量
+  exclude-uid-range: 
+  #  - 1000:9999  # 排除 UID 范围为 1000:9999 的流量
+  include-android-user: 
+  #  - 0  # 包含 Android 用户 ID 为 0 的流量
+  #  - 10  # 包含 Android 用户 ID 为 10 的流量
+  include-package:
+  #  - com.android.chrome  # 仅包含指定 Android 应用 (Chrome) 的流量
+  exclude-package:
+  #  - com.android.captiveportallogin  # 排除指定 Android 应用 (Captive Portal) 的流量
+
+# DNS 配置：控制 DNS 查询行为，支持增强模式和假 IP 功能
+# 查询 DNS 是否支持 H3 指令: curl https://1.1.1.1/dns-query --http3 -vI
+dns:
+  enable: true  # 启用 DNS 模块
+  prefer-h3: true  # 是否优先使用 HTTP/3 进行 DNS 查询
+  use-hosts: true  # 使用配置中的 hosts 文件条目
+  use-system-hosts: true  # 使用系统的 hosts 文件条目
+  respect-rules: true  # dns 连接遵守路由规则，需配置 proxy-server-nameserver
+  listen: 0.0.0.0:1053  # 本地 DNS 监听端口，默认是 1053 端口
+  ipv6: true  # 启用 IPv6 DNS 解析，避免 IPv6 地址的解析请求
+  default-nameserver:
+    - 223.5.5.5  # 阿里 DNS 解析 DNS 域名
+    - 8.8.8.8  # Google DNS 解析 DNS 域名
+    - "[2400:3200::1]"  # 阿里 DNS ipv6 解析 DNS 域名
+    - "[2001:4860:4860::8888]"  # Google DNS ipv6 解析 DNS 域名
+  enhanced-mode: redir-host  # 启用增强模式，使用假 IP 技术
+  fake-ip-range: 198.18.0.1/16  # 假 IP 的地址范围，用于伪装未匹配域名的 IP
+  fake-ip-filter-mode: blacklist  # 假 IP 过滤模式：使用黑名单模式
+  fake-ip-filter:
+    - "*.lan"  # 局域网域名不使用假 IP，确保本地网络正常解析
+  nameserver-policy:
+    "geosite:cn":  # 针对中国和私有域名使用特定 DNS 策略
+      - "https://dns.alidns.com/dns-query#h3=true"  # 阿里 DNS over H3
+      - "tls://dot.pub"  #腾讯 DNS over TLS
+      - system  # 系统 DNS
+    "geosite:!cn":  # 针对非中国和私有域名使用特定 DNS 策略
+      - "https://public.dns.iij.jp/dns-query#h3=true"  # IIJ DNS over H3
+      - "https://jp-nrt.doh.sb/dns-query#h3=true"  # SB Tokyo DNS over H3
+      - "https://cloudflare-dns.com/dns-query#h3=true"  # Cloudflare DNS over H3
+      - "tls://dns.google"  # Google DNS over TLS
+  nameserver:
+    - "https://dns.alidns.com/dns-query#h3=true"  # 阿里 DNS over H3
+  fallback:
+    - "https://cloudflare-dns.com/dns-query#h3=true"  # Cloudflare DNS over H3
+  proxy-server-nameserver:
+    - "https://dns.alidns.com/dns-query#h3=true"  # 阿里 DNS over H3 仅用于解析代理节点的域名
+  direct-nameserver:
+    - system  # 系统 DNS 用于直连出口域名解析的 DNS 服务器
+  direct-nameserver-follow-policy: true  # 是否遵循 nameserver-policy 策略
+  fallback-filter:
+    geoip: true  # 启用基于地理位置的 IP 过滤
+    geoip-code: CN  # 使用中国作为地理位置过滤的国家代码
+    # geosite:  # 使用 nameserver-policy 代替
+    #   - gfw  # 使用防火长城 (GFW) 规则进行域名过滤
+    ipcidr:
+      - 240.0.0.0/4  # 排除某些保留的 IP 范围
+    domain:
+      - "+.google.com"  # 将 Google 域名添加到回退 DNS 过滤
+      - "+.facebook.com"  # 将 Facebook 域名添加到回退 DNS 过滤
+      - "+.youtube.com"  # 将 YouTube 域名添加到回退 DNS 过滤
+
+pr: &pr {type: select, proxies: [🚀节点选择, 🎯全球直连, ☑️ 手动切换, ♻️自动选择, ⚡️均衡负载, 🔯故障转移, 🇭🇰香港, 🇹🇼台湾, 🇯🇵日本, 🇺🇸美国, 🇸🇬新加坡, 🏴󠁵󠁳󠁬󠁡󠁿洛杉矶, 🇬🇧英国, 🇩🇪德国, 🇫🇷法国, 🇨🇦加拿大, 🇦🇺澳大利亚, 🇰🇷韩国, 🇷🇺俄罗斯, 🇳🇱荷兰, 🇮🇳印度, 🇲🇾马来西亚, 🇵🇱波兰, 🇪🇪爱沙尼亚, 🇦🇪阿联酋, 🇳🇬尼日利亚, 🇧🇬保加利亚, 🇸🇨塞舌尔, 🇪🇸西班牙, 🇻🇳越南, 🇸🇽荷属圣马丁, 🇲🇴澳门, 🇵🇭菲律宾, 🇹🇭泰国, 🇲🇳蒙古, 🏴󠁧󠁢󠁥󠁮󠁧󠁿英格兰, 🌐其它地区]}
+proxies: 
+proxy-groups:
+  - {name: 🚀节点选择, type: select, proxies: [♻️自动选择, ☑️ 手动切换, ⚡️均衡负载, 🔯故障转移, 🇭🇰香港, 🇹🇼台湾, 🇯🇵日本, 🇺🇸美国, 🇸🇬新加坡, 🏴󠁵󠁳󠁬󠁡󠁿洛杉矶, 🇬🇧英国, 🇩🇪德国, 🇫🇷法国, 🇨🇦加拿大, 🇦🇺澳大利亚, 🇰🇷韩国, 🇷🇺俄罗斯, 🇳🇱荷兰, 🇮🇳印度, 🇲🇾马来西亚, 🇵🇱波兰, 🇪🇪爱沙尼亚, 🇦🇪阿联酋, 🇳🇬尼日利亚, 🇧🇬保加利亚, 🇸🇨塞舌尔, 🇪🇸西班牙, 🇻🇳越南, 🇸🇽荷属圣马丁, 🇲🇴澳门, 🇵🇭菲律宾, 🇹🇭泰国, 🇲🇳蒙古, 🏴󠁧󠁢󠁥󠁮󠁧󠁿英格兰, 🌐其它地区]}
+
+  - {name: ☑️ 手动切换, <<: *u, type: select}
+
+  - {name: 🚫广告拦截, udp: true, type: select, proxies: [REJECT, 🎯全球直连]}
+
+  - {name: 🎯全球直连, udp: true, type: select, proxies: [DIRECT, 🚀节点选择]}
+
+  - {name: ♻️自动选择, <<: *u, interval: 2, type: url-test}
+
+  - {name: ⚡️均衡负载, <<: *u, strategy: round-robin, type: load-balance}
+
+  - {name: 🔯故障转移, <<: *u, type: fallback}
+
+  # 应用分组
+  - {name: Apple, <<: *pr, type: select, icon: "https://www.apple.com.cn/ac/structured-data/images/knowledge_graph_logo.png"}
+  - {name: PikPak, <<: *pr, type: select, icon: "https://mypikpak.net/apple-touch-icon.png"}
+  - {name: Google, <<: *pr, type: select, icon: "http://www.google.cn/images/branding/googleg/1x/googleg_standard_color_128dp.png"}
+  - {name: Disney, <<: *pr, type: select, icon: "https://www.disney.cn/r/cms/www/default/disney/uploads/favicon-96x96.png"}
+  - {name: Bahamut, <<: *pr, type: select, icon: "https://i2.bahamut.com.tw/apple-touch-icon.png"}
+  - {name: YouTubeMusic, <<: *pr, type: select, icon: "https://music.youtube.com/img/cairo/favicon_144.png"}
+  - {name: Hulu, <<: *pr, type: select, icon: "https://www.hulu.com/static/icons/apple-touch-icon.png"}
+  - {name: TVB, <<: *pr, type: select, icon: "https://www.tvb.com/apple-touch-icon.png"}
+  - {name: Niconico, <<: *pr, type: select, icon: "https://resource.video.nimg.jp/uni/images/favicon/96.png"}
+  - {name: AbemaTV, <<: *pr, type: select, icon: "https://image.p-c2-x.abema-tv.com/image/assets/img_icon.png"}
+  - {name: TikTok, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/tiktok-icon.png"}
+  - {name: YouTube, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/youtube-icon.png"}
+  - {name: Twitter, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/twitch.png"}
+  - {name: Discord, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/discord-icon.png"}
+  - {name: Spotify, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/spotify-icon.png"}
+  - {name: Telegram, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/telegram.png"}
+  - {name: OpenAI, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/openai-icon.png"}
+  - {name: GitHub, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/github-icon.png"}
+  - {name: Facebook, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/facebook.png"}
+  - {name: Netflix, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/netflix-icon.png"}
+  - {name: Cloudflare, <<: *pr, type: select, icon: "https://ghgo.xyz/https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/82b4e05cf6db8fcdd442d67516b593874265e1b0/pngs/cloudflare.png"}
+
+  # 国家分组
+  - {name: 🇭🇰香港, <<: *u, filter: "(?i)🇭🇰|香港|hk_|hongkong|hong kong"}
+  
+  - {name: 🇹🇼台湾, <<: *u, filter: "(?i)🇹🇼|台湾|tw_|taiwan|tai wan"}
+  
+  - {name: 🇯🇵日本, <<: *u, filter: "(?i)🇯🇵|日本|jp_|japan"}
+  
+  - {name: 🇺🇸美国, <<: *u, filter: "(?i)🇺🇸|美国|us_|unitedstates|united states"}
+  
+  - {name: 🇸🇬新加坡, <<: *u, filter: "(?i)🇸🇬|新加坡|sg_|singapore"}
+  
+  - {name: 🏴󠁵󠁳󠁬󠁡󠁿洛杉矶, <<: *u, filter: "(?i)洛杉矶|l.a._|losangeles|la sangeles"}
+  
+  - {name: 🇩🇪德国, <<: *u, filter: "(?i)🇩🇪|德国|de_|germany"}
+  
+  - {name: 🇫🇷法国, <<: *u, filter: "(?i)🇫🇷|法国|fr_|france"}
+  
+  - {name: 🇨🇦加拿大, <<: *u, filter: "(?i)🇨🇦|加拿大|ca_|canada"}
+  
+  - {name: 🇦🇺澳大利亚, <<: *u, filter: "(?i)🇦🇺|澳大利亚|au_|australia"}
+  
+  - {name: 🇰🇷韩国, <<: *u, filter: "(?i)🇰🇷|韩国|kr_|korea|southkorea|south korea"}
+  
+  - {name: 🇷🇺俄罗斯, <<: *u, filter: "(?i)🇷🇺|俄罗斯|ru_|russia"}
+  
+  - {name: 🇳🇱荷兰, <<: *u, filter: "(?i)🇳🇱|荷兰|nl_|netherlands|holland"}
+  
+  - {name: 🇮🇳印度, <<: *u, filter: "(?i)🇮🇳|印度|in_|india"}
+  
+  - {name: 🇲🇾马来西亚, <<: *u, filter: "(?i)🇲🇾|马来西亚|my_|malaysia"}
+
+  - {name: 🇵🇱波兰, <<: *u, filter: "(?i)🇵🇱|波兰|pl_|poland"}
+
+  - {name: 🇪🇪爱沙尼亚, <<: *u, filter: "(?i)🇪🇪|爱沙尼亚|ee_|estonia"}
+
+  - {name: 🇦🇪阿联酋, <<: *u, filter: "(?i)🇦🇪|阿联酋|ae_|uae|unitedarabemirates|united arab emirates"}
+
+  - {name: 🇳🇬尼日利亚, <<: *u, filter: "(?i)🇳🇬|尼日利亚|ng_|nigeria"}
+
+  - {name: 🇧🇬保加利亚, <<: *u, filter: "(?i)🇧🇬|保加利亚|bg_|bulgaria"}
+
+  - {name: 🇸🇨塞舌尔, <<: *u, filter: "(?i)🇸🇨|塞舌尔|sc_|seychelles"}
+
+  - {name: 🇬🇧英国, <<: *u, filter: "(?i)🇬🇧|英国|gb_|greatbritain|great britain|united kingdom|unitedkingdom"}
+
+  - {name: 🇪🇸西班牙, <<: *u, filter: "(?i)🇪🇸|西班牙|es_|spain"}
+  
+  - {name: 🇻🇳越南, <<: *u, filter: "(?i)🇻🇳|越南|vn_|vietnam"}
+
+  - {name: 🇸🇽荷属圣马丁, <<: *u, filter: "(?i)🇸🇽|荷属圣马丁|nn_|sintmaarten|sint maarten|stmaarten|st maarten"}
+  
+  - {name: 🇲🇴澳门, <<: *u, filter: "(?i)🇲🇴|澳门|macao|mo_"}
+  
+  - {name: 🇵🇭菲律宾, <<: *u, filter: "(?i)🇵🇭|菲律宾|pilipinas|ph_"}
+  
+  - {name: 🇹🇭泰国, <<: *u, filter: "(?i)🇹🇭|泰国|thailand|th_"}
+  
+  - {name: 🇲🇳蒙古, <<: *u, filter: "(?i)🇲🇳|蒙古|mongolia|mn_"}
+
+  - {name: 🏴󠁧󠁢󠁥󠁮󠁧󠁿英格兰, <<: *u, filter: "(?i)🏴󠁧󠁢󠁥󠁮󠁧󠁿|英格兰|England"}
+
+  - {name: 🌐其它地区, <<: *u, type: select, filter: "(?i)^(?!.*(?:🇭🇰|香港|hk_|hongkong|hong kong|🇹🇼|台湾|tw_|taiwan|tai wan|🇯🇵|日本|jp_|japan|🇺🇸|美国|us_|unitedstates|united states|🇸🇬|新加坡|sg_|singapore|🏴󠁵󠁳󠁬󠁡󠁿|洛杉矶|l.a._|losangeles|la sangeles|🇩🇪|德国|de_|germany|🇫🇷|法国|fr_|france|🇨🇦|加拿大|ca_|canada|🇦🇺|澳大利亚|au_|australia|🇰🇷|韩国|kr_|korea|southkorea|south korea|🇷🇺|俄罗斯|ru_|russia|🇳🇱|荷兰|nl_|netherlands|holland|🇮🇳|印度|in_|india|🇲🇾|马来西亚|my_|malaysia|🇵🇱|波兰|pl_|poland|🇪🇪|爱沙尼亚|ee_|estonia|🇦🇪|阿联酋|ae_|uae|unitedarabemirates|united arab emirates|🇳🇬|尼日利亚|ng_|nigeria|🇧🇬|保加利亚|bg_|bulgaria|🇸🇨|塞舌尔|sc_|seychelles|🇬🇧|英国|gb_|greatbritain|great britain|united kingdom|unitedkingdom|🇪🇸|西班牙|es_|spain|🇻🇳|越南|vn_|vietnam|🇸🇽|荷属圣马丁|nn_|sintmaarten|sint maarten|stmaarten|st maarten|🇲🇴|澳门|macao|mo_|🇵🇭|菲律宾|pilipinas|ph_|🇹🇭|泰国|thailand|th_|🇲🇳|蒙古|mongolia|mn_|🏴󠁧󠁢󠁥󠁮󠁧󠁿|英格兰|England)).*$"}
+
+rules:
+  # 广告拦截
+  - AND,((RULE-SET,AdvertisingTest),(NOT,((RULE-SET,Direct)))),🚫广告拦截
+  - RULE-SET,BlockHttpDNS,🚫广告拦截
+  - GEOSITE,Category-Ads-All,🚫广告拦截
+
+  # 全球代理
+  - RULE-SET,Apple,Apple
+  - RULE-SET,PikPak,PikPak
+  - RULE-SET,Google,Google
+  - RULE-SET,TikTok,TikTok
+  - RULE-SET,YouTube,YouTube
+  - RULE-SET,YouTubeMusic,YouTubeMusic
+  - RULE-SET,Twitter,Twitter
+  - RULE-SET,Discord,Discord
+  - RULE-SET,Spotify,Spotify
+  - RULE-SET,Telegram,Telegram
+  - RULE-SET,OpenAI,OpenAI
+  - RULE-SET,GitHub,GitHub
+  - RULE-SET,Facebook,Facebook
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,Disney,Disney
+  - RULE-SET,Cloudflare,Cloudflare
+  - RULE-SET,Bahamut,Bahamut
+  - RULE-SET,Hulu,Hulu
+  - RULE-SET,TVB,TVB
+  - RULE-SET,Niconico,Niconico
+  - RULE-SET,AbemaTV,AbemaTV
+
+  # 全球直连
+  - RULE-SET,LocalAreaNetwork,🎯全球直连
+  - RULE-SET,BiliBili,🎯全球直连
+  - RULE-SET,NetEase,🎯全球直连
+  - RULE-SET,JingDong,🎯全球直连
+  - RULE-SET,58TongCheng,🎯全球直连
+  - RULE-SET,AliPay,🎯全球直连
+  - RULE-SET,Pinduoduo,🎯全球直连
+  - RULE-SET,WeChat,🎯全球直连
+  - RULE-SET,Alibaba,🎯全球直连
+  - RULE-SET,115,🎯全球直连
+  - RULE-SET,4399,🎯全球直连
+  - RULE-SET,Download,🎯全球直连
+  - RULE-SET,MJJ,🎯全球直连
+  - RULE-SET,ChinaMedia,🎯全球直连
+  - RULE-SET,ASNChina,🎯全球直连
+  - GEOSITE,CN,🎯全球直连
+  - GEOIP,CN,🎯全球直连
+
+  # 节点代理
+  - MATCH,🚀节点选择
+
+rule-anchor:
+  ipcidr: &ipcidr {type: http, interval: 600, behavior: ipcidr, format: yaml}
+  domain: &domain {type: http, interval: 600, behavior: domain, format: yaml}
+  classical: &classical {type: http, interval: 600, behavior: classical, format: yaml}
+
+rule-providers:
+  # 嵌套规则
+  Direct:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml"
+    path: ./ruleset/Direct.yaml
+
+  AdvertisingTest:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingTest/AdvertisingTest_Classical.yaml"
+    path: ./ruleset/AdvertisingTest.yaml
+
+  BlockHttpDNS:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BlockHttpDNS/BlockHttpDNS.yaml"
+    path: ./ruleset/BlockHttpDNS.yaml
+
+  ASNChina:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.yaml"
+    path: ./ruleset/ASNChina.yaml
+
+  Apple:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Classical.yaml"
+    path: ./ruleset/Apple.yaml
+
+  ChinaMedia:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml"
+    path: ./ruleset/ChinaMedia.yaml
+
+  Download:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Download.yaml"
+    path: ./ruleset/Download.yaml
+
+  LocalAreaNetwork:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/LocalAreaNetwork.yaml"
+    path: ./ruleset/LocalAreaNetwork.yaml
+
+  MJJ:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/MJJ.yaml"
+    path: ./ruleset/MJJ.yaml
+
+  BiliBili:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.yaml"
+    path: ./ruleset/BiliBili.yaml
+
+  NetEase:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEase/NetEase.yaml"
+    path: ./ruleset/NetEase.yaml
+
+  JingDong:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/JingDong/JingDong.yaml"
+    path: ./ruleset/JingDong.yaml
+
+  58TongCheng:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/58TongCheng/58TongCheng.yaml"
+    path: ./ruleset/58TongCheng.yaml
+
+  AliPay:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AliPay/AliPay.yaml"
+    path: ./ruleset/AliPay.yaml
+
+  Pinduoduo:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Pinduoduo/Pinduoduo.yaml"
+    path: ./ruleset/Pinduoduo.yaml
+
+  WeChat:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.yaml"
+    path: ./ruleset/WeChat.yaml
+
+  Alibaba:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba_Classical.yaml"
+    path: ./ruleset/Alibaba.yaml
+
+  115:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/115/115.yaml"
+    path: ./ruleset/115.yaml
+
+  4399:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/4399/4399.yaml"
+    path: ./ruleset/4399.yaml
+
+  PikPak:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PikPak/PikPak.yaml"
+    path: ./ruleset/PikPak.yaml
+
+  Google:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml"
+    path: ./ruleset/Google.yaml
+
+  TikTok:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
+    path: ./ruleset/TikTok.yaml
+
+  YouTube:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./ruleset/YouTube.yaml
+
+  YouTubeMusic:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml"
+    path: ./ruleset/YouTubeMusic.yaml
+
+  Twitter:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml"
+    path: ./ruleset/Twitter.yaml
+
+  Discord:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml"
+    path: ./ruleset/Discord.yaml
+
+  Spotify:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml"
+    path: ./ruleset/Spotify.yaml
+
+  Telegram:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"
+    path: ./ruleset/Telegram.yaml
+
+  OpenAI:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml"
+    path: ./ruleset/OpenAI.yaml
+
+  GitHub:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml"
+    path: ./ruleset/GitHub.yaml
+
+  Facebook:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml"
+    path: ./ruleset/Facebook.yaml
+
+  Netflix:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix_Classical.yaml"
+    path: ./ruleset/Netflix.yaml
+
+  Disney:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml"
+    path: ./ruleset/Disney.yaml
+
+  Cloudflare:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Cloudflare/Cloudflare.yaml"
+    path: ./ruleset/Cloudflare.yaml
+
+  Bahamut:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml"
+    path: ./ruleset/Bahamut.yaml
+
+  Hulu:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hulu/Hulu.yaml"
+    path: ./ruleset/HuluJP.yaml
+
+  TVB:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TVB/TVB.yaml"
+    path: ./ruleset/TVB.yaml
+
+  Niconico:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Niconico/Niconico.yaml"
+    path: ./ruleset/Niconico.yaml
+
+  AbemaTV:
+    <<: *classical
+    url: "https://ghgo.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AbemaTV/AbemaTV.yaml"
+    path: ./ruleset/AbemaTV.yaml

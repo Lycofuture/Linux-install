@@ -1,0 +1,381 @@
+{
+  "log": {
+    "disabled": true,
+    // 禁用日志，启动后不输出日志。
+    "level": "info",
+    //日志等级，可选值：trace debug info warn error fatal panic。
+    "output": "singbox.log",
+    //输出文件路径，启动后将不输出到控制台。
+    "timestamp": true //添加时间到每行。
+  },
+  "dns": {
+    "servers": [{
+      "tag": "dns_block",
+      // DNS 服务器的标签。
+      "address": "rcode://success",
+      // DNS 服务器的地址。
+      "address_resolver": "dns_direct",
+      // 用于解析本 DNS 服务器的域名的另一个 DNS 服务器的标签。
+      "address_strategy": "prefer_ipv6",
+      // 用于解析本 DNS 服务器的域名的策略。可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only
+      "strategy": "prefer_ipv4",
+      // 默认解析策略。可选项：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only
+      "detour": "direct",
+      // 用于连接到 DNS 服务器的出站的标签。
+      "client_subnet": "198.18.0.0/32" // 为每个查询附加 edns0-subnet 记录。IP 地址会自动附加 /32（IPv4）或 /128（IPv6）。可以被 rules.[].client_subnet 覆盖。
+    },
+    {
+      "tag": "dns_direct",
+      "address": "local"
+    },
+    {
+      "tag": "dns_fakeip",
+      "address": "fakeip"
+    },
+    {
+      "tag": "dns_ali",
+      "address": "h3://223.5.5.5/dns-query",
+    },
+    {
+      "tag": "dns_cloudflare",
+      "address": "h3://1.1.1.1/dns-query"
+    }],
+    "rules": [{
+      "inbound": ["mixed-in"],
+      // 入站 标签
+      "ip_version": 6,
+      // 4 (A DNS 查询) 或 6 (AAAA DNS 查询)。
+      "query_type": ["A", "AAAA", "HTTPS", 32768],
+      // DNS 查询类型。值可以为整数或者类型名称字符串。
+      "network": "tcp",
+      // tcp 或 udp。
+      "auth_user": [],
+      // 认证用户名，参阅入站设置。
+      "protocol": ["tls", "http", "quic"],
+      // 探测到的协议, 参阅 协议探测。
+      "domain": ["test.com"],
+      // 匹配完整域名。
+      "domain_suffix": [".cn"],
+      // 匹配域名后缀。
+      "domain_keyword": ["test"],
+      // 匹配域名关键字。
+      "domain_regex": ["^stun\\..+"],
+      // 匹配域名正则表达式。
+      "geoip": ["cn"],
+      // 与查询响应匹配 GeoIP。
+      "source_ip_cidr": ["10.0.0.0/24", "192.168.0.1"],
+      // 匹配源 IP CIDR。
+      "source_ip_is_private": false,
+      // 匹配非公开源 IP。
+      "ip_cidr": ["10.0.0.0/24", "192.168.0.1"],
+      // 与查询响应匹配 IP CIDR。
+      "ip_is_private": false,
+      // 与查询响应匹配非公开 IP。
+      "source_port": [12345],
+      // 匹配源端口。
+      "source_port_range": ["1000:2000", ":3000", "4000:"],
+      // 匹配源端口范围。
+      "port": [80, 443],
+      // 匹配端口。
+      "port_range": ["1000:2000", ":3000", "4000:"],
+      // 匹配端口范围。
+      "process_name": ["curl"],
+      // 匹配进程名称。
+      "process_path": ["/usr/bin/curl"],
+      // 匹配进程路径。
+      "process_path_regex": ["^/usr/bin/.+"],
+      // 使用正则表达式匹配进程路径。
+      "package_name": ["com.termux"],
+      // 匹配 Android 应用包名
+      "user": [],
+      // 匹配用户名。
+      "user_id": [],
+      // 匹配用户 ID。
+      "clash_mode": "direct",
+      // 匹配 Clash 模式。
+      "wifi_ssid": ["My WIFI"],
+      // 匹配 WiFi SSID。
+      "wifi_bssid": ["00:00:00:00:00:00"],
+      // 匹配 WiFi BSSID。
+      "rule_set": ["geoip-cn", "geosite-cn"],
+      // 匹配规则集。
+      "rule_set_ip_cidr_match_source": false,
+      // 使规则集中的 ip_cidr 规则匹配源 IP。
+      "rule_set_ip_cidr_accept_empty": false,
+      // 使规则集中的 ip_cidr 规则接受空查询响应。
+      "invert": false,
+      // 反选匹配结果。
+      "outbound": ["direct"],
+      // 匹配出站。any 可作为值用于匹配任意出站。
+      "server": "local",
+      // 目标 DNS 服务器的标签。
+      "disable_cache": false,
+      // 在此查询中禁用缓存。
+      "client_subnet": "127.0.0.1/24" // 默认每个查询都会附加 edns0-subnet OPT 记录，如果值是 IP 地址，自动加 /32 (IPv4) 或 /128 (IPv6)，将覆盖 dns.client_subnet 与 servers.[].client_subnet。
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      // and 或 or
+      "rules": [],
+      // 包括的规则。
+      "server": "local",
+      "disable_cache": false,
+      "client_subnet": "127.0.0.1/24"
+    }],
+    "final": "",
+    //默认 DNS 服务器的标签。默认使用第一个服务器。
+    "strategy": "prefer_ipv4",
+    //默认解析域名策略。可选值: prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only。如果设置了 server.strategy，则不生效。
+    "disable_cache": false,
+    //禁用 DNS 缓存。
+    "disable_expire": false,
+    //禁用 DNS 缓存过期。
+    "independent_cache": false,
+    //使每个 DNS 服务器的缓存独立，以满足特殊目的。如果启用，将轻微降低性能。
+    "reverse_mapping": false,
+    //在响应 DNS 查询后存储 IP 地址的反向映射以为路由目的提供域名。由于此过程依赖于应用程序在发出请求之前解析域名的行为，因此在 macOS 等 DNS 由系统代理和缓存的环境中可能会出现问题。
+    "client_subnet": "",
+    //默认情况下，将带有指定 IP 前缀的 edns0-subnet OPT 附加记录附加到每个查询。可以被 servers.[].client_subnet 或 rules.[].client_subnet 覆盖。
+    "fakeip": {
+      "enabled": true,
+      // 启用 FakeIP 服务。
+      "inet4_range": "198.18.0.0/15",
+      // 用于 FakeIP 的 IPv4 地址范围。
+      "inet6_range": "fc00::/18" // 用于 FakeIP 的 IPv6 地址范围。
+    }
+  },
+  "ntp": {
+    "enabled": false,
+    // 启用 NTP 服务。
+    "server": "time.apple.com",
+    // NTP 服务器地址。
+    "server_port": 123,
+    // NTP 服务器端口。
+    "interval": "30m",
+    // 时间同步间隔。
+    "detour": "upstream-out",
+    // 上游出站的标签。启用时，其他拨号字段将被忽略。
+    "bind_interface": "en0",
+    // 要绑定到的网络接口。
+    "inet4_bind_address": "0.0.0.0",
+    // 要绑定的 IPv4 地址。
+    "inet6_bind_address": "::",
+    // 要绑定的 IPv6 地址。
+    "routing_mark": 1234,
+    // 设置 netfilter 路由标记。
+    "reuse_addr": false,
+    // 重用监听地址。
+    "connect_timeout": "5s",
+    // 连接超时，采用 golang 的 Duration 格式。持续时间字符串是一个可能有符号的序列十进制数，每个都有可选的分数和单位后缀， 例如 "300ms"、"-1.5h" 或 "2h45m"。 有效时间单位为 "ns"、"us"（或 "µs"）、"ms"、"s"、"m"、"h"。
+    "tcp_fast_open": false,
+    // 启用 TCP Fast Open。
+    "tcp_multi_path": false,
+    // 启用 TCP Multi Path。
+    "udp_fragment": false,
+    // 启用 UDP 分段。
+    "domain_strategy": "prefer_ipv6",
+    // 可选值：prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only。
+    "fallback_delay": "300ms" // 定义在回退到 IPv4 之前等待 IPv6 连接成功的时间，仅在 prefer_ipv4 或 prefer_ipv6 策略下生效。
+  },
+  "inbounds": [{
+    "type": "direct",
+    // 入站的类型。
+    "tag": "direct-in",
+    // 入站的标签。
+    "network": "udp",
+    // 监听的网络协议，tcp udp 之一。
+    "override_address": "1.0.0.1",
+    // 覆盖连接目标地址。
+    "override_port": 53 // 覆盖连接目标端口。
+  },
+  {
+    "type": "tproxy",
+    "tag": "tproxy-in",
+    "listen": "::",  // 监听地址。
+    "listen_port": 5353,  // 监听端口。
+    "tcp_fast_open": false,  // 启用 TCP Fast Open。
+    "tcp_multi_path": false,  // 启用 TCP Multi Path。
+    "udp_fragment": false,  // 启用 UDP 分段。
+    "udp_timeout": "5m",  // UDP NAT 过期时间，以秒为单位
+    "detour": "another-in",  // 如果设置，连接将被转发到指定的入站。需要目标入站支持，参阅 注入支持。
+    "sniff": false,  // 启用协议探测。
+    "sniff_override_destination": false,  // 用探测出的域名覆盖连接目标地址。
+    "sniff_timeout": "300ms",  // 探测超时时间。
+    "domain_strategy": "prefer_ipv6",  // 可选值： prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only。
+    "udp_disable_domain_unmapping": false, // 如果启用，对于地址为域的 UDP 代理请求，将在响应中发送原始包地址而不是映射的域。此选项用于兼容不支持接收带有域地址的 UDP 包的客户端，如 Surge。
+    "network": "udp"  // 监听的网络协议
+  },
+  {
+    "type": "redirect",
+    "tag": "redirect-in",
+
+    "listen": "::",  // 监听地址。
+    "listen_port": 6363,  // 监听端口。
+    "tcp_fast_open": false,  // 启用 TCP Fast Open。
+    "tcp_multi_path": false,  // 启用 TCP Multi Path。
+    "udp_fragment": false,  // 启用 UDP 分段。
+    "udp_timeout": "5m",  // UDP NAT 过期时间，以秒为单位
+    "detour": "another-in",  // 如果设置，连接将被转发到指定的入站。需要目标入站支持，参阅 注入支持。
+    "sniff": false,  // 启用协议探测。
+    "sniff_override_destination": false,  // 用探测出的域名覆盖连接目标地址。
+    "sniff_timeout": "300ms",  // 探测超时时间。
+    "domain_strategy": "prefer_ipv6",  // 可选值： prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only。
+    "udp_disable_domain_unmapping": false, // 如果启用，对于地址为域的 UDP 代理请求，将在响应中发送原始包地址而不是映射的域。此选项用于兼容不支持接收带有域地址的 UDP 包的客户端，如 Surge。
+
+  },
+  {
+    "type": "tun",
+    "tag": "tun-in",
+    "interface_name": "tun0",  // 虚拟设备名称，默认自动选择。
+    "address": ["172.18.0.1/30", "fdfe:dcba:9876::1/126"],  // tun 接口的 IPv4 和 IPv6 前缀。
+    "mtu": 9000,  // 最大传输单元。
+    "gso": false,  // 启用通用分段卸载。
+    "auto_route": true,  // 设置到 Tun 的默认路由。VPN 默认优先于 tun。要使 tun 经过 VPN，启用 route.override_android_vpn。
+    "iproute2_table_index": 2022,  // auto_route 生成的 iproute2 路由表索引。
+    "iproute2_rule_index": 9000,  // auto_route 生成的 iproute2 规则起始索引。
+    "auto_redirect": false,  // 自动配置 iptables/nftables 以重定向连接。
+    "auto_redirect_input_mark": "0x2023",  // route_address_set 和 route_exclude_address_set 使用的连接输入标记。
+    "auto_redirect_output_mark": "0x2024",  // route_address_set 和 route_exclude_address_set 使用的连接输出标记。
+    "strict_route": true,  // 启用 auto_route 时执行严格的路由规则。
+    "route_address": ["0.0.0.0/1", "128.0.0.0/1", "::/1", "8000::/1"],  // 设置到 Tun 的自定义路由。
+    "route_exclude_address": ["192.168.0.0/16", "fc00::/7"],  // 设置到 Tun 的排除自定义路由。
+    "route_address_set": ["geoip-cloudflare"],  // 将指定规则集中的目标 IP CIDR 规则添加到防火墙。 不匹配的流量将绕过 sing-box 路由。与 route.default_mark 和 [dialOptions].routing_mark 冲突。
+    "route_exclude_address_set": ["geoip-cn"],  // 将指定规则集中的目标 IP CIDR 规则添加到防火墙。 匹配的流量将绕过 sing-box 路由。与 route.default_mark 和 [dialOptions].routing_mark 冲突。
+    "endpoint_independent_nat": false,  // 启用独立于端点的 NAT。
+    "udp_timeout": "5m",  // UDP NAT 过期时间，以秒为单位，默认为 300（5 分钟）。
+    "stack": "system",  // 默认使用 mixed 栈如果 gVisor 构建标记已启用，否则默认使用 system 栈。
+    "include_interface": ["lan0"],  // 限制被路由的接口。默认不限制。
+    "exclude_interface": ["lan1"],  // 排除路由的接口。与 include_interface 冲突。
+    "include_uid": [0],  // 限制被路由的用户。默认不限制。
+    "include_uid_range": ["1000-99999"],  // 限制被路由的用户范围。
+    "exclude_uid": [1000],  // 排除路由的用户。
+    "exclude_uid_range": ["1000-99999"],  // 排除路由的用户范围。
+    "include_android_user": [0, 10],  // 限制被路由的 Android 用户。
+    "include_package": ["com.android.chrome"],  // 限制被路由的 Android 应用包名。
+    "exclude_package": ["com.android.captiveportallogin"],  // 排除路由的 Android 应用包名。
+    "platform": {  // 平台特定的设置，由客户端应用提供。
+      "http_proxy": {  // 系统 HTTP 代理设置。
+        "enabled": false,  // 启用系统 HTTP 代理。
+        "server": "127.0.0.1",  // 系统 HTTP 代理服务器地址。
+        "server_port": 8080,  // 系统 HTTP 代理服务器端口。
+        "bypass_domain": [],  //绕过代理的主机名列表。
+        "match_domain": []  // 代理的主机名列表。
+      }
+    },
+
+    "listen": "::",  // 监听地址。
+    "listen_port": 7373,  // 监听端口。
+    "tcp_fast_open": false,  // 启用 TCP Fast Open。
+    "tcp_multi_path": false,  // 启用 TCP Multi Path。
+    "udp_fragment": false,  // 启用 UDP 分段。
+    "udp_timeout": "5m",  // UDP NAT 过期时间，以秒为单位
+    "detour": "another-in",  // 如果设置，连接将被转发到指定的入站。需要目标入站支持，参阅 注入支持。
+    "sniff": false,  // 启用协议探测。
+    "sniff_override_destination": false,  // 用探测出的域名覆盖连接目标地址。
+    "sniff_timeout": "300ms",  // 探测超时时间。
+    "domain_strategy": "prefer_ipv6",  // 可选值： prefer_ipv4 prefer_ipv6 ipv4_only ipv6_only。
+    "udp_disable_domain_unmapping": false, // 如果启用，对于地址为域的 UDP 代理请求，将在响应中发送原始包地址而不是映射的域。此选项用于兼容不支持接收带有域地址的 UDP 包的客户端，如 Surge。
+  }],
+  "outbounds": [{
+    "type": "direct",
+    "tag": "direct-out",
+    "override_address": "1.0.0.1",
+    // 覆盖连接目标地址。
+    "override_port": 53,
+    // 覆盖连接目标端口。
+    "proxy_protocol": 0,
+    // 写出 代理协议 到连接头。可用协议版本值：1 或 2。
+  }],
+  "route": {
+    "rules": [ // 一组 路由规则 。
+    {
+      "ip_is_private": true,
+      "outbound": "direct"
+    },
+    {
+      "rule_set": "geoip-cn",
+      "outbound": "direct"
+    },
+    {
+      "rule_set": "geoip-us",
+      "rule_set_ipcidr_match_source": true,
+      "outbound": "block"
+    }],
+    "rule_set": [ // 一组规则集。
+    {
+      "tag": "geoip-cn",
+      // 规则集的标签。
+      "type": "local",
+      // 规则集的类型，local 或者 remote
+      "format": "binary",
+      // 规则集文件的格式，source 或者 binary
+      "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+      // 规则集的下载URL。
+      "download_detour": "proxy" // 下载规则集使用的出站标签。
+      "update_interval": "" // 规则集的更新间隔。
+    },
+    {
+      "tag": "geoip-us",
+      "type": "remote",
+      "format": "binary",
+      "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-us.srs",
+      "download_detour": "proxy"
+    }],
+    "final": "",
+    // 默认出站标签。如果为空，将使用第一个可用于对应协议的出站。
+    "auto_detect_interface": false,
+    // 默认将出站连接绑定到默认网卡，以防止在 tun 下出现路由环路。如果设置了 outbound.bind_interface 设置，则不生效。
+    "override_android_vpn": false,
+    // 启用 auto_detect_interface 时接受 Android VPN 作为上游网
+    "default_interface": "en0",
+    // 默认将出站连接绑定到指定网卡，以防止在 tun 下出现路由环路。如果设置了 auto_detect_interface 设置，则不生效。
+    "default_mark": 233 // 默认为出站连接设置路由标记。如果设置了 outbound.routing_mark 设置，则不生效。
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true // 启用缓存文件。
+      "path": "cache.db",
+      // 缓存文件路径，默认使用cache.db。
+      "cache_id": "",
+      // 缓存文件中的标识符。如果不为空，配置特定的数据将使用由其键控的单独存储。
+      "store_fakeip": false,
+      // 将 fakeip 存储在缓存文件中。
+      "store_rdrc": false,
+      // 将拒绝的 DNS 响应缓存存储在缓存文件中。
+      "rdrc_timeout": "7d" // 拒绝的 DNS 响应缓存超时。
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      // RESTful web API 监听地址。如果为空，则禁用 Clash API。
+      "external_ui": "dashboard",
+      // 到静态网页资源目录的相对路径或绝对路径。sing-box 会在 http://{{external-controller}}/ui 下提供它。
+      "external_ui_download_url": "",
+      // 静态网页资源的 ZIP 下载 URL
+      "external_ui_download_detour": "",
+      // 用于下载静态网页资源的出站的标签。如果为空，将使用默认出站。
+      "secret": "",
+      // RESTful API 的密钥（可选） 通过指定 HTTP 标头 Authorization: Bearer ${secret} 进行身份验证 如果 RESTful API 正在监听 0.0.0.0，请始终设置一个密钥。
+      "default_mode": "",
+      // Clash 中的默认模式，默认使用 Rule。此设置没有直接影响，但可以通过 clash_mode 规则项在路由和 DNS 规则中使用
+      "access_control_allow_origin": [],
+      // 允许的 CORS 来源，默认使用 *。
+      "access_control_allow_private_network": false,
+      // 允许从私有网络访问。要从公共网站访问私有网络上的 Clash API，必须启用 access_control_allow_private_network
+    },
+    "v2ray_api": {
+      "listen": "127.0.0.1:8080",
+      // gRPC API 监听地址。如果为空，则禁用 V2Ray API。
+      "stats": { // 流量统计服务设置。
+        "enabled": true,
+        // 启用统计服务。
+        "inbounds": [ // 统计流量的入站列表。
+        "socks-in"],
+        "outbounds": [ // 统计流量的出站列表。
+        "proxy", "direct"],
+        "users": [ // 统计流量的用户列表
+        "sekai"]
+      }
+    }
+  }
+}
