@@ -50,7 +50,7 @@ sudo nano /etc/pam.d/sddm
 将第一个注释，第二个取消注释
 
 > #auth    required        pam_succeed_if.so user != root quiet_success
-   auth    sufficient      pam_succeed_if.so user ingroup nopasswdlogin	
+   auth    sufficient      pam_succeed_if.so user ingroup nopasswdlogin
 
 ## 安装中文语包和繁体包
 

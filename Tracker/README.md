@@ -1,7 +1,8 @@
 <details><summary><b>Tracker列表</b></summary>
 <p>
- 
- - 来源
+
+- 来源
+
 ```url
    https://cf.trackerslist.com/best.txt
    https://cf.trackerslist.com/all.txt
@@ -17,7 +18,7 @@
    https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_all_ip.txt
    https://raw.githubusercontent.com/DeSireFire/animeTrackerList/master/AT_bad.txt
 ```
-   
+
 </p>
 </details>
 <details><summary><b>爱恋动漫论坛tTorrent源</b></summary>
