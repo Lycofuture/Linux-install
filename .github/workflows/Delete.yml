@@ -1,9 +1,7 @@
 name: Delete All Commit History
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   delete-history:
