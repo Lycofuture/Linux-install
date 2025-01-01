@@ -6,6 +6,7 @@
 
 ```bash
 apt install golang-go
+npm install -P
 ```
 
 ## 运行
@@ -13,7 +14,7 @@ apt install golang-go
 整理并去重
 
 ```bash
-node 待检测提取.js
+node extraction.js
 ```
 
 测试有效ip
@@ -28,11 +29,11 @@ node 待检测提取.js
 - `tls` 默认参数 `true` 是否启用TLS
 
 ```bash
-go run iptest.go -file 待检测ip.txt -outfile 已检测ip.csv -max 50
+go run iptest.go -file extraction_ip.txt -outfile detected_ip.csv -max 50
 ```
 
 提取有速度的ip并整理为指定格式
 
 ```bash
-node 已检测提取.js
+node detected.js
 ```
