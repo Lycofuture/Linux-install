@@ -8,15 +8,6 @@ log() {
     echo "$(date +'%Y-%m-%d %H:%M:%S') - $1"
 }
 
-# 安装 npm 依赖
-log "开始安装 npm 依赖"
-if npm install -P; then
-    log "npm 依赖安装成功"
-else
-    log "npm 依赖安装失败"
-    exit 1
-fi
-
 # 执行第一个 Node.js 脚本
 log "开始执行 extraction.js"
 if node extraction.js; then
