@@ -1,15 +1,47 @@
 #!/bin/bash
 
-set -e  # 启用错误检查，任何一个命令失败都会停止执行
+set -e          # 当任何命令以非零状态退出时，立即退出脚本
+set -o pipefail # 确保管道中的每个命令都成功
 
-# 捕获任何错误并显示自定义消息
-trap 'echo "脚本执行失败，错误发生在: $BASH_COMMAND"; exit 1' ERR
+# 定义日志函数
+log() {
+    echo "$(date +'%Y-%m-%d %H:%M:%S') - $1"
+}
+
+# 安装 npm 依赖
+log "开始安装 npm 依赖"
+if npm install -P; then
+    log "npm 依赖安装成功"
+else
+    log "npm 依赖安装失败"
+    exit 1
+fi
 
 # 执行第一个 Node.js 脚本
-node 待检测提取.js
+log "开始执行 extraction.js"
+if node extraction.js; then
+    log "extraction.js 执行成功"
+else
+    log "extraction.js 执行失败"
+    exit 1
+fi
 
 # 执行 Go 脚本
-go run iptest.go -file 待检测ip.txt -outfile 已检测ip.csv -max 50
+log "开始执行 iptest.go"
+if go run iptest.go -file extraction_ip.txt -outfile detected_ip.csv -max 50; then
+    log "iptest.go 执行成功"
+else
+    log "iptest.go 执行失败"
+    exit 1
+fi
 
 # 执行第二个 Node.js 脚本
-node 已检测提取.js
+log "开始执行 detected.js"
+if node detected.js; then
+    log "detected.js 执行成功"
+else
+    log "detected.js 执行失败"
+    exit 1
+fi
+
+log "所有脚本执行完毕"
