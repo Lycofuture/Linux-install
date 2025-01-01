@@ -1,6 +1,6 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import url from 'node:url';
+import fs from 'fs';
+import path from 'path';
+import url from 'url';
 console.log('已加载 node 模块');
 // 获取当前脚本路径
 const __filename = url.fileURLToPath(import.meta.url);
@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 const csvFilePath = path.resolve(__dirname, '初始数据.csv');
 // 输出 TXT 文件路径
 const txtFilePath = path.resolve(__dirname, '待检测ip.txt');
-console.log(`CSV 文件路径: ${csvFilePath}`);
+
 // 提取列
 const ipcom = 'ip'
 const portcom = 'port'
@@ -47,7 +47,7 @@ async function extractIpAndPort() {
       )).join('\n'); // 合并成多行字符串
     // 写入到 TXT 文件
     fs.writeFile(txtFilePath, result, 'utf8');
-    console.log(`IP 和端口已成功提取到 ${txtFilePath}`);
+    console.log(`已成功提取到 ${txtFilePath}`);
   } catch (error) {
     console.error('处理文件时发生错误:', error.message);
   }

@@ -1,6 +1,6 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import url from 'node:url';
+import fs from 'fs';
+import path from 'path';
+import url from 'url';
 import maxmind from '@maxmind/geoip2-node';
 
 // 获取当前脚本路径
@@ -42,7 +42,6 @@ async function extractIpAndPort() {
     // 读取 GeoLite2 数据库
     const dbBuffer = fs.readFile(geoip);
     const reader = maxmind.Reader.openBuffer(dbBuffer);
-    console.log('已加载 GeoLite2 数据库');
     const result = lines.slice(1) // 去掉表头
       .map(line => line.split(',')) // 按逗号分割每一行
       .filter(fields => fields.length > Math.max(ipIndex, portIndex, speedIndex)) // 确保有足够的列
@@ -62,7 +61,7 @@ async function extractIpAndPort() {
       
     // 写入到 TXT 文件
     fs.writeFile(txtFilegeo, result, 'utf8');
-    console.log(`IP 和端口已成功提取到 ${txtFilegeo}`);
+    console.log(`已成功提取到 ${txtFilegeo}`);
   } catch (error) {
     console.error('处理文件时发生错误:', error.message);
   }
