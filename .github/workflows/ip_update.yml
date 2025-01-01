@@ -35,7 +35,9 @@ jobs:
     - name: build 
       run: |
         cd iptest
-        ./main.sh
+        node extraction.js
+        go run iptest.go -file extraction_ip.txt -outfile detected_ip.csv -max 50
+        node detected.js
 
     - name: Configure Git
       run: |
