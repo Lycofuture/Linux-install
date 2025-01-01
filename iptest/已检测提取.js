@@ -1,10 +1,10 @@
-import { readFile, writeFile } from 'fs/promises';
-import { Reader } from '@maxmind/geoip2-node';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
+import maxmind from '@maxmind/geoip2-node';
 
 // 获取当前脚本路径
-const __filename = fileURLToPath(import.meta.url);
+const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // 输入 CSV 文件路径
@@ -20,7 +20,7 @@ const speedtestresult = '下载速度'
 async function extractIpAndPort() {
   try {
     // 读取 CSV 文件内容
-    const data = await readFile(csvFilePath, 'utf8');
+    const data = fs.readFile(csvFilePath, 'utf8');
 
     // 按行分割 CSV 内容
     const lines = data.split('\n').filter(line => line.trim()); // 去掉空行
@@ -40,8 +40,9 @@ async function extractIpAndPort() {
 
     // 提取 IP 和端口
     // 读取 GeoLite2 数据库
-    const dbBuffer = await readFile(geoip);
-    const reader = Reader.openBuffer(dbBuffer);
+    const dbBuffer = fs.readFile(geoip);
+    const reader = maxmind.Reader.openBuffer(dbBuffer);
+    console.log('已加载 GeoLite2 数据库');
     const result = lines.slice(1) // 去掉表头
       .map(line => line.split(',')) // 按逗号分割每一行
       .filter(fields => fields.length > Math.max(ipIndex, portIndex, speedIndex)) // 确保有足够的列
@@ -60,7 +61,7 @@ async function extractIpAndPort() {
       .join('\n'); // 合并成多行字符串
       
     // 写入到 TXT 文件
-    await writeFile(txtFilegeo, result, 'utf8');
+    fs.writeFile(txtFilegeo, result, 'utf8');
     console.log(`IP 和端口已成功提取到 ${txtFilegeo}`);
   } catch (error) {
     console.error('处理文件时发生错误:', error.message);
