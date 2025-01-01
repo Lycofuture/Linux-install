@@ -50,15 +50,15 @@ async function extractIpAndPort() {
         return speed > 0; // 过滤下载速度大于 0 kB/s 的记录
       })
       .map(fields => {
-                ip = fields[ipIndex];
-                port = fields[portIndex];
-                const data = reader.country(ip);
-                // 获取中文名称和国家代码
-                const country = data.country.names['zh-CN'] || '未知';                
-                return `${ip}:${port}#${country}`;
-            })
+        ip = fields[ipIndex];
+        port = fields[portIndex];
+        const data = reader.country(ip);
+        // 获取中文名称和国家代码
+        const country = data.country.names['zh-CN'] || '未知';
+        return `${ip}:${port}#${country}`;
+      })
       .join('\n'); // 合并成多行字符串
-      
+
     // 写入到 TXT 文件
     fs.writeFile(txtFilegeo, result, 'utf8');
     console.log(`已成功提取到 ${txtFilegeo}`);
