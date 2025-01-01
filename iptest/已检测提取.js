@@ -50,7 +50,6 @@ async function extractIpAndPort() {
         return speed > 0; // 过滤下载速度大于 0 kB/s 的记录
       })
       .map(fields => {
-<<<<<<< HEAD
         ip = fields[ipIndex];
         port = fields[portIndex];
         const data = reader.country(ip);
@@ -60,17 +59,6 @@ async function extractIpAndPort() {
       })
       .join('\n'); // 合并成多行字符串
 
-=======
-                ip = fields[ipIndex];
-                port = fields[portIndex];
-                const data = reader.country(ip);
-                // 获取中文名称和国家代码
-                const country = data.country.names['zh-CN'] || '未知';                
-                return `${ip}:${port}#${country}`;
-            })
-      .join('\n'); // 合并成多行字符串
-      
->>>>>>> c68d815766038ea5fa0e6e9a3b6cc055c1deff9b
     // 写入到 TXT 文件
     fs.writeFile(txtFilegeo, result, 'utf8');
     console.log(`已成功提取到 ${txtFilegeo}`);
