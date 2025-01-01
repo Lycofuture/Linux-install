@@ -40,11 +40,19 @@ async function extractIpAndPort() {
         .map(line => line.split(',')) // 按逗号分割每一行
         .filter(fields => fields.length > Math.max(ipIndex, portIndex)) // 确保有足够的列
         .map(fields => {
+<<<<<<< HEAD
           const ip = fields[ipIndex];
           const port = fields[portIndex];
           return `${ip} ${port}`;
         })
     )).join('\n'); // 合并成多行字符串
+=======
+                  const ip = fields[ipIndex];
+                  const port = fields[portIndex];                
+                  return `${ip} ${port}`;
+              })
+      )).join('\n'); // 合并成多行字符串
+>>>>>>> c68d815766038ea5fa0e6e9a3b6cc055c1deff9b
     // 写入到 TXT 文件
     fs.writeFile(txtFilePath, result, 'utf8');
     console.log(`已成功提取到 ${txtFilePath}`);
