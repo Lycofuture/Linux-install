@@ -5,8 +5,6 @@ name: ip_update
 
 on:
   workflow_dispatch:
-  schedule:
-  - cron: "0 2 * * *"
 
 jobs:
 
