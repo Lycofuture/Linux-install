@@ -16,7 +16,7 @@ jobs:
     - name: build 
       run: |
         cd iptest
-        tar --exclude='./*/' -czf iptest.tar.gz .
+        tar --exclude='./*/' -czf iptest.tar.gz ./
 
     - name: Release
       uses: softprops/action-gh-release@v2
