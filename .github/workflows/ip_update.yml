@@ -6,10 +6,15 @@ name: ip_update
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+  discussions: write
+
 jobs:
 
   build:
     runs-on: ubuntu-latest
+    
     steps:
     - uses: actions/checkout@v4
 
@@ -21,3 +26,5 @@ jobs:
       with:
           files: iptest.tar.gz
           tag_name:  v.iptest
+          append_body: false
+          generate_release_notes: true
