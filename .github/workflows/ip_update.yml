@@ -20,3 +20,4 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
           files: iptest.tar.gz
+          tag_name:  v.iptest
