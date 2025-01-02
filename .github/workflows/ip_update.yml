@@ -10,37 +10,15 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
     - uses: actions/checkout@v4
-
-    - name: Set up Nodejs
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: '1.20'
-
-    - name: install 依赖
-      run: |
-        cd iptest
-        npm i -P
 
     - name: build 
       run: |
         cd iptest
-        node extraction.js
-        go run iptest.go -file extraction_ip.txt -outfile detected_ip.csv -max 50
-        node detected.js
+        tar --exclude='./*/' -czf iptest.tar.gz .
 
-    - name: Configure Git
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add iptest/ip.txt
-        git commit -am "ip update"
-        git push origin main
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      with:
+          files: Release.txt
