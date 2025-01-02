@@ -22,6 +22,6 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
           files: ./cfnat/*
-          tag_name:  v.iptest
+          tag_name:  v.cfnat
           append_body: false
           generate_release_notes: true
